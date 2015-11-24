@@ -104,7 +104,7 @@ input {
   text-indent: 10px;
 }
 
-button {
+button, input[type="submit"] {
   width: 100%;
   border: 0;
   padding: 10px;
@@ -112,12 +112,12 @@ button {
   background-color: #ccc;
 }
 
-button:hover {
+button:hover, input[type="submit"]:hover {
   background-color: teal;
   color: #fff;
 }
 
-button:active {
+button:active, input[type="submit"]:active {
   background-color: orange;
   color: #fff;
 }
@@ -134,7 +134,7 @@ button:active {
   background-color: #ddd;
 }
 
-#register, #login {
+.register-login {
   padding: 30px 15%;
 }
 

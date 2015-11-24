@@ -22,27 +22,33 @@
   <!-- end header -->
 
   <!-- begin register -->
-  <div id="register" class="API-register">
-    <div>
+  <div class="API-register">
+    <div class="register-login">
       <h4>Register</h4>
-          <input name="email" type="text" placeholder="email">
-          <input name="password" type="password" placeholder="password">
-          <input name="password_confirmation" type="password" placeholder="password confirmation">
-          <!-- <input name="register" type="submit" value="Register"> -->
-          <button type="">Submit</button>
-          <p>Already registered? <a href="#">Sign in.</a></p>
-        </div>
+      <form id="register">
+        <input name="email" type="text" placeholder="email">
+        <input name="password" type="password" placeholder="password">
+        <input name="password_confirmation" type="password" placeholder="password confirmation">
+        <input name="register" type="submit" value="Register">
+      </form>
+        <!-- <button type="">Submit</button> -->
+        <p>Already registered? <a href="#">Sign in.</a></p>
+    </div>
   </div>
   <!-- end register -->
 
   <!-- begin login -->
-  <div id="login" class="API-login">
-    <h4>Login</h4>
-    <input name="email" type="text" placeholder="email">
-    <input name="password" type="password" placeholder="password">
-    <!-- <input name="login" type="submit" value="Login"> -->
-    <button type="">Submit</button>
-    <p>First time here? <a href="#">Register.</a></p>
+  <div class="API-login">
+    <div class="register-login">
+      <h4>Login</h4>
+      <form id="login">
+        <input name="email" type="text" placeholder="email">
+        <input name="password" type="password" placeholder="password">
+        <input name="login" type="submit" value="Login">
+      </form>
+      <!-- <button type="">Submit</button> -->
+      <p>First time here? <a href="#">Register.</a></p>
+    </div>
   </div>
   <!-- end login -->
 
@@ -73,27 +79,22 @@
       <h5>Your surveys</h5>
       <ul>
         <li><a href="#">Survey Title 01</a></li>
-        <li><button type="">Edit</button></li>
         <li><button type="">Delete</button></li>
       </ul>
       <ul>
         <li><a href="#">Survey Title 02</a></li>
-        <li><button type="">Edit</button></li>
         <li><button type="">Delete</button></li>
       </ul>
       <ul>
         <li><a href="#">Survey Title 03</a></li>
-        <li><button type="">Edit</button></li>
         <li><button type="">Delete</button></li>
       </ul>
       <ul>
         <li><a href="#">Survey Title 04</a></li>
-        <li><button type="">Edit</button></li>
         <li><button type="">Delete</button></li>
       </ul>
       <ul>
         <li><a href="#">Survey Title 05</a></li>
-        <li><button type="">Edit</button></li>
         <li><button type="">Delete</button></li>
       </ul>
     </div>
@@ -113,7 +114,6 @@
       <label><input type="checkbox" name="choice05" value="choice05">Choice 05</label>
       <button type="">Vote</button>
       <button type="">See Results</button>
-      <button type="">Edit this Survey</button>
       <button type="">Delete this Survey</button>
     </div>
   </div>
