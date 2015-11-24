@@ -1,0 +1,250 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+
+
+
+/* Custom CSS */
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  color: #333;
+  -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+
+}
+
+a {
+    text-decoration: none;
+    color: teal;
+}
+
+a:hover {
+    text-decoration: none;
+    color: chocolate;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 2.5em;
+    padding: 5px 10px;
+    float: left;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: 900;
+}
+
+
+
+/* Header */
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  overflow: auto;
+  background-color: #fff;
+  border-bottom: 1px solid #777;
+}
+
+nav {
+    float: right;
+    padding-right: 20px;
+}
+nav li {
+    display: inline;
+}
+nav li a {
+    padding: 26px 10px;
+    display: inline-block;
+}
+nav li a:hover {
+    background: teal;
+    color: #fff;
+}
+
+
+
+/* Inputs and Buttons */
+
+input {
+  width: 100%;
+  border:0;
+  padding:10px 0;
+  margin: 5px 0;
+  font-size:.8em;
+  display: block;
+  color: #444;
+  text-indent: 10px;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #ccc;
+}
+
+button:hover {
+  background-color: teal;
+  color: #fff;
+}
+
+button:active {
+  background-color: orange;
+  color: #fff;
+}
+
+
+
+/* Register and Login */
+.API-register {
+  margin-top: 50px;
+  background-color: #eee;
+}
+
+.API-login {
+  background-color: #ddd;
+}
+
+#register, #login {
+  padding: 30px 15%;
+}
+
+
+
+/* User survey dashboard */
+
+#user-survey-dashboard {
+  background-color: #eee;
+  overflow: auto;
+}
+
+.messages-container {
+  margin-top: 10px;
+  padding: 10px;
+  overflow: auto;
+}
+
+#survey-creator {
+  width: 40%;
+  padding: 30px 0 30px 15%;
+  float: left;
+}
+
+#user-surveys {
+  width: 28%;
+  margin-top: 88px;
+  margin-left: 10px;
+  padding: 10px 5px 10px 10px;
+  float: left;
+  background-color: #ddd;
+}
+
+#user-surveys li {
+    display: inline;
+}
+
+#user-surveys button {
+  width: 50px;
+  margin: 5px;
+  padding: 5px;
+}
+
+#user-surveys:after {
+  content: " ";
+  clear: both;
+}
+
+
+
+/* Survey container */
+
+#survey-container {
+  background-color: #ddd;
+  overflow: auto;
+}
+
+#rendered-survey {
+  padding: 30px 15%;
+}
+
+#rendered-survey > label {
+  display: block;
+  margin: 10px 0;
+  padding: 5px 0;
+  background-color: #eee;
+}
+
+#rendered-survey > label > input {
+  width: 20px;
+  display: inline;
+}
+
+#rendered-survey button {
+  width: 20%;
+  margin: 10px 5px 10px 0;
+}
+
+
+/* Survey results */
+
+#survey-results {
+  background-color: #eee;
+  overflow: auto;
+}
+
+#rendered-survey-results {
+  width: 40%;
+  padding: 30px 0 30px 15%;
+  float: left;
+}
+
+#rendered-survey-results p{
+  margin: 10px 0;
+  padding: 5px;
+  background-color: #ddd;
+}
+
+#survey-results-graph {
+  width: 150px;
+  height: 150px;
+  margin-top: 84px;
+  margin-left: 10px;
+  padding: 10px;
+  float: left;
+  background-color: #ddd;
+}
+
+#survey-results-graph:after {
+  content: " ";
+  clear: both;
+}
+
