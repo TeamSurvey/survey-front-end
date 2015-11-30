@@ -33,7 +33,7 @@ $(function() {
 
   // logout event handler
   $('#logout').on('submit', function(e) {
-    var credentials = wrap('credentials', form2object(this));
+    var credentials = form2object(this);
 
     poll_api.login(credentials, logoutCb);
     e.preventDefault();
@@ -43,24 +43,25 @@ $(function() {
 
   // handlers requiring authentication
 
-  // create new bike handler
-  $('#poll').on('submit', function(e) {
-    var data = wrap('poll', form2object(this));
+  // create new poll handler
+  $('#create-poll').on('submit', function(e) {
+    var data = form2object(this);
+    console.log("clicked for create poll action");
 
     poll_api.createPoll(session.token, data, createPollCb);
     e.preventDefault();
   });
 
 
-  // NEW updateFavPoll a poll handler
-  $('#update_favorite').on('submit', function(e) {
-    var data = wrap('favorite_poll', form2object(this));
-    console.log("clicked");
+  // NEW voteOnPoll a poll handler
+  $('#vote').on('submit', function(e) {
+    var data = form2object(this);
+    console.log("clicked for vote on poll action");
     // test to see if the data was wrapped
-    console.log(data.favorite_poll);
+    console.log(data);
 
-    console.log(data.favorite_poll.id);
-    var id = data.favorite_poll.id;
+    console.log(data.id);
+    var id = data.id;
     // test to see if the session.token is recognized
     console.log(session.token);
 
@@ -71,9 +72,9 @@ $(function() {
 
 
   // delete poll event handler
-  $('#user-polls').on('click', '.delete-bike', function() {
+  $('#user-polls').on('click', '.delete-poll', function() {
 
-    console.log("clicked");
+    console.log("clicked for delete action");
 
     // find the poll_id attached to the div
     var thisPollId = $(this).closest('.poll-posts').attr('id');
@@ -91,7 +92,7 @@ $(function() {
     $(this).closest('.poll-posts').remove();
 
 
-    // find poll in all bikes listing and remove
+    // find poll in all polls listing and remove
     // still debugging this
     var thisPollInAllPolls = $('#all-poll').find('.poll-posts').attr(thisPollId)
     thisPollInAllPolls.remove();

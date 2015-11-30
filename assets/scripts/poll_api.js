@@ -21,6 +21,9 @@ var poll_api = {
       url: this.url + '/signup',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(credentials),
+      xhrFields: {
+        withCredentials: true
+      }
       // dataType: 'json'
     }, callback);
   },
@@ -31,6 +34,9 @@ var poll_api = {
       url: this.url + '/login',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(credentials),
+      xhrFields: {
+        withCredentials: true
+      }
       // dataType: 'json'
     }, callback);
   },
@@ -52,7 +58,10 @@ var poll_api = {
       url: this.url + '/logout',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(id),
-      dataType: 'json'
+      xhrFields: {
+        withCredentials: true
+      }
+      // dataType: 'json'
     }, callback);
   },
 
@@ -65,7 +74,10 @@ var poll_api = {
       },
       contentType: 'application/json',
       data: JSON.stringify(data),
-      dataType: 'json'
+      xhrFields: {
+        withCredentials: true
+      },
+      // dataType: 'json'
     }, callback);
   },
 
@@ -73,10 +85,13 @@ var poll_api = {
     this.ajax({
       method: 'GET',
       url: this.url + '/polls/' + id,
-      headers: {
-        Authorization: 'Token token=' + token
-      },
-      dataType: 'json'
+      // headers: {
+      //   Authorization: 'Token token=' + token
+      // },
+      xhrFields: {
+        withCredentials: true
+      }
+      // dataType: 'json'
     }, callback);
   },
 
@@ -84,10 +99,13 @@ var poll_api = {
     this.ajax({
       method: 'GET',
       url: this.url + '/polls',
-      headers: {
-        Authorization: 'Token token=' + token
-      },
-      dataType: 'json'
+      // headers: {
+      //   Authorization: 'Token token=' + token
+      // },
+      xhrFields: {
+        withCredentials: true
+      }
+      // dataType: 'json'
       }, callback);
   },
 
@@ -96,12 +114,15 @@ var poll_api = {
     this.ajax({
       method: 'PATCH',
       url: this.url + '/polls/' + id,
-      headers: {
-        Authorization: 'Token token=' + token
-      },
+      // headers: {
+      //   Authorization: 'Token token=' + token
+      // },
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(data),
-      dataType: 'json'
+      xhrFields: {
+        withCredentials: true
+      }
+      // dataType: 'json'
     }, callback);
   },
 
@@ -110,23 +131,29 @@ var poll_api = {
     this.ajax({
       method: 'DELETE',
       url: this.url + '/polls/' + id,
-      headers: {
-        Authorization: 'Token token=' + token
-      },
+      // headers: {
+      //   Authorization: 'Token token=' + token
+      // },
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(id),
-      dataType: 'json'
+      xhrFields: {
+        withCredentials: true
+      },
+      // dataType: 'json'
     }, callback);
   },
 
 
   watchPoll: function (id, token) {
     var url = this.url + '/polls/' + id + '/watch';
-    var auth = {
-      Authorization: 'Token token=' + token
-    };
-    this.bikeWatcher = resourceWatcher(url, auth); //jshint ignore: line
-    return this.surveyWatcher;
+    // var auth = {
+    //   Authorization: 'Token token=' + token
+    // };
+    // xhrFields: {
+    //     withCredentials: true
+    //   };
+    this.pollWatcher = resourceWatcher(url, auth); //jshint ignore: line
+    return this.pollWatcher;
   }
 
 };
