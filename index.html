@@ -21,15 +21,28 @@
   </header>
   <!-- end header -->
 
+  <!-- begin hero -->
+  <div id="hero">
+    <h2>Survey Says...</h2>
+    <h5>Create a survey, vote on a survey, better intro text here</h5>
+    <p>To continue, <a href="#login">login</a>. If you need an account, <a href="#register">register</a>.</p>
+  </div>
+  <!-- end hero -->
+
   <!-- begin register -->
   <div class="API-register">
     <div class="register-login">
       <h4>Register</h4>
-      <form id="register">
-        <input name="email" type="text" placeholder="email">
-        <input name="password" type="password" placeholder="password">
-        <input name="password_confirmation" type="password" placeholder="password confirmation">
-        <input name="register" type="submit" value="Register">
+      <form id="register" enctype="multipart/form-data" charset="utf-8">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="username">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="password">
+        <!-- double-check this is the correct syntax -->
+        <!-- for the pw conf label and input -->
+        <label for="password_confirmation">Password Confirmation</label>
+        <input type="password" name="password_confirmation" placeholder="password confirmation">
+        <input type="submit" name="register" value="Register">
       </form>
         <!-- <button type="">Submit</button> -->
         <p>Already registered? <a href="#">Sign in.</a></p>
@@ -41,8 +54,10 @@
   <div class="API-login">
     <div class="register-login">
       <h4>Login</h4>
-      <form id="login">
-        <input name="email" type="text" placeholder="email">
+      <form id="login" enctype="multipart/form-data" charset="utf-8">
+        <label for="username">Username</label>
+        <input name="username" type="text" placeholder="username">
+        <label for="password">Password</label>
         <input name="password" type="password" placeholder="password">
         <input name="login" type="submit" value="Login">
       </form>
@@ -63,38 +78,50 @@
       <div class="messages-container">
         <h4>Welcome, [user]</h4>
       </div>
-      <input name="question" type="text" placeholder="Survey Question">
-      <input name="choice01" type="text" placeholder="Survey response choice01">
-      <input name="choice02" type="text" placeholder="Survey response choice02">
-      <input name="choice03" type="text" placeholder="Survey response choice03">
-      <input name="choice04" type="text" placeholder="Survey response choice04">
-      <input name="choice05" type="text" placeholder="Survey response choice05">
-      <!-- <input name="survey" type="submit" value="Survey"> -->
-      <button type="">Create!</button>
+      <form id="survey" enctype="multipart/form-data" charset="utf-8">
+        <label for="title">Survey Question</label>
+        <input name="title" type="text" placeholder="Survey Question">
+        <label for="choice01">Choice 01</label>
+        <input name="choice01" type="text" placeholder="Survey response choice01">
+        <label for="choice02">Choice 02</label>
+        <input name="choice02" type="text" placeholder="Survey response choice02">
+        <label for="choice03">Choice 03</label>
+        <input name="choice03" type="text" placeholder="Survey response choice03">
+        <label for="choice04">Choice 04</label>
+        <input name="choice04" type="text" placeholder="Survey response choice04">
+        <label for="choice05">Choice 05</label>
+        <input name="choice05" type="text" placeholder="Survey response choice05">
+        <input name="create" type="submit" value="Create!">
+      </form>
+      <!-- <button type="">Create!</button> -->
     </div>
     <!-- end survey creator -->
 
     <!-- begin user surveys list -->
     <div id="user-surveys">
+      <div class="messages">
+        <h6>messages</h6>
+        <p class="user-messages"></p>
+      </div>
       <h5>Your surveys</h5>
       <ul>
-        <li><a href="#">Survey Title 01</a></li>
+        <li><a href="#" data-survey-id="survey01" class="load-survey">Survey Title 01</a></li>
         <li><button type="">Delete</button></li>
       </ul>
       <ul>
-        <li><a href="#">Survey Title 02</a></li>
+        <li><a href="#" data-survey-id="survey02" class="load-survey">Survey Title 02</a></li>
         <li><button type="">Delete</button></li>
       </ul>
       <ul>
-        <li><a href="#">Survey Title 03</a></li>
+        <li><a href="#" data-survey-id="survey03" class="load-survey"> Survey Title 03</a></li>
         <li><button type="">Delete</button></li>
       </ul>
       <ul>
-        <li><a href="#">Survey Title 04</a></li>
+        <li><a href="#" data-survey-id="survey04" class="load-survey">Survey Title 04</a></li>
         <li><button type="">Delete</button></li>
       </ul>
       <ul>
-        <li><a href="#">Survey Title 05</a></li>
+        <li><a href="#" data-survey-id="survey05" class="load-survey">Survey Title 05</a></li>
         <li><button type="">Delete</button></li>
       </ul>
     </div>
@@ -107,12 +134,14 @@
   <div id="survey-container">
     <div id="rendered-survey">
       <h4>[Survey Question here]</h4>
-      <label><input type="checkbox" name="choice01" value="choice01">Choice 01</label>
-      <label><input type="checkbox" name="choice02" value="choice02">Choice 02</label>
-      <label><input type="checkbox" name="choice03" value="choice03">Choice 03</label>
-      <label><input type="checkbox" name="choice04" value="choice04">Choice 04</label>
-      <label><input type="checkbox" name="choice05" value="choice05">Choice 05</label>
-      <button type="">Vote</button>
+      <!-- swapped checkboxes for radio button and made all  -->
+      <!-- name attributes the same to force one choice per vote. -->
+      <label for="choice01" data-choice="01"><input type="radio" name="choice" value="choice01">Choice 01</label>
+      <label for="choice02" data-choice="02"><input type="radio" name="choice" value="choice02">Choice 02</label>
+      <label for="choice03" data-choice="03"><input type="radio" name="choice" value="choice03">Choice 03</label>
+      <label for="choice04" data-choice="04"><input type="radio" name="choice" value="choice04">Choice 04</label>
+      <label for="choice05" data-choice="05"><input type="radio" name="choice" value="choice05">Choice 05</label>
+      <button type="">Submit Vote</button>
       <button type="">See Results</button>
       <button type="">Delete this Survey</button>
     </div>
@@ -124,20 +153,22 @@
     <div id="rendered-survey-results">
       <h4>Survey Results</h4>
       <h5>[Survey Question here]</h5>
-      <p>Choice 01</p>
-      <p>Choice 02</p>
-      <p>Choice 03</p>
-      <p>Choice 04</p>
-      <p>Choice 05</p>
+      <p>Choice 01 <small>(choice01 votes/total votes) * 100</small></p>
+      <p>Choice 02 <small>(choice02 votes/total votes) * 100</small></p>
+      <p>Choice 03 <small>(choice03 votes/total votes) * 100</small></p>
+      <p>Choice 04 <small>(choice04 votes/total votes) * 100</small></p>
+      <p>Choice 05 <small>(choice05 votes/total votes) * 100</small></p>
+
     </div>
     <div id="survey-results-graph">
-      chart data of results breakdown will go here
+      chart data of results breakdown could go here
     </div>
   </div>
   <!-- end survey results -->
 
 <!-- begin scripts -->
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="assets/scripts/app.js" type="text/javascript" charset="utf-8" defer></script>
   <!-- end scripts -->
 </body>
 </html>
