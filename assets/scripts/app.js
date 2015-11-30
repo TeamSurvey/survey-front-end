@@ -25,19 +25,32 @@
 
 $(function() {
 
+  // setting up AJAX to handle cookies
+  // $.ajaxSetup({
+  //   xhrFields: {
+  //       withCredentials: true
+  //   }
+  // });
+
   // register
   $('#register').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(e.target);
     $.ajax({
-      url: 'http://httpbin.org/post',
-      // url: 'http://localhost:3000/signup',
+      // url: 'http://httpbin.org/post',
+      url: 'http://localhost:3000/signup',
       method: 'POST',
-      contentType: false,
+      contentType: 'application/json; charset=utf-8',
       processData: false,
-      data: formData
+      data: formData,
+      dataType: 'json',
+      // adding preflight
+      xhrFields: {
+        withCredentials: true
+      }
     }).done(function(data) {
       $('.user-messages').html('<p>Successful registration. </p><p>username is ' + data.form.username + 'and password is ' + data.form.password + '</p>');
+      console.log(data);
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
@@ -48,12 +61,17 @@ $(function() {
     e.preventDefault();
     var formData = new FormData(e.target);
     $.ajax({
-      url: 'http://httpbin.org/post',
-      // url: 'http://localhost:3000/login',
+      // url: 'http://httpbin.org/post',
+      url: 'http://localhost:3000/login',
       method: 'POST',
-      contentType: false,
+      contentType: 'application/json; charset=utf-8',
       processData: false,
-      data: formData
+      data: formData,
+      dataType: 'json',
+      // adding preflight
+      xhrFields: {
+        withCredentials: true
+      }
     }).done(function(data) {
       $('.user-messages').html('<p>Successful login.</p><p>username is ' + data.form.username + ' and password is ' + data.form.password + '</p>');
       $('.messages-container h4').html('Welcome, ' + data.form.username);
