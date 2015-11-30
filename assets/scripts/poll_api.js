@@ -72,7 +72,7 @@ var poll_api = {
       headers: {
         Authorization: 'Token token=' + token
       },
-      contentType: 'application/json',
+      contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(data),
       xhrFields: {
         withCredentials: true
@@ -95,7 +95,7 @@ var poll_api = {
     }, callback);
   },
 
-  listUserSurveys: function (token, callback) {
+  listUserPolls: function (token, callback) {
     this.ajax({
       method: 'GET',
       url: this.url + '/polls',
