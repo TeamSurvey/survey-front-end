@@ -32,9 +32,7 @@ var regCb = function (error, data) {
     $(".user-messages").html("<strong>Error! Registration fail!</strong>");
     return;
   }
-  console.log(data);
-  // console.log(JSON.stringify(data, null, 4));
-    // $('.user-messages').text('Welcome,  new user #' + data.user.id);
+  console.log('data is ' + data);
 };
 
 
@@ -46,7 +44,9 @@ var loginCb = function (error, data) {
     console.error(error);
     $(".user-messages").html("<strong>Error! Login fail!</strong>");
     return;
-  } else { console.log(JSON.stringify(data, null, 4));}
+  } else {
+    console.log(JSON.stringify(data, null, 4));
+  }
 
 }; // end of login callback;
 

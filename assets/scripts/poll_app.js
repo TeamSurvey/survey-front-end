@@ -1,8 +1,7 @@
 'use strict';
 
 var user = {
-  id: null,
-  token: null
+  username: null
 };
 
 
@@ -23,11 +22,14 @@ $(function() {
   $('#login').on('submit', function(e) {
     var credentials = form2object(this);
     console.log(credentials);
+
     poll_api.login(credentials, loginCb);
     e.preventDefault();
+    // add user feedback
+    $(".messages-container h4").html("Welcome, " + credentials.username);
   });
 
-  // logout event handler
+  // logout event handler -- stretch goal
   $('#logout').on('submit', function(e) {
     var credentials = form2object(this);
 
@@ -45,7 +47,11 @@ $(function() {
 
 
 
-  // voteOnPoll a poll handler
+  // edit poll title handler
+
+
+
+  // showPoll a handler
 
 
 

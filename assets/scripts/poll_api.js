@@ -41,18 +41,11 @@ var poll_api = {
     }, callback);
   },
 
-  listAllPolls: function (callback) {
-    this.ajax({
-      method: 'GET',
-      url: this.url + '/polls',
-      dataType: 'json'
-      }, callback);
-  },
-
 
   //Authenticated api actions
 
-  logout: function(id, token, callback) {
+  // logout function is a stretch goal
+  logout: function(id, callback) {
     this.ajax({
       method: 'POST',
       url: this.url + '/logout',
@@ -65,13 +58,13 @@ var poll_api = {
     }, callback);
   },
 
-  createPoll: function (token, data, callback) {
+  createPoll: function (data, callback) {
     this.ajax({
       method: 'POST',
       url: this.url + '/polls',
-      headers: {
-        Authorization: 'Token token=' + token
-      },
+      // headers: {
+      //   Authorization: 'Token token=' + token
+      // },
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(data),
       xhrFields: {
@@ -81,7 +74,7 @@ var poll_api = {
     }, callback);
   },
 
-  showPoll: function (id, token, callback) {
+  showPoll: function (id, callback) {
     this.ajax({
       method: 'GET',
       url: this.url + '/polls/' + id,
@@ -95,7 +88,7 @@ var poll_api = {
     }, callback);
   },
 
-  listUserPolls: function (token, callback) {
+  listUserPolls: function (callback) {
     this.ajax({
       method: 'GET',
       url: this.url + '/polls',
@@ -110,7 +103,7 @@ var poll_api = {
   },
 
 
-  editVote: function (id, data, token, callback) {
+  editPollTitle: function (id, data, callback) {
     this.ajax({
       method: 'PATCH',
       url: this.url + '/polls/' + id,
@@ -127,7 +120,7 @@ var poll_api = {
   },
 
 
-  deletePoll: function (id, token, callback) {
+  deletePoll: function (id, callback) {
     this.ajax({
       method: 'DELETE',
       url: this.url + '/polls/' + id,
@@ -143,8 +136,8 @@ var poll_api = {
     }, callback);
   },
 
-
-  watchPoll: function (id, token) {
+// watchPoll function is a stretch goal
+  watchPoll: function (id) {
     var url = this.url + '/polls/' + id + '/watch';
     // var auth = {
     //   Authorization: 'Token token=' + token
