@@ -97,36 +97,6 @@
     </div>
     <!-- end survey creator -->
 
-    <!-- begin user surveys list -->
-    <div id="user-surveys">
-      <div class="messages">
-        <h6>messages</h6>
-        <p class="user-messages"></p>
-      </div>
-      <h5>Your surveys</h5>
-      <ul>
-        <li><a href="#" data-survey-id="survey01" class="load-survey">Survey Title 01</a></li>
-        <li><button type="">Delete</button></li>
-      </ul>
-      <ul>
-        <li><a href="#" data-survey-id="survey02" class="load-survey">Survey Title 02</a></li>
-        <li><button type="">Delete</button></li>
-      </ul>
-      <ul>
-        <li><a href="#" data-survey-id="survey03" class="load-survey"> Survey Title 03</a></li>
-        <li><button type="">Delete</button></li>
-      </ul>
-      <ul>
-        <li><a href="#" data-survey-id="survey04" class="load-survey">Survey Title 04</a></li>
-        <li><button type="">Delete</button></li>
-      </ul>
-      <ul>
-        <li><a href="#" data-survey-id="survey05" class="load-survey">Survey Title 05</a></li>
-        <li><button type="">Delete</button></li>
-      </ul>
-    </div>
-    <!-- nd user surveys list -->
-
   </div>
   <!-- end user dashboard -->
 
@@ -142,9 +112,31 @@
       <label for="choice04" data-choice="04"><input type="radio" name="choice" value="choice04">Choice 04</label>
       <label for="choice05" data-choice="05"><input type="radio" name="choice" value="choice05">Choice 05</label>
       <button type="" id="vote">Submit Vote</button>
-      <button type="">See Results</button>
-      <button type="">Delete this Survey</button>
+      <button type="" id="results">See Results</button>
+      <button type="" class="create-new">Create New Survey</button>
+      <button type="" id="edit">Edit this Survey</button>
+      <button type="" id="delete">Delete this Survey</button>
     </div>
+
+    <!-- begin user surveys list -->
+    <div id="user-surveys">
+      <!-- begin user messages box -->
+      <div class="messages">
+        <h6>messages</h6>
+        <p class="user-messages"></p>
+      </div>
+      <!-- end user messages box -->
+      <h5>Your surveys</h5>
+      <ul>
+        <li><a href="#" data-survey-id="survey01" class="load-survey">Survey Title 01</a></li>
+        <li><a href="#" data-survey-id="survey02" class="load-survey">Survey Title 02</a></li>
+        <li><a href="#" data-survey-id="survey03" class="load-survey"> Survey Title 03</a></li>
+        <li><a href="#" data-survey-id="survey04" class="load-survey">Survey Title 04</a></li>
+        <li><a href="#" data-survey-id="survey05" class="load-survey">Survey Title 05</a></li>
+      </ul>
+    </div>
+    <!-- end user surveys list -->
+
   </div>
   <!-- end rendered survey -->
 
