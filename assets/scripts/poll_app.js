@@ -138,13 +138,29 @@ $(document).ready(function() {
 
 
 
+// km -- begin showPoll handler
 
 
-  // showPoll a handler
+  // showPoll handler for user poll list (READ)
+    $('.show-poll').on('click', function(e) {
+    e.preventDefault();
+    console.log('clicked');
+
+    console.log('poll id is ' + JSON.stringify(poll._id, null, 4));
+
+    poll_api.editPoll(poll._id, showPollCb);
+
+    // On submit click, title patch request and populate title in the p tag.
+
+    $(this).fadeOut();
+
+  });
 
   //   On click of URL, URL populates in address bar, and if poll container visible, poll container repopulates. If hidden, poll container shows and populates.
 
   // Each option and li will have hover and active actions
+
+// km -- end showPoll handler
 
 
 

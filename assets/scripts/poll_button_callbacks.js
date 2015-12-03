@@ -1,5 +1,14 @@
 'use strict';
 
+// km begin poll obj literal
+var poll = {
+  _id: null,
+  title: null,
+  options: [],
+  owner_id: null
+};
+// km end poll obj literal
+
 var createdPoll = $('#rendered-poll');
 var createdPollsList = $('#poll-list');
 
@@ -80,6 +89,9 @@ var createPollCb = function (error, data) {
   }
   console.log('successful create, data is ' + JSON.stringify(data, null, 4));
 
+  // km testing show through create retrieval of poll id
+  poll.id = data._id;
+
   // createdPollsHTML(poll);
 
 };
@@ -93,8 +105,15 @@ var showPollCb = function (error, data) {
     return;
   }
   // grab poll from backend
-  // var poll = data.poll;
   console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
+  poll.id = data.id;
+  console.log(poll.id);
+  poll.title = data.title;
+  console.log(poll.title);
+  poll.options = data.options;
+  console.log(poll.options);
+  poll.owner_id = data.owner_id;
+  console.log(poll.owner_id);
 
 };
 
