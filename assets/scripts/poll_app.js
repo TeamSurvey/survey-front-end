@@ -115,6 +115,20 @@ $(document).ready(function() {
 
     $('#poll-list').append(newPollLink);
 
+    //ben edits start
+    // poll._id = data.poll.id;
+    poll.title = data.title;
+    poll.options = data.options;
+    poll.owner_id = data.owner_id;
+    $('.render-poll-title').html(poll.title);
+    $('.option-one').html(poll.options[0]);
+    $('.option-two').html(poll.owner_id);
+    // $('.option-three').html(poll.options[2]);
+    // $('.option-four').html(poll.options[3]);
+    // $('.option-five').html(poll.options[4]);
+
+    //ben edits end
+
     $(this).fadeOut();
     // On submit, msg fades out, create form fades out, message with URL (let's vote on it) fades in, GET request created poll data, Li with a-tag of poll w data-poll-id fades in poll list ul, poll container fades up, dates populated in (for each)? Buttons populate on.
 
