@@ -1,5 +1,18 @@
 'use strict';
 
+// lcn adds
+var url = 'http://localhost:5000/';
+var poll_url = "";
+
+// km begin poll obj literal
+var poll = {
+  id: null,
+  title: null,
+  options: [],
+  owner_id: null
+};
+// km end poll obj literal
+
 var createdPoll = $('#rendered-poll');
 var createdPollsList = $('#poll-list');
 
@@ -89,7 +102,16 @@ var createPollCb = function (error, data) {
   }
   console.log('successful create, data is ' + JSON.stringify(data, null, 4));
 
-  // createdPollsHTML(poll);
+  // used bracket notation to solve for special character in key value
+  poll.id = data["_id"];
+  console.log(poll.id)
+
+  // lcn unique URL add
+  poll_url = url + data.id;
+
+  console.log('poll_url is ' + poll_url);
+
+  $(".user-messages").html("Your survey can be found here " + poll_url);
 
 };
 
@@ -102,8 +124,16 @@ var showPollCb = function (error, data) {
     return;
   }
   // grab poll from backend
-  // var poll = data.poll;
   console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
+  poll.id = data[0]["_id"];
+   // prod_id = data[0]["_id"]; //Global variable
+  console.log('poll id is ' + poll.id);
+  poll.title = data.title;
+  console.log(poll.title);
+  poll.options = data.options;
+  console.log(poll.options);
+  poll.owner_id = data.owner_id;
+  console.log(poll.owner_id);
 
 };
 
@@ -138,7 +168,7 @@ var editPollCb = function (error, data) {
 
   var pollTitle = data.title;
 
-  console.log('new poll title is ' + pollTitle.id);
+  console.log('new poll title is ' + pollTitle);
 
   $(".user-messages").html("<strong>Poll updated!</strong>");
 
