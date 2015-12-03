@@ -79,6 +79,13 @@
 
     <div id="create-edit-del-button-dashboard" class="">
      <button type="" class="create-new">Create New Poll</button>
+
+     <!-- km begin add show button -->
+     <button type="" class="show-poll">Show a Poll</button>
+     <input name="showPoll" type="text" placeholder="poll ID">
+     <!-- km end add show button -->
+
+
       <button type="" id="edit">Edit this Poll</button>
       <button type="" id="delete">Delete this Poll</button>
     </div>
@@ -132,10 +139,9 @@
      <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
        <label for="title">Poll Title</label>
        <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
-       <label for="option01">Option 01</label>
-       <input name="options" type="text" placeholder="Poll response option01" id="pollOption01">
-       <label for="option02">Option 02</label>
-       <input name="owner_id" type="text" placeholder="Owner ID" id="pollOption02">
+
+<!--  km: removed option01 and option02 inputs, we are not using them for this prototype -->
+
        <input name="save" type="submit" value="Save!">
      </form>
    </div>
