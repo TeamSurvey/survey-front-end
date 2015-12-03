@@ -146,14 +146,14 @@
   <!-- begin rendered poll -->
   <div class="vote-poll-container">
     <div id="rendered-poll" data-currentPollId="">
-      <h4>[Poll Question here]</h4>
+      <h4 class="render-poll-title">[Poll Question here]</h4>
       <!-- swapped checkboxes for radio button and made all  -->
       <!-- name attributes the same to force one choice per vote. -->
-      <div data-answer="01"><input type="radio" name="answer" value="answer01">Answer 01</div>
-      <div data-answer="02"><input type="radio" name="answer" value="answer02">Answer 02</div>
-      <div data-answer="03"><input type="radio" name="answer" value="answer03">Answer 03</div>
-      <div data-answer="04"><input type="radio" name="answer" value="answer04">Answer 04</div>
-      <div data-answer="05"><input type="radio" name="answer" value="answer05">Answer 05</div>
+      <div class="option-one" data-answer="01"><input type="radio" name="answer" value="answer01">Answer 01</div>
+      <div class="option-two" data-answer="02"><input type="radio" name="answer" value="answer02">Answer 02</div>
+      <div class="option-three" data-answer="03"><input type="radio" name="answer" value="answer03">Answer 03</div>
+      <div class="option-four" data-answer="04"><input type="radio" name="answer" value="answer04">Answer 04</div>
+      <div class="option-five" data-answer="05"><input type="radio" name="answer" value="answer05">Answer 05</div>
     </div>
     <div id="vote-results-button-dashboard">
       <button type="" id="vote">Submit Vote</button>
