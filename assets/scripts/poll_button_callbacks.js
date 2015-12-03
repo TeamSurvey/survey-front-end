@@ -4,15 +4,6 @@
 var url = 'http://localhost:5000/'; //CHANGE TO GH PAGES URL
 var poll_url = "";
 
-// km begin poll obj literal
-var poll = {
-  id: null,
-  title: null,
-  options: [],
-  owner_id: null
-};
-// km end poll obj literal
-
 var createdPoll = $('#rendered-poll');
 var createdPollsList = $('#poll-list');
 
