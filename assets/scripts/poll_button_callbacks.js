@@ -3,6 +3,15 @@
 var createdPoll = $('#rendered-poll');
 var createdPollsList = $('#poll-list');
 
+//ben changes start
+var poll = {
+ id: null,
+ title: null,
+ options: [],
+ owner_id: null
+};
+//ben changes end
+
 // for poplulating the poll content into the div
 var createdPollsHTML = function(poll) {
   createdPollsList.append('<div id=' + poll.id + ' class="poll-posts usr-posts"><h3>' + poll.title + '</h3><p>' + poll.description +'</p><p> poll id: '+ poll.id +'</p><p> user id: '+ poll.user_id +'</p><button class="delete-poll">Delete this listing</button></div>');
