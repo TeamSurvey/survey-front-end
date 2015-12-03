@@ -116,16 +116,19 @@ $(document).ready(function() {
     $('#poll-list').append(newPollLink);
 
     //ben edits start
-    poll.id = data["_id"];
-    poll.title = data.title;
-    poll.options = data.options;
-    poll.owner_id = data.owner_id;
-    $('.render-poll-title').html(poll.title);
-    $('.option-one').html(poll.options);
-    $('.option-two').html(poll.owner_id);
-    // $('.option-three').html(poll.options[2]);
-    // $('.option-four').html(poll.options[3]);
-    // $('.option-five').html(poll.options[4]);
+    // poll.id = data["_id"];
+    // poll.title = data.title;
+    // poll.options = data.options;
+    // poll.owner_id = data.owner_id;
+    // $('.render-poll-title').html(poll.title);
+    // console.log('one ' + poll.options);
+    // console.log('two ' + poll.options[0]);
+    // console.log('theree ' + poll.options.option01);
+    // $('.option-one').val(poll.options.option01);
+    // $('.option-two').html(poll.options.option02);
+    // $('.option-three').html(poll.options.option03);
+    // $('.option-four').html(poll.options.option04);
+    // $('.option-five').html(poll.options.option05);
 
     //ben edits end
 

@@ -116,7 +116,7 @@
        <label for="title">Poll Question</label>
        <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
        <label for="option01">Option 01</label>
-       <input name="options" type="text" placeholder="Poll response option01" id="pollOption01">
+       <input name="option01" type="text" placeholder="Poll response option01" id="pollOption01">
        <label for="option02">Option 02</label>
        <input name="option02" type="text" placeholder="Poll response option02" id="pollOption02">
         <label for="option03">Option 03</label>
@@ -157,8 +157,11 @@
       <h4 class="render-poll-title">[Poll Question here]</h4>
       <!-- swapped checkboxes for radio button and made all  -->
       <!-- name attributes the same to force one choice per vote. -->
-      <div class="option-one" data-answer="01"><input type="radio" name="answer" value="answer01">Option</div>
-      <div class="option-two" data-answer="02"><input type="radio" name="answer" value="answer02">Owner_ID</div>
+      <div class="option-one" data-option="01"><input type="radio" name="option" value="option01">Option 01</div>
+      <div class="option-two" data-option="02"><input type="radio" name="option" value="option02">Option 02</div>
+      <div class="option-three" data-option="03"><input type="radio" name="option" value="option03">Option 03</div>
+      <div class="option-four" data-option="04"><input type="radio" name="option" value="option04">Option 04</div>
+      <div class="option-five" data-option="05"><input type="radio" name="option" value="option05">Option 05</div>
 
     </div>
     <div id="vote-results-button-dashboard">

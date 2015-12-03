@@ -95,7 +95,23 @@ var createPollCb = function (error, data) {
 
   // used bracket notation to solve for special character in key value
   poll.id = data["_id"];
-  console.log(poll.id)
+  poll.title = data.title;
+  poll.options = data.options;
+  poll.owner_id = data.owner_id;
+
+ $('.render-poll-title').html(poll.title);
+
+  $('.option-one').html(poll.options[0]);
+  $('.option-two').html(poll.options[1]);
+  $('.option-three').html(poll.options[2]);
+  $('.option-four').html(poll.options[3]);
+  $('.option-five').html(poll.options[4]);
+
+  // var optionsAry  = data.options.split('');
+  // console.log("optionsAry is: " + optionsAry);
+
+  // console.log(poll.id);
+  // console.log("Options are : " + data.options);
 
   // lcn unique URL add
   poll_url = (url + "polls/" + data["_id"]);
