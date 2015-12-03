@@ -1,8 +1,12 @@
 'use strict';
 
+// lcn adds
+var url = 'http://localhost:5000/';
+var poll_url = "";
+
 // km begin poll obj literal
 var poll = {
-  _id: null,
+  id: null,
   title: null,
   options: [],
   owner_id: null
@@ -98,10 +102,16 @@ var createPollCb = function (error, data) {
   }
   console.log('successful create, data is ' + JSON.stringify(data, null, 4));
 
-  // km testing show through create retrieval of poll id
-  poll.id = data._id;
+  // used bracket notation to solve for special character in key value
+  poll.id = data["_id"];
+  console.log(poll.id)
 
-  // createdPollsHTML(poll);
+  // lcn unique URL add
+  poll_url = url + data.id;
+
+  console.log('poll_url is ' + poll_url);
+
+  $(".user-messages").html("Your survey can be found here " + poll_url);
 
 };
 
@@ -115,8 +125,9 @@ var showPollCb = function (error, data) {
   }
   // grab poll from backend
   console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
-  poll.id = data.id;
-  console.log(poll.id);
+  poll.id = data[0]["_id"];
+   // prod_id = data[0]["_id"]; //Global variable
+  console.log('poll id is ' + poll.id);
   poll.title = data.title;
   console.log(poll.title);
   poll.options = data.options;
@@ -157,7 +168,7 @@ var editPollCb = function (error, data) {
 
   var pollTitle = data.title;
 
-  console.log('new poll title is ' + pollTitle.id);
+  console.log('new poll title is ' + pollTitle);
 
   $(".user-messages").html("<strong>Poll updated!</strong>");
 
