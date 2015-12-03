@@ -156,13 +156,13 @@ $(document).ready(function() {
 
 
   // showPoll handler for user poll list (READ)
-    $('.show-poll').on('click', function(e) {
+    $('#show-poll').on('submit', function(e) {
     e.preventDefault();
     console.log('clicked');
 
-    console.log('poll id is ' + JSON.stringify(poll._id, null, 4));
+    console.log('poll id is ' + JSON.stringify(poll.id, null, 4));
 
-    poll_api.editPoll(poll._id, showPollCb);
+    poll_api.editPoll(poll.id, showPollCb);
 
     // On submit click, title patch request and populate title in the p tag.
 
