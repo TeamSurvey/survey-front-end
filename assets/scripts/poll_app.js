@@ -111,43 +111,10 @@ $(document).ready(function() {
 
     poll_api.createPoll(data, createPollCb);
 
-<<<<<<< HEAD
-    var newPollLink = $('<li><a href="#" data-poll-id="[data.pollID]" class="load-poll">' + data.title + '</a></li>');
-=======
     var newPollLink = $('<li><a href="#" data-poll-id="' + poll_url + '" class="load-poll">' + data.title + '</a></li>');
->>>>>>> km_feature_connect_API
 
     $('#poll-list').append(newPollLink);
 
-    //ben edits start
-<<<<<<< HEAD
-    poll.id = data["_id"];
-    poll.title = data.title;
-    poll.options = data.options;
-    poll.owner_id = data.owner_id;
-    $('.render-poll-title').html(poll.title);
-    $('.option-one').html(poll.options[0]);
-    $('.option-two').html(poll.owner_id);
-    // $('.option-three').html(poll.options[2]);
-    // $('.option-four').html(poll.options[3]);
-    // $('.option-five').html(poll.options[4]);
-=======
-    // poll.id = data["_id"];
-    // poll.title = data.title;
-    // poll.options = data.options;
-    // poll.owner_id = data.owner_id;
-    // $('.render-poll-title').html(poll.title);
-    // console.log('one ' + poll.options);
-    // console.log('two ' + poll.options[0]);
-    // console.log('theree ' + poll.options.option01);
-    // $('.option-one').val(poll.options.option01);
-    // $('.option-two').html(poll.options.option02);
-    // $('.option-three').html(poll.options.option03);
-    // $('.option-four').html(poll.options.option04);
-    // $('.option-five').html(poll.options.option05);
->>>>>>> km_feature_connect_API
-
-    //ben edits end
 
     $(this).fadeOut();
     // On submit, msg fades out, create form fades out, message with URL (let's vote on it) fades in, GET request created poll data, Li with a-tag of poll w data-poll-id fades in poll list ul, poll container fades up, dates populated in (for each)? Buttons populate on.

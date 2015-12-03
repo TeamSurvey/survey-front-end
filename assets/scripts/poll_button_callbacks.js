@@ -93,11 +93,10 @@ var createPollCb = function (error, data) {
   }
   console.log('successful create, data is ' + JSON.stringify(data, null, 4));
 
+  //ben edits start
+
   // used bracket notation to solve for special character in key value
   poll.id = data["_id"];
-<<<<<<< HEAD
-  console.log(poll.id)
-=======
   poll.title = data.title;
   poll.options = data.options;
   poll.owner_id = data.owner_id;
@@ -109,13 +108,7 @@ var createPollCb = function (error, data) {
   $('.option-three').html(poll.options[2]);
   $('.option-four').html(poll.options[3]);
   $('.option-five').html(poll.options[4]);
-
-  // var optionsAry  = data.options.split('');
-  // console.log("optionsAry is: " + optionsAry);
-
-  // console.log(poll.id);
-  // console.log("Options are : " + data.options);
->>>>>>> km_feature_connect_API
+  //ben edits end
 
   // lcn unique URL add
   poll_url = (url + "polls/" + data["_id"]);
