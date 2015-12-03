@@ -111,7 +111,7 @@ $(document).ready(function() {
 
     poll_api.createPoll(data, createPollCb);
 
-    var newPollLink = $('<li><a href="#" data-poll-id="[data.pollID]" class="load-poll">' + data.title + '</a></li>');
+    var newPollLink = $('<li><a href="#" data-poll-id="' + poll_url + '" class="load-poll">' + data.title + '</a></li>');
 
     $('#poll-list').append(newPollLink);
 
@@ -121,7 +121,7 @@ $(document).ready(function() {
     poll.options = data.options;
     poll.owner_id = data.owner_id;
     $('.render-poll-title').html(poll.title);
-    $('.option-one').html(poll.options[0]);
+    $('.option-one').html(poll.options);
     $('.option-two').html(poll.owner_id);
     // $('.option-three').html(poll.options[2]);
     // $('.option-four').html(poll.options[3]);
