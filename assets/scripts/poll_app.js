@@ -146,7 +146,6 @@ $(document).ready(function() {
     $('#show-poll').on('submit', function(e) {
     e.preventDefault();
     console.log('clicked');
-<<<<<<< HEAD
 
     console.log('poll id is ' + JSON.stringify(poll.id, null, 4));
 
@@ -155,18 +154,6 @@ $(document).ready(function() {
     // On submit click, title patch request and populate title in the p tag.
 
     $(this).fadeOut();
-
-=======
-
-    console.log('poll id is ' + JSON.stringify(poll.id, null, 4));
-
-    poll_api.editPoll(poll.id, showPollCb);
-
-    // On submit click, title patch request and populate title in the p tag.
-
-    $(this).fadeOut();
-
->>>>>>> km_feature_connect_API
   });
 
   //   On click of URL, URL populates in address bar, and if poll container visible, poll container repopulates. If hidden, poll container shows and populates.
