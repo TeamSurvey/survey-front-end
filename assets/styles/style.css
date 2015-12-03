@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
 
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
 
 
 /* Custom CSS */
@@ -9,9 +11,9 @@ body {
   font-weight: 300;
   font-size: 1em;
   color: #333;
-  -webkit-box-sizing: border-box;
+/*  -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
-   box-sizing: border-box;
+   box-sizing: border-box;*/
 
 }
 
@@ -31,17 +33,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.5vw;
     padding: 5px 10px;
     float: left;
 }
 
 h2 {
-  font-size: 2em;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 4.5vw;
 }
 
 h3 {
-  font-size: 1.75em;
+  font-size: 1.75vw;
   text-transform: uppercase;
 }
 
@@ -126,38 +129,67 @@ button:active, input[type="submit"]:active {
   color: #fff;
 }
 
+/* wrapper */
+.wrapper {
+  width: 100%;
+  height:auto;
+  padding:65px 0 300px;
+  background: url(../images/duck.jpg) no-repeat center center;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+}
 
 
 /* Hero */
-#hero {
-  margin-top: 50px;
-  padding: 30px 0 30px 15%;
+.hero {
+/*  position: absolute;*/
+  width: 35%;
+  height: 200px;
+  margin: 130px auto;
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 5;
+}
+
+
+.hero h2 {
+  margin-top: 25px;
+}
+
+.hero h5 {
+  margin: 10px;
 }
 
 
 
 /* Register and Login */
 .API-register {
-
+  width: 20%;
+  position: fixed;
+  top: 195px;
+  right: 0px;
   background-color: #eee;
 }
 
 .API-login {
+  width: 20%;
+  position: fixed;
+  top: 195px;
+  right: 0px;
   background-color: #ddd;
 }
 
 .register-login {
-  padding: 30px 15%;
+  padding: 30px 10%;
 }
 
 
 
-/* User survey dashboard */
-
-#user-survey-dashboard {
-  background-color: #eee;
-  overflow: auto;
-}
+/* Create poll container */
 
 .messages-container {
   margin-top: 10px;
@@ -165,35 +197,37 @@ button:active, input[type="submit"]:active {
   overflow: auto;
 }
 
-#survey-creator {
-  /*width: 40%;*/
-  padding: 30px 15%;
-/*  remove float*/
-  /*float: left;*/
+#poll-creation-container, #poll-edit-container{
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px 3%;
+  background-color: #eee;
+  overflow: auto;
 }
 
-#user-surveys {
+
+/* Your polls */
+
+#user-polls {
   width: 20%;
   margin-top: 64px;
   margin-left: 10px;
   padding: 10px 5px 10px 10px;
-  float: left;
-  /*background-color: #ddd;*/
   background-color: #eee;
 }
 
-#user-surveys li {
+#user-polls li {
     display: block;
     padding: 5px;
 }
 
-#user-surveys button {
+#user-polls button {
   width: 50px;
   margin: 5px;
   padding: 5px;
 }
 
-#user-surveys:after {
+#user-polls:after {
   content: " ";
   clear: both;
 }
@@ -207,32 +241,36 @@ button:active, input[type="submit"]:active {
 
 
 
-/* Survey container */
+/* Poll container */
 
-#survey-container {
+#rendered-poll-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px 3%;
   background-color: #ddd;
   overflow: auto;
 }
 
-#rendered-survey {
+#rendered-poll {
   width: 48%;
   padding: 30px 0 30px 15%;
   float: left;
 }
 
-#rendered-survey > label {
+#rendered-poll > label {
   display: block;
+  width: 90%;
   margin: 10px 0;
   padding: 5px 0;
   background-color: #eee;
 }
 
-#rendered-survey > label > input {
-  width: 20px;
+#rendered-poll > label > input {
+  width: 90%;
   display: inline;
 }
 
-#rendered-survey button {
+#rendered-poll button {
   width: 18.5%;
   margin: 10px 5px 10px 0;
   padding: 5px 3px;
@@ -240,26 +278,31 @@ button:active, input[type="submit"]:active {
 }
 
 
-/* Survey results */
+/* Poll results */
 
-#survey-results {
+#poll-results-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px 3%;
+  background-color: #ddd;
+  overflow: auto;
   background-color: #eee;
   overflow: auto;
 }
 
-#rendered-survey-results {
-  width: 40%;
-  padding: 30px 0 30px 15%;
+#rendered-poll-results {
+  width: 90%;
+  padding: 30px 3%;
   float: left;
 }
 
-#rendered-survey-results p{
+#rendered-poll-results p{
   margin: 10px 0;
   padding: 5px;
   background-color: #ddd;
 }
 
-#survey-results-graph {
+#poll-results-graph {
   width: 150px;
   height: 150px;
   margin-top: 84px;
@@ -269,8 +312,13 @@ button:active, input[type="submit"]:active {
   background-color: #ddd;
 }
 
-#survey-results-graph:after {
+#poll-results-graph:after {
   content: " ";
   clear: both;
 }
 
+/* animations and jQuery*/
+
+.hidden {
+  display: none;
+}

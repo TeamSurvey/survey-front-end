@@ -4,158 +4,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Duck Poll</title>
   <link rel="stylesheet" type="text/css" href="assets/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+
 </head>
 
 <body>
-  <!-- begin header -->
-  <header id="header" class="">
-    <h1>Duck Poll</h1>
-    <!-- nav buttons for login/register -->
-    <nav>
-      <ul>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- end header -->
+ <!-- begin header -->
+   <header>
+     <h1>Duck Poll</h1>
+     <!-- nav buttons for login/register -->
+     <!-- <nav>
+       <ul>
+           <li><a href="#">Login</a></li>
+           <li><a href="#">Register</a></li>
+       </ul>
+     </nav> -->
+   </header>
+   <!-- end header -->
 
-  <!-- begin hero -->
-  <div id="hero">
-    <h2>Duck Poll!</h2>
-    <h5>Create a poll, vote on a poll, better intro text here</h5>
-    <p>To continue, <a href="#login">login</a>. If you need an account, <a href="#register">register</a>.</p>
+
+
+
+  <div class="wrapper">
+   <!-- begin hero -->
+   <div class="hero animated zoomIn">
+     <h2 >Ducks in a Row</h2>
+     <h5>Create a poll, vote on a poll, better intro text here</h5>
+     <p>To continue, <a href="#login" class="login-a">login</a>. If you need an account, <a href="#register" class="register-a">register</a>.</p>
+   </div>
+   <!-- end hero -->
+
+
+
+   <!-- begin register -->
+   <div class="API-register hidden">
+     <div class="register-login">
+       <h4>Register</h4>
+       <form id="register" enctype="multipart/form-data" charset="utf-8">
+         <label for="username">Username</label>
+         <input type="text" name="username" placeholder="username">
+         <label for="password">Password</label>
+         <input type="password" name="password" placeholder="password">
+         <input type="submit" name="register" value="Register">
+       </form>
+         <p class="user-messages">Already registered? <a href="#" class="login-a2">Sign in.</a></p>
+     </div>
+   </div>
+   <!-- end register -->
+
+
+
+   <!-- begin login -->
+   <div class="API-login hidden">
+     <div class="register-login">
+       <h4>Login</h4>
+       <form id="login" enctype="multipart/form-data" charset="utf-8">
+         <label for="username">Username</label>
+         <input name="username" type="text" placeholder="username">
+         <label for="password">Password</label>
+         <input name="password" type="password" placeholder="password">
+         <input name="login" type="submit" value="Login">
+       </form>
+       <p>First time here? <a href="#" class="register-a2">Register.</a></p>
+     </div>
+   </div>
+   <!-- end login -->
+
+
+
+   <!-- begin poll creation container -->
+   <div id="poll-creation-container">
+     <!-- user messages -->
+     <div class="messages-container">
+       <h4>Create a poll, [user]</h4>
+     </div>
+     <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
+       <label for="title">Poll Question</label>
+       <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
+       <label for="option01">Option 01</label>
+       <input name="options" type="text" placeholder="Poll response option01" id="pollOption01">
+       <label for="option02">Option 02</label>
+       <input name="owner_id" type="text" placeholder="Owner ID" id="pollOption02">
+       <!--  <label for="option03">Option 03</label>
+       <input name="option03" type="text" placeholder="Poll response option03" id="pollOption03">
+       <label for="option04">Option 04</label>
+       <input name="option04" type="text" placeholder="Poll response option04" id="pollOption04">
+       <label for="option05">Option 05</label>
+       <input name="option05" type="text" placeholder="Poll response option05" id="pollOption05"> -->
+       <input name="create" type="submit" value="Create!">
+     </form>
+   </div>
+   <!-- end poll creation container -->
+
+
+
+   <!-- begin poll edit container -->
+   <div id="poll-edit-container">
+     <!-- user messages -->
+     <div>
+       <h4>Edit this poll</h4>
+     </div>
+     <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
+       <label for="title">Poll Title</label>
+       <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
+       <label for="option01">Option 01</label>
+       <input name="options" type="text" placeholder="Poll response option01" id="pollOption01">
+       <label for="option02">Option 02</label>
+       <input name="owner_id" type="text" placeholder="Owner ID" id="pollOption02">
+       <input name="save" type="submit" value="Save!">
+     </form>
+   </div>
+   <!-- end poll edit container -->
+
+
+
+   <!-- begin rendered poll -->
+   <div id="rendered-poll-container" data-currentPollId="">
+     <h4>[Poll Question here]</h4>
+     <!-- swapped checkboxes for radio button and made all  -->
+     <!-- name attributes the same to force one choice per vote. -->
+     <div data-answer="01"><input type="radio" name="answer" value="answer01">Answer 01</div>
+     <div data-answer="02"><input type="radio" name="answer" value="answer02">Answer 02</div>
+     <div data-answer="03"><input type="radio" name="answer" value="answer03">Answer 03</div>
+     <div data-answer="04"><input type="radio" name="answer" value="answer04">Answer 04</div>
+     <div data-answer="05"><input type="radio" name="answer" value="answer05">Answer 05</div>
+     <button type="" id="vote">Submit Vote</button>
+     <button type="" id="results">See Results</button>
+     <button type="" class="create-new">Create New Poll</button>
+     <button type="" id="edit">Edit this Poll</button>
+     <button type="" id="delete">Delete this Poll</button>
+   </div>
+   <!-- end rendered polls -->
+
+
+
+  <!-- begin user polls list -->
+   <div id="user-polls">
+     <!-- begin user messages box -->
+     <div class="messages">
+       <h6>messages</h6>
+       <p class="user-messages"></p>
+     </div>
+     <!-- end user messages box -->
+     <h5>Your Polls</h5>
+     <ul id="poll-list">
+       <li><a href="#" data-poll-id="poll01" class="load-poll">Poll Title 01</a></li>
+       <li><a href="#" data-poll-id="poll02" class="load-poll">Poll Title 02</a></li>
+       <li><a href="#" data-poll-id="poll03" class="load-poll"> Poll Title 03</a></li>
+       <li><a href="#" data-poll-id="poll04" class="load-poll">Poll Title 04</a></li>
+       <li><a href="#" data-poll-id="poll05" class="load-poll">Poll Title 05</a></li>
+     </ul>
+   </div>
+   <!-- end user polls list -->
+
+
+
+   <!-- begin poll results -->
+   <div id="poll-results-container">
+     <div id="rendered-poll-results">
+       <h4>Poll Results</h4>
+       <h5>[Poll Question here]</h5>
+       <p>Choice 01 <small>(choice01 votes/total votes) * 100</small></p>
+       <p>Choice 02 <small>(choice02 votes/total votes) * 100</small></p>
+       <p>Choice 03 <small>(choice03 votes/total votes) * 100</small></p>
+       <p>Choice 04 <small>(choice04 votes/total votes) * 100</small></p>
+       <p>Choice 05 <small>(choice05 votes/total votes) * 100</small></p>
+
+     </div>
+     <div id="survey-results-graph">
+       chart data of results breakdown could go here
+     </div>
+   </div>
+   <!-- end poll results -->
   </div>
-  <!-- end hero -->
-
-  <!-- begin register -->
-  <div class="API-register">
-    <div class="register-login">
-      <h4>Register</h4>
-      <form id="register" enctype="multipart/form-data" charset="utf-8">
-        <label for="username">Username</label>
-        <input type="text" name="username" placeholder="username">
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="password">
-        <!-- double-check this is the correct syntax -->
-        <!-- for the pw conf label and input -->
-        <!-- <label for="password_confirmation">Password Confirmation</label>
-        <input type="password" name="password_confirmation" placeholder="password confirmation"> -->
-        <input type="submit" name="register" value="Register">
-      </form>
-        <!-- <button type="">Submit</button> -->
-        <p>Already registered? <a href="#">Sign in.</a></p>
-    </div>
-  </div>
-  <!-- end register -->
-
-  <!-- begin login -->
-  <div class="API-login">
-    <div class="register-login">
-      <h4>Login</h4>
-      <form id="login" enctype="multipart/form-data" charset="utf-8">
-        <label for="username">Username</label>
-        <input name="username" type="text" placeholder="username">
-        <label for="password">Password</label>
-        <input name="password" type="password" placeholder="password">
-        <input name="login" type="submit" value="Login">
-      </form>
-      <!-- <button type="">Submit</button> -->
-      <p>First time here? <a href="#">Register.</a></p>
-    </div>
-  </div>
-  <!-- end login -->
-
-
-  <!-- begin user dashboard -->
-  <div id="user-poll-dashboard">
-
-
-    <!-- begin poll creation container -->
-    <div id="poll-creation-container">
-      <!-- user messages -->
-      <div class="messages-container">
-        <h4>Welcome, [user]</h4>
-      </div>
-      <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
-        <label for="title">Poll Question</label>
-        <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
-        <label for="option01">Option 01</label>
-        <input name="options" type="text" placeholder="Poll response option01" id="pollOption01">
-        <label for="option02">Option 02</label>
-        <input name="owner_id" type="text" placeholder="Owner ID" id="pollOption02">
-        <!--  <label for="option03">Option 03</label>
-        <input name="option03" type="text" placeholder="Poll response option03" id="pollOption03">
-        <label for="option04">Option 04</label>
-        <input name="option04" type="text" placeholder="Poll response option04" id="pollOption04">
-        <label for="option05">Option 05</label>
-        <input name="option05" type="text" placeholder="Poll response option05" id="pollOption05"> -->
-        <input name="create" type="submit" value="Create!">
-      </form>
-    </div>
-    <!-- end poll creation container -->
-
-  </div>
-  <!-- end user dashboard -->
-
-  <!-- begin rendered poll -->
-  <div id="poll-container">
-    <div id="rendered-poll" data-currentPollId="">
-      <h4>[Poll Question here]</h4>
-      <!-- swapped checkboxes for radio button and made all  -->
-      <!-- name attributes the same to force one choice per vote. -->
-      <label for="answer01" data-answer="01"><input type="radio" name="answer" value="answer01">Answer 01</label>
-      <label for="answer02" data-answer="02"><input type="radio" name="answer" value="answer02">Answer 02</label>
-      <label for="answer03" data-answer="03"><input type="radio" name="answer" value="answer03">Answer 03</label>
-      <label for="answer04" data-answer="04"><input type="radio" name="answer" value="answer04">Answer 04</label>
-      <label for="answer05" data-answer="05"><input type="radio" name="answer" value="answer05">Answer 05</label>
-      <button type="" id="vote">Submit Vote</button>
-      <button type="" id="results">See Results</button>
-      <button type="" class="create-new">Create New Poll</button>
-      <button type="" id="edit">Edit this Poll</button>
-      <button type="" id="delete">Delete this Poll</button>
-    </div>
-
-    <!-- begin user polls list -->
-    <div id="user-polls">
-      <!-- begin user messages box -->
-      <div class="messages">
-        <h6>messages</h6>
-        <p class="user-messages"></p>
-      </div>
-      <!-- end user messages box -->
-      <h5>Your Polls</h5>
-      <ul id="poll-list">
-        <li><a href="#" data-poll-id="poll01" class="load-poll">Poll Title 01</a></li>
-        <li><a href="#" data-poll-id="poll02" class="load-poll">Poll Title 02</a></li>
-        <li><a href="#" data-poll-id="poll03" class="load-poll"> Poll Title 03</a></li>
-        <li><a href="#" data-poll-id="poll04" class="load-poll">Poll Title 04</a></li>
-        <li><a href="#" data-poll-id="poll05" class="load-poll">Poll Title 05</a></li>
-      </ul>
-    </div>
-    <!-- end user polls list -->
-
-  </div>
-  <!-- end rendered polls -->
-
-  <!-- begin poll results -->
-  <div id="poll-results">
-    <div id="rendered-poll-results">
-      <h4>Survey Results</h4>
-      <h5>[Survey Question here]</h5>
-      <p>Choice 01 <small>(choice01 votes/total votes) * 100</small></p>
-      <p>Choice 02 <small>(choice02 votes/total votes) * 100</small></p>
-      <p>Choice 03 <small>(choice03 votes/total votes) * 100</small></p>
-      <p>Choice 04 <small>(choice04 votes/total votes) * 100</small></p>
-      <p>Choice 05 <small>(choice05 votes/total votes) * 100</small></p>
-
-    </div>
-    <div id="survey-results-graph">
-      chart data of results breakdown could go here
-    </div>
-  </div>
-  <!-- end poll results -->
 
 <!-- begin scripts -->
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
