@@ -111,11 +111,16 @@ $(document).ready(function() {
 
     poll_api.createPoll(data, createPollCb);
 
+<<<<<<< HEAD
     var newPollLink = $('<li><a href="#" data-poll-id="[data.pollID]" class="load-poll">' + data.title + '</a></li>');
+=======
+    var newPollLink = $('<li><a href="#" data-poll-id="' + poll_url + '" class="load-poll">' + data.title + '</a></li>');
+>>>>>>> km_feature_connect_API
 
     $('#poll-list').append(newPollLink);
 
     //ben edits start
+<<<<<<< HEAD
     poll.id = data["_id"];
     poll.title = data.title;
     poll.options = data.options;
@@ -126,6 +131,21 @@ $(document).ready(function() {
     // $('.option-three').html(poll.options[2]);
     // $('.option-four').html(poll.options[3]);
     // $('.option-five').html(poll.options[4]);
+=======
+    // poll.id = data["_id"];
+    // poll.title = data.title;
+    // poll.options = data.options;
+    // poll.owner_id = data.owner_id;
+    // $('.render-poll-title').html(poll.title);
+    // console.log('one ' + poll.options);
+    // console.log('two ' + poll.options[0]);
+    // console.log('theree ' + poll.options.option01);
+    // $('.option-one').val(poll.options.option01);
+    // $('.option-two').html(poll.options.option02);
+    // $('.option-three').html(poll.options.option03);
+    // $('.option-four').html(poll.options.option04);
+    // $('.option-five').html(poll.options.option05);
+>>>>>>> km_feature_connect_API
 
     //ben edits end
 
@@ -159,6 +179,7 @@ $(document).ready(function() {
     $('#show-poll').on('submit', function(e) {
     e.preventDefault();
     console.log('clicked');
+<<<<<<< HEAD
 
     console.log('poll id is ' + JSON.stringify(poll.id, null, 4));
 
@@ -168,6 +189,17 @@ $(document).ready(function() {
 
     $(this).fadeOut();
 
+=======
+
+    console.log('poll id is ' + JSON.stringify(poll.id, null, 4));
+
+    poll_api.editPoll(poll.id, showPollCb);
+
+    // On submit click, title patch request and populate title in the p tag.
+
+    $(this).fadeOut();
+
+>>>>>>> km_feature_connect_API
   });
 
   //   On click of URL, URL populates in address bar, and if poll container visible, poll container repopulates. If hidden, poll container shows and populates.
