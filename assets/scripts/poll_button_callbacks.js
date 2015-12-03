@@ -1,5 +1,12 @@
 'use strict';
 
+var createdPoll = $('#rendered-poll');
+var createdPollsList = $('#poll-list');
+
+// for poplulating the poll content into the div
+var createdPollsHTML = function(poll) {
+  createdPollsList.append('<div id=' + poll.id + ' class="poll-posts usr-posts"><h3>' + poll.title + '</h3><p>' + poll.description +'</p><p> poll id: '+ poll.id +'</p><p> user id: '+ poll.user_id +'</p><button class="delete-poll">Delete this listing</button></div>');
+ };
 
 // create object from form data
 var form2object = function(form) {
@@ -21,7 +28,7 @@ var callback = function callback(error, data) {
     $('#result').val('status: ' + error.status + ', error: ' + error.error);
     return;
   }
-  $('#result').val(JSON.stringify(data, null, 4));
+  $('.user-messages').val(JSON.stringify(data, null, 4));
 };
 
 
@@ -58,7 +65,6 @@ var logoutCb = function (error){
     console.error(error);
     $(".user-messages").html("<strong>Whoops! You're still logged in.</strong>");
   }
-  data.user.current_user = false;
   // changeLogout();
   console.log(JSON.stringify(data, null, 4));
   console.log("Logged out");
@@ -66,6 +72,17 @@ var logoutCb = function (error){
 
 
 // createPoll callback
+var createPollCb = function (error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Poll create fail!</strong>");
+    return;
+  }
+  console.log('successful create, data is ' + JSON.stringify(data, null, 4));
+
+  // createdPollsHTML(poll);
+
+};
 
 
 // listUserPolls callback

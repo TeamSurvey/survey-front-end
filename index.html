@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survey Says...</title>
+  <title>Duck Poll</title>
   <link rel="stylesheet" type="text/css" href="assets/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
 </head>
@@ -10,7 +10,7 @@
 <body>
   <!-- begin header -->
   <header id="header" class="">
-    <h1>Survey Says...</h1>
+    <h1>Duck Poll</h1>
     <!-- nav buttons for login/register -->
     <nav>
       <ul>
@@ -23,8 +23,8 @@
 
   <!-- begin hero -->
   <div id="hero">
-    <h2>Survey Says...</h2>
-    <h5>Create a survey, vote on a survey, better intro text here</h5>
+    <h2>Duck Poll!</h2>
+    <h5>Create a poll, vote on a poll, better intro text here</h5>
     <p>To continue, <a href="#login">login</a>. If you need an account, <a href="#register">register</a>.</p>
   </div>
   <!-- end hero -->
@@ -69,80 +69,79 @@
 
 
   <!-- begin user dashboard -->
-  <div id="user-survey-dashboard">
+  <div id="user-poll-dashboard">
 
 
-    <!-- begin survey creator -->
-    <div id="survey-creator">
+    <!-- begin poll creation container -->
+    <div id="poll-creation-container">
       <!-- user messages -->
       <div class="messages-container">
         <h4>Welcome, [user]</h4>
       </div>
-      <form id="survey" enctype="multipart/form-data" charset="utf-8">
-        <label for="title">Survey Question</label>
-        <input name="title" type="text" placeholder="Survey Question">
-        <label for="choice01">Choice 01</label>
-        <input name="choice01" type="text" placeholder="Survey response choice01">
-        <label for="choice02">Choice 02</label>
-        <input name="choice02" type="text" placeholder="Survey response choice02">
-        <label for="choice03">Choice 03</label>
-        <input name="choice03" type="text" placeholder="Survey response choice03">
-        <label for="choice04">Choice 04</label>
-        <input name="choice04" type="text" placeholder="Survey response choice04">
-        <label for="choice05">Choice 05</label>
-        <input name="choice05" type="text" placeholder="Survey response choice05">
-        <input name="create" type="submit" value="Create!" id="create-poll">
+      <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
+        <label for="title">Poll Question</label>
+        <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
+        <label for="option01">Option 01</label>
+        <input name="options" type="text" placeholder="Poll response option01" id="pollOption01">
+        <label for="option02">Option 02</label>
+        <input name="owner_id" type="text" placeholder="Owner ID" id="pollOption02">
+        <!--  <label for="option03">Option 03</label>
+        <input name="option03" type="text" placeholder="Poll response option03" id="pollOption03">
+        <label for="option04">Option 04</label>
+        <input name="option04" type="text" placeholder="Poll response option04" id="pollOption04">
+        <label for="option05">Option 05</label>
+        <input name="option05" type="text" placeholder="Poll response option05" id="pollOption05"> -->
+        <input name="create" type="submit" value="Create!">
       </form>
-      <!-- <button type="">Create!</button> -->
     </div>
-    <!-- end survey creator -->
+    <!-- end poll creation container -->
 
   </div>
   <!-- end user dashboard -->
 
-  <!-- begin rendered survey -->
-  <div id="survey-container">
-    <div id="rendered-survey" data-currentPollId="">
-      <h4>[Survey Question here]</h4>
+  <!-- begin rendered poll -->
+  <div id="poll-container">
+    <div id="rendered-poll" data-currentPollId="">
+      <h4>[Poll Question here]</h4>
       <!-- swapped checkboxes for radio button and made all  -->
       <!-- name attributes the same to force one choice per vote. -->
-      <label for="choice01" data-choice="01"><input type="radio" name="choice" value="choice01">Choice 01</label>
-      <label for="choice02" data-choice="02"><input type="radio" name="choice" value="choice02">Choice 02</label>
-      <label for="choice03" data-choice="03"><input type="radio" name="choice" value="choice03">Choice 03</label>
-      <label for="choice04" data-choice="04"><input type="radio" name="choice" value="choice04">Choice 04</label>
-      <label for="choice05" data-choice="05"><input type="radio" name="choice" value="choice05">Choice 05</label>
+      <label for="answer01" data-answer="01"><input type="radio" name="answer" value="answer01">Answer 01</label>
+      <label for="answer02" data-answer="02"><input type="radio" name="answer" value="answer02">Answer 02</label>
+      <label for="answer03" data-answer="03"><input type="radio" name="answer" value="answer03">Answer 03</label>
+      <label for="answer04" data-answer="04"><input type="radio" name="answer" value="answer04">Answer 04</label>
+      <label for="answer05" data-answer="05"><input type="radio" name="answer" value="answer05">Answer 05</label>
       <button type="" id="vote">Submit Vote</button>
       <button type="" id="results">See Results</button>
-      <button type="" class="create-new">Create New Survey</button>
-      <button type="" id="edit">Edit this Survey</button>
-      <button type="" id="delete">Delete this Survey</button>
+      <button type="" class="create-new">Create New Poll</button>
+      <button type="" id="edit">Edit this Poll</button>
+      <button type="" id="delete">Delete this Poll</button>
     </div>
 
-    <!-- begin user surveys list -->
-    <div id="user-surveys">
+    <!-- begin user polls list -->
+    <div id="user-polls">
       <!-- begin user messages box -->
       <div class="messages">
         <h6>messages</h6>
         <p class="user-messages"></p>
       </div>
       <!-- end user messages box -->
-      <h5>Your surveys</h5>
-      <ul>
-        <li><a href="#" data-survey-id="survey01" class="load-survey">Survey Title 01</a></li>
-        <li><a href="#" data-survey-id="survey02" class="load-survey">Survey Title 02</a></li>
-        <li><a href="#" data-survey-id="survey03" class="load-survey"> Survey Title 03</a></li>
-        <li><a href="#" data-survey-id="survey04" class="load-survey">Survey Title 04</a></li>
-        <li><a href="#" data-survey-id="survey05" class="load-survey">Survey Title 05</a></li>
+      <h5>Your Polls</h5>
+      <ul id="poll-list">
+        <li><a href="#" data-poll-id="poll01" class="load-poll">Poll Title 01</a></li>
+        <li><a href="#" data-poll-id="poll02" class="load-poll">Poll Title 02</a></li>
+        <li><a href="#" data-poll-id="poll03" class="load-poll"> Poll Title 03</a></li>
+        <li><a href="#" data-poll-id="poll04" class="load-poll">Poll Title 04</a></li>
+        <li><a href="#" data-poll-id="poll05" class="load-poll">Poll Title 05</a></li>
       </ul>
     </div>
-    <!-- end user surveys list -->
+    <!-- end user polls list -->
 
   </div>
-  <!-- end rendered survey -->
+  <!-- end rendered polls -->
 
-  <!-- begin survey results -->
-  <div id="survey-results">
-    <div id="rendered-survey-results">
+  <!-- begin poll results -->
+  <div id="poll-results">
+    <div id="rendered-poll-results">
       <h4>Survey Results</h4>
       <h5>[Survey Question here]</h5>
       <p>Choice 01 <small>(choice01 votes/total votes) * 100</small></p>
@@ -156,11 +155,11 @@
       chart data of results breakdown could go here
     </div>
   </div>
-  <!-- end survey results -->
+  <!-- end poll results -->
 
 <!-- begin scripts -->
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
- <script src="assets/scripts/poll_api.js" type="text/javascript" defer charset="utf-8"></script>
+  <script src="assets/scripts/poll_api.js" type="text/javascript" defer charset="utf-8"></script>
   <script src="assets/scripts/poll_button_callbacks.js" type="text/javascript" defer charset="utf-8"></script>
   <script src="assets/scripts/poll_app.js" type="text/javascript" defer charset="utf-8"></script>
   <!-- end scripts -->
