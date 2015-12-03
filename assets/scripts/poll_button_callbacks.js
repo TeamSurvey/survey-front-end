@@ -1,7 +1,7 @@
 'use strict';
 
 // lcn adds
-var url = 'http://localhost:5000/';
+var url = 'http://localhost:5000/'; //CHANGE TO GH PAGES URL
 var poll_url = "";
 
 // km begin poll obj literal
@@ -107,7 +107,7 @@ var createPollCb = function (error, data) {
   console.log(poll.id)
 
   // lcn unique URL add
-  poll_url = url + data.id;
+  poll_url = (url + "polls/" + data["_id"]);
 
   console.log('poll_url is ' + poll_url);
 
