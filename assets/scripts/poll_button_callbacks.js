@@ -14,7 +14,7 @@ var createdPollsList = $('#poll-list');
 
 //ben changes start
 var poll = {
- id: null,
+ id: 0,
  title: null,
  options: [],
  owner_id: null

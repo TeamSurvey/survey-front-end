@@ -116,7 +116,7 @@ $(document).ready(function() {
     $('#poll-list').append(newPollLink);
 
     //ben edits start
-    // poll._id = data.poll.id;
+    poll.id = data["_id"];
     poll.title = data.title;
     poll.options = data.options;
     poll.owner_id = data.owner_id;
@@ -206,17 +206,9 @@ $(document).ready(function() {
   $('#create-edit-del-button-dashboard').on('click', '.delete', function() {
     console.log('clicked');
 
-    var data = form2object(this);
-     console.log('the form will send ' + JSON.stringify(data, null, 4));
-
-    poll_api.deletePoll(data, deletePollCb);
-    $('.user-messages').html('<p>Successful poll deletion</p>');
+    poll_api.deletePoll(poll.id, deletePollCb);
 
   });
-
-
-
-
 
 
 }); // end doc ready function
