@@ -143,25 +143,46 @@ button:active, input[type="submit"]:active {
 
 
 /* Hero */
+
 .hero {
-/*  position: absolute;*/
-  width: 35%;
-  height: 200px;
-  margin: 130px auto;
-  padding: 15px;
+  width: 60%;
+  height: 250px;
+  margin: 10px auto;
+  color: white;
+}
+
+.duck-intro {
+  width: 60%;
+  padding: 20px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  z-index: 5;
+  float: left;
 }
 
 
-.hero h2 {
-  margin-top: 25px;
+.duck-intro h2 {
+/*  margin-top: 25px;*/
 }
 
-.hero h5 {
+.duck-intro h5 {
   margin: 10px;
+}
+
+.user-messages {
+  overflow: auto;
+  width: 30%;
+  height: 100px;
+  margin-left: .9%;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.5);
+  float: left;
+}
+
+/* button dashboard 01 */
+#create-edit-del-button-dashboard {
+  width: 8%;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
 }
 
 
@@ -232,49 +253,38 @@ button:active, input[type="submit"]:active {
   clear: both;
 }
 
-.user-messages {
-  overflow: auto;
-  width: 90%;
-  height: 100px;
-  border: 1px solid black;
-}
-
 
 
 /* Poll container */
 
-#rendered-poll-container {
+.vote-poll-container {
   width: 50%;
   margin: 0 auto;
-  padding: 30px 3%;
-  background-color: #ddd;
   overflow: auto;
 }
 
 #rendered-poll {
-  width: 48%;
-  padding: 30px 0 30px 15%;
+  width: 90%;
+  margin: 0;
+  padding: 30px 0 30px 10px;
+  background-color: #ddd;
   float: left;
 }
 
-#rendered-poll > label {
+/* button dashboard 02 */
+
+#vote-results-button-dashboard {
+  width: 10%;
+  color: white;
+  float: left;
+  margin-top: 0;
+}
+
+#vote-results-button-dashboard button{
+  width: 65%;
+  margin-right: 5px;
+  padding-left: 5px;
   display: block;
-  width: 90%;
-  margin: 10px 0;
-  padding: 5px 0;
-  background-color: #eee;
-}
-
-#rendered-poll > label > input {
-  width: 90%;
-  display: inline;
-}
-
-#rendered-poll button {
-  width: 18.5%;
-  margin: 10px 5px 10px 0;
-  padding: 5px 3px;
-  height: 30px;
 }
 
 

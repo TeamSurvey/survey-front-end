@@ -6,52 +6,50 @@ $(document).ready(function() {
 
   // animate on register/login containers
   $('.register-a').on('click', function() {
-    $('.API-register').fadeIn();
-    $('.API-register').removeClass('hidden');
+    $('.API-register').fadeIn().removeClass('hidden');
   });
 
   $('.login-a').on('click', function() {
-    $('.API-login').fadeIn();
-    $('.API-login').removeClass('hidden');
+    $('.API-login').fadeIn().removeClass('hidden');
   });
 
   $('.register-a2').on('click', function() {
     $('.API-login').slideUp(300);
-    $('.API-register').delay(600).slideDown(300);
-    $('.API-register').removeClass('hidden');
+    $('.API-register').delay(600).slideDown(300).removeClass('hidden');
   });
 
   $('.login-a2').on('click', function() {
     $('.API-register').slideUp(300);
-    $('.API-login').delay(600).slideDown(300);
-    $('.API-login').removeClass('hidden');
+    $('.API-login').delay(600).slideDown(300).removeClass('hidden');
   });
 
 
-  // create button click handler
-  //   On create but click, p tag text fades out? Message fades out?
+  // create-new (poll) button click handler
+  $('.user-messages').on('click', '.create-new', function() {
+    console.log('clicked');
+    $('#poll-creation-container').fadeIn().removeClass('hidden');
 
-  // Create form fades in input fields fade in (for each)? Message instruct enter poll question and options.
+    // replace or hide user messages text
 
-  // On create poll click, if viewing a rendered poll, poll container fades out and poll creation container fades up
+    // Create form fades in input fields fade in (for each)? Message instruct enter poll question and options.
+
+    // On create poll click, if viewing a rendered poll, poll container fades out and poll creation container fades up
+  });
+
+  // or
+
+ $('#create-edit-del-button-dashboard').on('click', '.create-new', function() {
+    console.log('clicked');
+    $('#poll-creation-container').fadeIn().removeClass('hidden');
+  });
 
 
-  // edit button click handler
 
-  // On edit click, edit title container fades up.
-
-
-  // vote button click handler (put with AJAX request section)
-  // On vote click, message container updates with "thanks for your vote, your vote is [answer]. Do you want to <see poll results>?
-
-
-
-  // see results button click handler (put with AJAX request)
-//   On See Results button click, pollAnswers GET req, rendered poll fades out, poll results container fades in. Poll data from rendered poll populates here and count data fades in.
-
-// If no poll results, fade in "nobody's taken the poll, do you want to?" Yes/no. Yes... fade out poll res container, fade in rendered poll container.
-
-// Add X buttons to close windows.
+  // edit poll button click handler
+  $('#create-edit-del-button-dashboard').on('click', '.edit', function() {
+    console.log('clicked');
+    $('#poll-edit-container').fadeIn().removeClass('hidden');
+  });
 
 
 
@@ -80,10 +78,12 @@ $(document).ready(function() {
     // hide login container
     $('.API-login').slideUp();
 
-    // change text in #hero p tag (user message box?), add create button
+    // fade up user-messages and create-poll button
+    $('.user-messages').fadeIn().removeClass('hidden');
+    $('.user-messages').html('<p>Welcome, ' + credentials.username + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
 
     // add user feedback
-    $(".messages-container h4").html("Welcome, " + credentials.username);
+    $('.messages-container h4').html('Welcome, ' + credentials.username);
   });
 
 
@@ -111,16 +111,32 @@ $(document).ready(function() {
 
     poll_api.createPoll(data, createPollCb);
 
-    //create form fades in, user message box gives instructions
+    var newPollLink = $('<li><a href="#" data-poll-id="[data.pollID]" class="load-poll">[data.poll.title]</a></li>');
 
+    $('#poll-list').append(newPollLink);
+
+    $(this).fadeOut();
     // On submit, msg fades out, create form fades out, message with URL (let's vote on it) fades in, GET request created poll data, Li with a-tag of poll w data-poll-id fades in poll list ul, poll container fades up, dates populated in (for each)? Buttons populate on.
 
   });
 
 
   // edit poll title handler
+  $('#edit-poll').on('submit', function(e) {
+    e.preventDefault();
 
-  // On submit click, title patch request and populate title in the p tag.
+    var data = form2object(this);
+     console.log('the form will send ' + JSON.stringify(data, null, 4));
+
+    poll_api.editPoll(data, editPollCb);
+
+    // On submit click, title patch request and populate title in the p tag.
+
+    $(this).fadeOut();
+
+  });
+
+
 
 
 
@@ -132,9 +148,42 @@ $(document).ready(function() {
 
 
 
+  // vote button click handler (put with AJAX request section)
+  $('#vote-results-button-dashboard').on('click', '.vote', function() {
+    console.log('clicked');
+
+    var data = form2object(this);
+     console.log('the form will send ' + JSON.stringify(data, null, 4));
+
+    poll_api.votePoll(data, votePollCb);
+    $('.user-messages').html('<p>Successful poll deletion</p>');
+  });
+
+  // On vote click, message container updates with "thanks for your vote, your vote is [answer]. Do you want to <see poll results>?
+
+
+
+  // see results button click handler (put with AJAX request)
+//   On See Results button click, pollAnswers GET req, rendered poll fades out, poll results container fades in. Poll data from rendered poll populates here and count data fades in.
+
+// If no poll results, fade in "nobody's taken the poll, do you want to?" Yes/no. Yes... fade out poll res container, fade in rendered poll container.
+
+// Add X buttons to close windows.
+
+
 
   // delete poll event handler
-  // On delete click, rendered poll container fades out, message feedback, successful deletion.
+  $('#create-edit-del-button-dashboard').on('click', '.delete', function() {
+    console.log('clicked');
+
+    var data = form2object(this);
+     console.log('the form will send ' + JSON.stringify(data, null, 4));
+
+    poll_api.deletePoll(data, deletePollCb);
+    $('.user-messages').html('<p>Successful poll deletion</p>');
+
+  });
+
 
 
 

@@ -66,7 +66,21 @@ var poll_api = {
     }, callback);
   },
 
-  listUserPolls: function (callback) {
+  votePoll: function(id, callback) {
+    this.ajax({
+      method: 'POST',
+      url: this.url + '/pollAnswers/' + id,
+    }, callback);
+  },
+
+  showPollResults: function(id, callback) {
+    this.ajax({
+      method: 'GET',
+      url: this.url + '/pollAnswers/' + id,
+    }, callback);
+  },
+
+  listPolls: function (callback) {
     this.ajax({
       method: 'GET',
       url: this.url + '/polls',
@@ -74,7 +88,7 @@ var poll_api = {
   },
 
 
-  editPollTitle: function (id, data, callback) {
+  editPoll: function (id, data, callback) {
     this.ajax({
       method: 'PATCH',
       url: this.url + '/polls/' + id,

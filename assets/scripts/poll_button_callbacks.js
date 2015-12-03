@@ -85,10 +85,74 @@ var createPollCb = function (error, data) {
 };
 
 
-// listUserPolls callback
+// showPoll callback
+var showPollCb = function (error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Poll listing fail!</strong>");
+    return;
+  }
+  // grab poll from backend
+  // var poll = data.poll;
+  console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
+
+};
+
+
+
+// listAllPolls callback
+var listAllPollsCb = function (error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Poll listing fail!</strong>");
+    return;
+  }
+  // grab polls from backend
+  var polls = data.polls;
+
+  // polls.forEach(function(poll){
+  //   listPollHTML(poll);
+  // });
+
+};
+
+
+// updatePollTitle callback
+var editPollCb = function (error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Poll edit fail!</strong>");
+    return;
+  }
+  // console.log test
+  console.log('new poll data is ' + data);
+
+  var pollTitle = data.title;
+
+  console.log('new poll title is ' + pollTitle.id);
+
+  $(".user-messages").html("<strong>Poll updated!</strong>");
+
+};
+// end of updateFavBike submit handler
+
 
 
 // deletePoll callback
+var deletePollCb = function (error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Poll deletion fail!</strong>");
+    return;
+  }
+
+  // find li by data attribute, delete that li in the 'your polls list and hide the rendered survey container? If so, do in click handler js section'
+
+  $(".user-messages").html("<strong>Poll deletion success!</strong>");
+
+
+
+};
 
 
 
