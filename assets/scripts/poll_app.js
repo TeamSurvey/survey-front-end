@@ -111,7 +111,7 @@ $(document).ready(function() {
 
     poll_api.createPoll(data, createPollCb);
 
-    var newPollLink = $('<li><a href="#" data-poll-id="[data.pollID]" class="load-poll">[data.poll.title]</a></li>');
+    var newPollLink = $('<li><a href="#" data-poll-id="[data.pollID]" class="load-poll">' + data.title + '</a></li>');
 
     $('#poll-list').append(newPollLink);
 
