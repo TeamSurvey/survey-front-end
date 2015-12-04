@@ -1,0 +1,91 @@
+User Actions
+// Random user clicks on unique url of a created survey:
+
+  // *** VOTE ***
+  //(save as pollVote function)
+  // Page loads with AJAX GET request for that survey (title, options)
+
+  // click event on an option in the list triggers:
+
+    // enabling of the "Vote" button
+
+  // click event on the "Vote" button triggers:
+
+    // pollAnswer document creation
+
+    // AJAX POST of that answer (the text of the option) into document
+
+    // "Results" button enables OR results automatically display?
+
+    // "Exit" button enables?
+
+  //  *** REGISTER ***
+  // Random user registers
+
+    // Registration fields are the only items shown
+
+    // User enters credentials
+
+      // If username is not unique
+
+        // Error
+
+      // else username is unique
+
+      // Click event on "Register" button triggers:
+
+        // POST rquest to users, new document created with username, password & password digest
+
+        // Register fields hide
+
+        // Login fields show
+
+        // Message "Please login"
+
+   // ** LOGIN **
+  // User logs in
+
+    // User enters in credientials
+
+    // Click event on "Login" button triggers:
+
+      // POST request to users route
+
+      // Login fields hide
+
+      // "Welcome, User" populates
+
+      // Blank "Create Survey" fields show
+
+      // List of surveys populate: AJAX GET request for last 5 surveys with user_id as owner_id
+
+      // Session token stored
+
+      // Log out button?
+
+    // *** CREATE A SURVEY ***
+    // User creates a survey
+
+      // User enters Title and some options (no rules here yet)
+
+      // Click event triggers:
+
+        // POST request to polls/id, new Poll doc created w/user_id as owner_id
+
+        // page down to created poll
+
+        // unique url in message to user
+
+        // "Your Surveys" list populates with new survey
+
+
+
+
+
+
+
+
+
+
+// ** Registration **//
+

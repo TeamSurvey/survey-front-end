@@ -4,6 +4,45 @@
 
 $(document).ready(function() {
 
+  // handle show poll
+  $('#poll-list').on('click', function(event){
+    event.preventDefault();
+
+    var pollLinkElement = $(event.target);
+    var pollID = pollLinkElement.data('poll-id');
+
+    var pollGetURL = 'http://localhost:3000/polls/' + pollID;
+
+    console.log("pollID is ", pollID);
+
+    // Ajax call to http://3000/poll/8484883383
+    $.ajax({
+      url: pollGetURL
+    }).done(function(pollsData){
+      console.log("pollData returned from server is ", pollsData);
+      // this is the HTML for the poll with the pollData returned from
+      // the server
+      var pollData = pollsData[0];
+      var title = pollData.title;
+      var choice1 = pollData.options[0];
+      var choice2 = pollData.options[1];
+      var choice3 = pollData.options[2];
+      var choice4 = pollData.options[3];
+      var choice5 = pollData.options[4];
+      $('#title').html(title);
+      $('#option-one').html(choice1);
+      $('#option-two').html(choice2);
+      $('#option-three').html(choice3);
+      $('#option-four').html(choice4);
+      $('#option-five').html(choice5);
+
+      // unhide/show the HTML for the poll.
+      $('#poll').show()
+
+    });
+
+  });
+
   // animate on register/login containers
   $('.register-a').on('click', function() {
     $('.API-register').fadeIn().removeClass('hidden');

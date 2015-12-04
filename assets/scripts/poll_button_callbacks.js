@@ -120,7 +120,7 @@ var createPollCb = function (error, data) {
 
   console.log('poll_url is ' + poll_url);
 
-  var newPollLink = $('<li><a href="' + poll_url + '" data-poll-id="' + data["_id"] + '" class="load-poll">' + data.title + '</a></li>');
+  var newPollLink = $('<li><a href="" data-poll-id="' + data["_id"] + '" class="load-poll">' + data.title + '</a></li>');
 
   $('#poll-list').append(newPollLink);
 
