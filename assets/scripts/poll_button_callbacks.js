@@ -97,6 +97,8 @@ var createPollCb = function (error, data) {
 
   // used bracket notation to solve for special character in key value
   poll.id = data["_id"];
+
+  console.log("poll id is: " + poll.id)
   poll.title = data.title;
   poll.options = data.options;
   poll.owner_id = data.owner_id;
@@ -108,6 +110,9 @@ var createPollCb = function (error, data) {
   $('.option-three').html(poll.options[2]);
   $('.option-four').html(poll.options[3]);
   $('.option-five').html(poll.options[4]);
+
+  $('#poll-creation-container').attr('data-pollid', poll.id);
+
   //ben edits end
 
   // lcn unique URL add

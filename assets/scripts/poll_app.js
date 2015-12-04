@@ -114,6 +114,7 @@ $(document).ready(function() {
     var newPollLink = $('<li><a href="#" data-poll-id="' + poll_url + '" class="load-poll">' + data.title + '</a></li>');
 
     $('#poll-list').append(newPollLink);
+    // $('#poll-creation-container').data('pollid', poll.id);
 
 
     $(this).fadeOut();
@@ -175,27 +176,26 @@ $(document).ready(function() {
     $('.user-messages').html('<p>Successful poll deletion</p>');
   });
 
-  // On vote click, message container updates with "thanks for your vote, your vote is [answer]. Do you want to <see poll results>?
-
-
-
   // see results button click handler (put with AJAX request)
-//   On See Results button click, pollAnswers GET req, rendered poll fades out, poll results container fades in. Poll data from rendered poll populates here and count data fades in.
-
-// If no poll results, fade in "nobody's taken the poll, do you want to?" Yes/no. Yes... fade out poll res container, fade in rendered poll container.
-
-// Add X buttons to close windows.
-
+  // On See Results button click, pollAnswers GET req, rendered poll fades out, poll results container fades in. Poll data from rendered poll populates here and count data fades in.
 
 
   // delete poll event handler
-  $('#create-edit-del-button-dashboard').on('click', '.delete', function() {
+  $('#delete').on('click', function(e) {
+    e.preventDefault();
     console.log('clicked');
 
-    poll_api.deletePoll(poll.id, deletePollCb);
+    var getpollID = $('#poll-creation-container').attr('data-pollid');
+    console.log("poll id is: " + getpollID);
+    poll_api.deletePoll(getpollID, deletePollCb);
 
   });
 
+  // On vote click, message container updates with "thanks for your vote, your vote is [answer]. Do you want to <see poll results>?
+
+  // If no poll results, fade in "nobody's taken the poll, do you want to?" Yes/no. Yes... fade out poll res container, fade in rendered poll container.
+
+  // Add X buttons to close windows.
 
 }); // end doc ready function
 
