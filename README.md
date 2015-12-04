@@ -73,10 +73,8 @@ Git is a free and open source distributed version control system designed to han
 ##Major Hurdles
 
 - Picking a data model/schema and sticking to it. We vacillated between what schema we were going to use for way too long.
-
 - De-scoping
   - Due to time restraints we had to hard code various aspects just to get more features working
-
 - When splitting up work as the deadline came closer, we ran into some difficult merge conflicts.
 
 ##Areas of Growth
