@@ -122,9 +122,13 @@ $(document).ready(function() {
     e.preventDefault();
 
     var data = form2object(this);
-     console.log('the form will send ' + JSON.stringify(data, null, 4));
-
-    poll_api.editPoll(data, editPollCb);
+    console.log('the form will send ' + JSON.stringify(data, null, 4));
+    console.log("data is: " + data.title);
+    var newTitle = data.title;
+    $('#pollTitle').html(newTitle);
+    // var newTitle = $('#pollTitle').val();
+    console.log("new title is: " + newTitle);
+    poll_api.editPoll(newTitle.title, editPollCb);
 
     // On submit click, title patch request and populate title in the p tag.
 
