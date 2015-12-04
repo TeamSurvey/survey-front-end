@@ -105,12 +105,12 @@ var createPollCb = function (error, data) {
 
  $('.render-poll-title').html(poll.title);
 
-  $('.option-one').html(poll.options[0]);
-  $('.option-two').html(poll.options[1]);
-  $('.option-three').html(poll.options[2]);
-  $('.option-four').html(poll.options[3]);
-  $('.option-five').html(poll.options[4]);
-
+// km changing class references to id refs
+  $('#option-one').html(poll.options[0]);
+  $('#option-two').html(poll.options[1]);
+  $('#option-three').html(poll.options[2]);
+  $('#option-four').html(poll.options[3]);
+  $('#option-five').html(poll.options[4]);
   $('#poll-creation-container').attr('data-pollid', poll.id);
 
   //ben edits end

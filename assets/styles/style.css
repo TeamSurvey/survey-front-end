@@ -213,23 +213,37 @@ border-bottom: 2px solid white;
 
 
 
-#poll-creation-container{
+#poll-creation-container, #poll-edit-container, #user-polls, #vote-poll-container, #poll-results-container {
+  padding: 10px 10px 0;
   background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
 
+#poll-creation-container form, #poll-edit-container form, #vote-poll-container ul{
+  position: relative;
+  width: 90%;
+  padding: 10px 5px;
+}
+
+.option-one li {
+  display: inline;
+  width: 90%;
+  padding: 10px 5px;
+}
+
+#poll-creation-container label{
+  margin-top: 10px;
+}
+
 #poll-edit-container{
-  width: 100%;
-  background-color: rgba(0,0,0,0.5);
-  overflow: auto;
+  margin-top: 20px;
 }
 
 
 /* Your polls */
 
 #user-polls {
-  width: 100%;
-  background-color: rgba(0,0,0,0.5);
+  height: 100px;
 }
 
 #user-polls li {
@@ -290,8 +304,12 @@ border-bottom: 2px solid white;
 
 
 
-/* animations and jQuery*/
+/* misc, animations, and jQuery*/
 
 .hidden {
   display: none;
+}
+
+.center-content {
+  margin: 0 auto;
 }

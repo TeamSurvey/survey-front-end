@@ -29,6 +29,11 @@ $(document).ready(function() {
     console.log('clicked');
     $('#poll-creation-container').fadeIn().removeClass('hidden');
 
+        // fade up user-messages and create-poll button
+            // fade up user-messages and create-poll button
+    $('.user-messages').find('p').fadeOut();
+    $('.user-messages').html('<p>WelcomeCreate a poll!</p>').fadeIn();
+
     // replace or hide user messages text
 
     // Create form fades in input fields fade in (for each)? Message instruct enter poll question and options.
@@ -40,13 +45,13 @@ $(document).ready(function() {
 
  $('#create-edit-del-button-dashboard').on('click', '.create-new', function() {
     console.log('clicked');
-    $('#poll-creation-container').fadeIn().removeClass('hidden');
+    $('#poll-creation-container').fadeIn();
   });
 
 
 
   // edit poll button click handler
-  $('#create-edit-del-button-dashboard').on('click', '.edit', function() {
+  $('#create-edit-del-button-dashboard').on('click', '#edit', function() {
     console.log('clicked');
     $('#poll-edit-container').fadeIn().removeClass('hidden');
   });
@@ -111,7 +116,7 @@ $(document).ready(function() {
 
     poll_api.createPoll(data, createPollCb);
 
-    $(this).fadeOut();
+    $(this).closest('#poll-creation-container').fadeOut();
     // On submit, msg fades out, create form fades out, message with URL (let's vote on it) fades in, GET request created poll data, Li with a-tag of poll w data-poll-id fades in poll list ul, poll container fades up, dates populated in (for each)? Buttons populate on.
 
   });
@@ -128,7 +133,7 @@ $(document).ready(function() {
 
     // On submit click, title patch request and populate title in the p tag.
 
-    $(this).fadeOut();
+    $(this).closest('#poll-edit-container').fadeOut();
 
   });
 

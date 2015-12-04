@@ -5,8 +5,9 @@
   <title>Duck Poll</title>
   <link rel="stylesheet" type="text/css" href="assets/styles/html5reset.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/animate.css">
-  <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+
 
 </head>
 
@@ -33,14 +34,14 @@
     <section class="span_12_of_12">
     <!-- begin hero -->
     <div class="span_5_of_12 hero animated zoomIn duck-intro">
-      <h2>Ducks in a Row</h2>
-      <h5>Create a poll, vote on a poll, better intro text here</h5>
-      <p>To continue, <a href="#login" class="login-a">login</a>. If you need an account, <a href="#register" class="register-a">register</a>.</p>
+      <h2>Duck Poll</h2>
+      <h5>All it's quacked up to be.</h5>
+      <p>Ready to poll? <a href="#login" class="login-a">Waddle in</a>. First time here? <a href="#register" class="register-a">Join the flock</a>.</p>
 
     </div>
      <!-- end hero -->
     <!-- begin user messages box -->
-      <div class="span_3_of_12 user-messages hidden"></div>
+      <div class="span_4_of_12 user-messages hidden"></div>
     <!-- end user messages box -->
     </section>
 
@@ -49,15 +50,15 @@
    <!-- begin register -->
    <div class="API-register hidden">
      <div class="register-login">
-       <h4>Register</h4>
+       <h4>Join the Flock</h4>
        <form id="register" enctype="multipart/form-data" charset="utf-8">
          <label for="username">Username</label>
          <input type="text" name="username" placeholder="username">
          <label for="password">Password</label>
          <input type="password" name="password" placeholder="password">
-         <input type="submit" name="register" value="Register">
+         <input type="submit" name="register" value="Join the Flock">
        </form>
-         <p>Already registered? <a href="#" class="login-a2">Sign in.</a></p>
+         <p>Ready to poll? <a href="#" class="login-a2"> Waddle in.</a></p>
      </div>
    </div>
    <!-- end register -->
@@ -67,15 +68,15 @@
    <!-- begin login -->
    <div class="API-login hidden">
      <div class="register-login">
-       <h4>Login</h4>
+       <h4>Waddle In</h4>
        <form id="login" enctype="multipart/form-data" charset="utf-8">
          <label for="username">Username</label>
          <input name="username" type="text" placeholder="username">
          <label for="password">Password</label>
          <input name="password" type="password" placeholder="password">
-         <input name="login" type="submit" value="Login">
+         <input name="login" type="submit" value="Waddle In">
        </form>
-       <p>First time here? <a href="#" class="register-a2">Register.</a></p>
+       <p>First time here? <a href="#" class="register-a2"> Join the flock.</a></p>
      </div>
    </div>
    <!-- end login -->
@@ -84,7 +85,7 @@
   <div id="create-edit-del-button-dashboard" class="span_12_of_12">
     <button type="" class="create-new">Create New Poll</button>
 
-    <button type="" id="edit">Edit this Poll</button>
+    <button type="" id="edit">Edit Poll Title</button>
     <button type="" id="delete">Delete this Poll</button>
   </div>
   <!-- end button dashboard -->
@@ -93,7 +94,7 @@
 
   <div class="span_12_of_12">
    <!-- begin poll creation container -->
-   <div id="poll-creation-container" class="col span_3_of_12" data-pollid="">
+   <div id="poll-creation-container" class="col span_3_of_12 hidden" data-pollid="">
      <h4>Create a poll</h4>
      <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
        <label for="title">Poll Question</label>
@@ -119,13 +120,13 @@
   <div class="col span_3_of_12">
     <!-- begin user polls list -->
       <div id="user-polls">
-        <h5>Most Recent Poll</h5>
+        <h4>Most Recent Poll</h4>
         <ul id="poll-list"></ul>
       </div>
       <!-- end user polls list -->
 
       <!-- begin poll edit container -->
-      <div id="poll-edit-container">
+      <div id="poll-edit-container" class="hidden">
 
        <h4>Edit this poll</h4>
 
@@ -156,6 +157,7 @@
      <div class="option-five" id="option-five" data-option="05"><input type="radio" name="option" value="option05">Option 05</div>
      <!-- End LCN edits -->
 
+
     </div>
     <div id="vote-results-button-dashboard">
       <button type="" id="vote">Submit Vote</button>
@@ -180,9 +182,9 @@
        <p>Choice 05 <small>(choice05 votes/total votes) * 100</small></p>
 
      </div>
-     <div id="survey-results-graph">
+     <!-- <div id="survey-results-graph">
        chart data of results breakdown could go here
-     </div>
+     </div> -->
    </div>
    <!-- end poll results -->
   </div>
