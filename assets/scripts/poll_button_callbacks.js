@@ -1,7 +1,7 @@
 'use strict';
 
 // lcn adds
-var url = 'http://localhost:5000/'; //CHANGE TO GH PAGES URL
+var url = 'http://localhost:3000/'; //CHANGE TO GH PAGES URL
 var poll_url = "";
 
 var createdPoll = $('#rendered-poll');
@@ -114,6 +114,11 @@ var createPollCb = function (error, data) {
   poll_url = (url + "polls/" + data["_id"]);
 
   console.log('poll_url is ' + poll_url);
+
+  var newPollLink = $('<li><a href="' + poll_url + '" data-poll-id="' + data["_id"] + '" class="load-poll">' + data.title + '</a></li>');
+
+  $('#poll-list').append(newPollLink);
+
 
   $(".user-messages").html("Your survey can be found here " + poll_url);
 
