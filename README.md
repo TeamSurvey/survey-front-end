@@ -55,27 +55,40 @@ CSS3 is a style sheet language used for describing the presentation of a documen
 
 Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
-
 ##Approach
 
-- **Wireframing and User Stories**
-      - [Wireframes](http://i.imgur.com/bHvabIp.jpg)
-      - [User Journey](http://imgur.com/iGlESh4)
-      - [User Stories and Work Process](https://trello.com/b/V36WDCbW/survey-says)
-      - [Initial ERM Diagram](http://imgur.com/iZBmK9U)
-      - [Final ERM Diagram](http://i.imgur.com/6Kgo7Fj.jpg)
 
+- [Wireframes](http://i.imgur.com/bHvabIp.jpg)
+- [User Journey](http://imgur.com/iGlESh4)
+- [User Stories and Work Process](https://trello.com/b/V36WDCbW/survey-says)
+- [Initial ERM Diagram](http://imgur.com/iZBmK9U)
+- [Final ERM Diagram](http://i.imgur.com/6Kgo7Fj.jpg)
 
 ##Unsolved Problems
 
 - Cannot update a poll on the front-end
+- We can display a unique poll URL but cannot currently get the URL to show anything other than JSON.
 - Cannot display poll results on the front-end (but the aggregation of votes works on the back end)
 
 ##Major Hurdles
 
-- De-scoping example: We had the planned to display the last 5 surveys for a user, all hyperlinked. When our backend tests took longer that we expected on Wednesday, we agreed to display only the most recent survey. We then added the original goal as a stretch goal.
+- Picking a data model/schema and sticking to it. We vacillated between what schema we were going to use for way too long.
 
+- De-scoping
+  - Due to time restraints we had to hard code various aspects just to get more features working
 
+- When splitting up work as the deadline came closer, we ran into some difficult merge conflicts.
+
+##Areas of Growth
+
+- Git control
+- Group communication
+- Javascript familiarity
+
+##Future Additions
+
+- jQuery animations and general UX
+- Real time results
 
 
 
