@@ -102,8 +102,7 @@ var poll_api = {
     this.ajax({
       method: 'DELETE',
       url: this.url + '/polls/' + id,
-      contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify(id),
+      contentType: 'application/json'
     }, callback);
   },
 

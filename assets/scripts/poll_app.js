@@ -111,8 +111,6 @@ $(document).ready(function() {
 
     poll_api.createPoll(data, createPollCb);
 
-
-
     $(this).fadeOut();
     // On submit, msg fades out, create form fades out, message with URL (let's vote on it) fades in, GET request created poll data, Li with a-tag of poll w data-poll-id fades in poll list ul, poll container fades up, dates populated in (for each)? Buttons populate on.
 
@@ -172,27 +170,26 @@ $(document).ready(function() {
     $('.user-messages').html('<p>Successful poll deletion</p>');
   });
 
-  // On vote click, message container updates with "thanks for your vote, your vote is [answer]. Do you want to <see poll results>?
-
-
-
   // see results button click handler (put with AJAX request)
-//   On See Results button click, pollAnswers GET req, rendered poll fades out, poll results container fades in. Poll data from rendered poll populates here and count data fades in.
-
-// If no poll results, fade in "nobody's taken the poll, do you want to?" Yes/no. Yes... fade out poll res container, fade in rendered poll container.
-
-// Add X buttons to close windows.
-
+  // On See Results button click, pollAnswers GET req, rendered poll fades out, poll results container fades in. Poll data from rendered poll populates here and count data fades in.
 
 
   // delete poll event handler
-  $('#create-edit-del-button-dashboard').on('click', '.delete', function() {
+  $('#delete').on('click', function(e) {
+    e.preventDefault();
     console.log('clicked');
 
-    poll_api.deletePoll(poll.id, deletePollCb);
+    var getpollID = $('#poll-creation-container').attr('data-pollid');
+    console.log("poll id is: " + getpollID);
+    poll_api.deletePoll(getpollID, deletePollCb);
 
   });
 
+  // On vote click, message container updates with "thanks for your vote, your vote is [answer]. Do you want to <see poll results>?
+
+  // If no poll results, fade in "nobody's taken the poll, do you want to?" Yes/no. Yes... fade out poll res container, fade in rendered poll container.
+
+  // Add X buttons to close windows.
 
 }); // end doc ready function
 
