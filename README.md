@@ -4,6 +4,8 @@ This project was created by [Kathleen McMahon](https://github.com/resource11), [
 
 **NOTE: This is still a *work in progress* and is not a finished product**
 
+Deployed fron-end URL: http://teamsurvey.github.io/survey-front-end
+
 To see the **back-end** repository, click [here](https://github.com/TeamSurvey/survey-back-end).
 
 ##Description
@@ -19,7 +21,7 @@ Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.j
 
 ###Express:
 
-Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile application
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile application.
 
 ###Passport
 
@@ -68,13 +70,13 @@ Git is a free and open source distributed version control system designed to han
 
 - Cannot update a poll on the front-end
 - We can display a unique poll URL but cannot currently get the URL to show anything other than JSON.
-- Cannot display poll results on the front-end (but the aggregation of votes works on the back end)
+- Cannot display poll results on the front-end (but the aggregation of votes works on the back end).
 
 ##Major Hurdles
 
-- Picking a data model/schema and sticking to it. We vacillated between what schema we were going to use for way too long.
+- We kept vacillating between different data models, which yielded not only a bit of stress, but also significant learning. Our initial data model utilized one model which included both answers and votes. We eventually decided to create two data models that stored polls and poll answers (which would then be aggregated by the answer chosen in the poll model), respectively. This second option was chosen as it was our intent to write this app to leverage the strengths of Mongo, one of which is the ability to create many documents very quickly. We also recognized that this gave us the ability to extend functionality to creat surveys instead of single question polls, which we had identified as a stretch goal.
 - De-scoping
-  - Due to time restraints we had to hard code various aspects just to get more features working
+  - Due to time restraints we had to hard code various aspects just to get more features working.
 - When splitting up work as the deadline came closer, we ran into some difficult merge conflicts.
 
 ##Areas of Growth
@@ -87,8 +89,3 @@ Git is a free and open source distributed version control system designed to han
 
 - jQuery animations and general UX
 - Real time results
-
-
-
-
-
