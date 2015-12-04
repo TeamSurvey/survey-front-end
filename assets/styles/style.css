@@ -19,15 +19,11 @@ background: linear-gradient(to bottom,  #13262b 0%,#012c38 44%,#002533 100%); /*
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13262b', endColorstr='#002533',GradientType=0 ); /* IE6-9 */
 
 
-/*  -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-   box-sizing: border-box;*/
-
 }
 
 a {
     text-decoration: none;
-    color: chocolate;
+    color: rgba(0,255,0,0.8);
 }
 
 a:hover {
@@ -193,10 +189,10 @@ button:active, input[type="submit"]:active {
 }
 
 .user-messages {
-  height: 100px;
+  height: 60px;
   margin: 0px auto 30px;
   padding: 10px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(49,169,200,0.3);
 }
 
 .user-messages:after {
@@ -246,7 +242,7 @@ button:active, input[type="submit"]:active {
 
 #poll-creation-container, #poll-edit-container, #user-polls, .vote-poll-container, #poll-results-container {
   padding: 10px 10px 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.7);
   overflow: auto;
 }
 
@@ -256,11 +252,11 @@ button:active, input[type="submit"]:active {
   padding: 10px 5px;
 }
 
-.option-one li {
+/*.option-one li {
   display: inline;
   width: 90%;
   padding: 10px 5px;
-}
+}*/
 
 #poll-creation-container label{
   margin-top: 10px;
@@ -278,7 +274,11 @@ button:active, input[type="submit"]:active {
 }
 
 #user-polls li {
-  display: block;
+  display: inline-block;
+  padding: 5px;
+}
+
+#user-polls li:nth-child(odd) {
   padding: 5px;
 }
 
@@ -296,9 +296,16 @@ button:active, input[type="submit"]:active {
   overflow: auto;
 }
 
-/*#rendered-poll {
-  background-color: rgba(0,0,0,0.5);
+/*#rendered-poll ul{
+  background-color: rgba(0,255,0,0.5);
 }*/
+
+#rendered-poll li{
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+}
+
 
 
 
@@ -359,6 +366,7 @@ button:active, input[type="submit"]:active {
 
 .right-fix {
   position: fixed;
-  right: 0;
+  right: 80px;
   top: 60px;
+  padding: 15px 40px 15px 15px;
 }

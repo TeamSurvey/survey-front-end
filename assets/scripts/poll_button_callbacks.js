@@ -108,7 +108,7 @@ var createPollCb = function (error, data) {
  $('.render-poll-title').html(poll.title);
 
 // km changing class references to id refs
-  $('#option-one').html(poll.options[0]);
+  $('#option-one').text(poll.options[0]);
   $('#option-two').html(poll.options[1]);
   $('#option-three').html(poll.options[2]);
   $('#option-four').html(poll.options[3]);
