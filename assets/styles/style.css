@@ -11,6 +11,14 @@ body {
   font-weight: 300;
   font-size: 1em;
   color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#13262b+0,012c38+44,002533+100 */
+background: #13262b; /* Old browsers */
+background: -moz-linear-gradient(top,  #13262b 0%, #012c38 44%, #002533 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #13262b 0%,#012c38 44%,#002533 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #13262b 0%,#012c38 44%,#002533 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13262b', endColorstr='#002533',GradientType=0 ); /* IE6-9 */
+
+
 /*  -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    box-sizing: border-box;*/
@@ -19,12 +27,12 @@ body {
 
 a {
     text-decoration: none;
-    color: teal;
+    color: chocolate;
 }
 
 a:hover {
     text-decoration: none;
-    color: chocolate;
+    color: orange;
 }
 
 
@@ -112,7 +120,7 @@ nav li a:hover {
 input {
   width: 100%;
   border:0;
-  padding:10px 0;
+  padding:7px 0;
   margin: 5px 0;
   font-size:.8em;
   display: block;
@@ -156,7 +164,7 @@ button:active, input[type="submit"]:active {
 
 .hero {
   margin: 60px auto 0;
-  padding: 5px 5px 10px;
+  padding: 5px 5px 20px;
   color: white;
   overflow: auto;
   text-align: center;
@@ -173,19 +181,20 @@ button:active, input[type="submit"]:active {
 
 
 .duck-intro h2 {
+  margin-bottom: 5px;
 /*border-bottom: 2px solid white;*/
 }
 
 .duck-intro h5 {
   width: 60%;
   margin: 0 auto 12px;
-  padding-top: 10px;
-  border-top: 2px solid teal;
+  padding-top: 7px;
+  border-top: 3px solid teal;
 }
 
 .user-messages {
   height: 100px;
-  margin: 15px auto 30px;
+  margin: 0px auto 30px;
   padding: 10px;
   background-color: rgba(0,0,0,0.5);
 }
@@ -197,9 +206,13 @@ button:active, input[type="submit"]:active {
 
 /* button dashboard 01 */
 #create-edit-del-button-dashboard {
+  position: absolute;
+  right: 0;
+  top: 480px;
   width: 8%;
 /*  background-color: rgba(0,0,0,0.5);*/
   color: white;
+  z-index: 10px;
 }
 
 
@@ -336,4 +349,16 @@ button:active, input[type="submit"]:active {
 
 .pad-lft {
   margin-left: 10%;
+}
+
+.bottom-fix {
+  position: fixed;
+  bottom: 0;
+  left: 0
+}
+
+.right-fix {
+  position: fixed;
+  right: 0;
+  top: 60px;
 }

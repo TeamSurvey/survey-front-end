@@ -33,10 +33,10 @@
 
     </div>
      <!-- end hero -->
-    <!-- begin user messages box -->
-      <div class="span_4_of_12 user-messages hidden"></div>
-    <!-- end user messages box -->
     </section>
+    <!-- begin user messages box -->
+      <div class=" span_3_of_12 right-fix user-messages hidden"></div>
+    <!-- end user messages box -->
 
 
 
@@ -85,101 +85,103 @@
 
 
 
-  <div class="span_12_of_12">
-   <!-- begin poll creation container -->
-   <div id="poll-creation-container" class="col span_3_of_12 hidden" data-pollid="">
-     <h4>Create a poll</h4>
-     <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
-       <label for="title">Poll Question</label>
-       <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
-       <label for="option01">Option 01</label>
-       <input name="option01" type="text" placeholder="Poll response option01" id="pollOption01">
-       <label for="option02">Option 02</label>
-       <input name="option02" type="text" placeholder="Poll response option02" id="pollOption02">
-        <label for="option03">Option 03</label>
-       <input name="option03" type="text" placeholder="Poll response option03" id="pollOption03">
-       <label for="option04">Option 04</label>
-       <input name="option04" type="text" placeholder="Poll response option04" id="pollOption04">
-       <label for="option05">Option 05</label>
-       <input name="option05" type="text" placeholder="Poll response option05" id="pollOption05">
-       <input name="create" type="submit" value="Create!">
-     </form>
-   </div>
-   <!-- end poll creation container -->
-   </div>
 
-
-
-  <div class="col span_3_of_12">
-    <!-- begin user polls list -->
-      <div id="user-polls" class="hidden">
-        <h4>Most Recent Poll</h4>
-        <ul id="poll-list"></ul>
-      </div>
-      <!-- end user polls list -->
-
-      <!-- begin poll edit container -->
-      <div id="poll-edit-container" class="hidden">
-
-       <h4>Edit this poll</h4>
-
-       <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
-         <label for="title">Poll Title</label>
+  <div class="span_12_of_12 bottom-fix">
+     <!-- begin poll creation container -->
+     <div id="poll-creation-container" class="col span_3_of_12 hidden" data-pollid="">
+       <h4>Create a poll</h4>
+       <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
+         <label for="title">Poll Question</label>
          <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
-         <input name="save" type="submit" value="Save!">
+         <label for="option01">Option 01</label>
+         <input name="option01" type="text" placeholder="Poll response option01" id="pollOption01">
+         <label for="option02">Option 02</label>
+         <input name="option02" type="text" placeholder="Poll response option02" id="pollOption02">
+          <label for="option03">Option 03</label>
+         <input name="option03" type="text" placeholder="Poll response option03" id="pollOption03">
+         <label for="option04">Option 04</label>
+         <input name="option04" type="text" placeholder="Poll response option04" id="pollOption04">
+         <label for="option05">Option 05</label>
+         <input name="option05" type="text" placeholder="Poll response option05" id="pollOption05">
+         <input name="create" type="submit" value="Create!">
        </form>
+     </div>
+     <!-- end poll creation container -->
+
+
+
+    <div class="col span_2_of_12">
+      <!-- begin user polls list -->
+        <div id="user-polls" class="hidden">
+          <h4>Most Recent Poll</h4>
+          <ul id="poll-list"></ul>
+        </div>
+        <!-- end user polls list -->
+
+        <!-- begin poll edit container -->
+        <div id="poll-edit-container" class="hidden">
+
+         <h4>Edit this poll</h4>
+
+         <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
+           <label for="title">Poll Title</label>
+           <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
+           <input name="save" type="submit" value="Save!">
+         </form>
+
+        </div>
+        <!-- end poll edit container -->
+      </div>
+
+
+
+    <!-- begin rendered poll -->
+    <div class="col span_3_of_12 vote-poll-container hidden">
+      <div id="rendered-poll" data-currentPollId="">
+        <h4 class="render-poll-title">[Poll Question here]</h4>
+        <!-- swapped checkboxes for radio button and made all  -->
+        <!-- name attributes the same to force one choice per vote. -->
+
+        <!-- LCN added id fields to each below -->
+       <div class="option-one" id="option-one" data-option="01"><input type="radio" name="option" value="option01">Option 01</div>
+       <div class="option-two" id="option-two" data-option="02"><input type="radio" name="option" value="option02">Option 02</div>
+       <div class="option-three" id="option-three" data-option="03"><input type="radio" name="option" value="option03">Option 03</div>
+       <div class="option-four" id="option-four" data-option="04"><input type="radio" name="option" value="option04">Option 04</div>
+       <div class="option-five" id="option-five" data-option="05"><input type="radio" name="option" value="option05">Option 05</div>
+       <!-- End LCN edits -->
+
 
       </div>
-      <!-- end poll edit container -->
+      <div id="vote-results-button-dashboard">
+        <button type="" id="vote">Submit Vote</button>
+        <button type="" id="results">See Results</button>
+      </div>
     </div>
-
-
-
-  <!-- begin rendered poll -->
-  <div class="col span_3_of_12 vote-poll-container hidden">
-    <div id="rendered-poll" data-currentPollId="">
-      <h4 class="render-poll-title">[Poll Question here]</h4>
-      <!-- swapped checkboxes for radio button and made all  -->
-      <!-- name attributes the same to force one choice per vote. -->
-
-      <!-- LCN added id fields to each below -->
-     <div class="option-one" id="option-one" data-option="01"><input type="radio" name="option" value="option01">Option 01</div>
-     <div class="option-two" id="option-two" data-option="02"><input type="radio" name="option" value="option02">Option 02</div>
-     <div class="option-three" id="option-three" data-option="03"><input type="radio" name="option" value="option03">Option 03</div>
-     <div class="option-four" id="option-four" data-option="04"><input type="radio" name="option" value="option04">Option 04</div>
-     <div class="option-five" id="option-five" data-option="05"><input type="radio" name="option" value="option05">Option 05</div>
-     <!-- End LCN edits -->
-
-
-    </div>
-    <div id="vote-results-button-dashboard">
-      <button type="" id="vote">Submit Vote</button>
-      <button type="" id="results">See Results</button>
-    </div>
-  </div>
-  <!-- end rendered polls -->
+    <!-- end rendered polls -->
 
 
 
 
 
-   <!-- begin poll results -->
-   <div id="poll-results-container" class="col span_3_of_12  hidden">
-     <div id="rendered-poll-results">
-       <h4>Poll Results</h4>
-       <h5>[Poll Question here]</h5>
-       <p>Choice 01 </p>
-       <p>Choice 02 </p>
-       <p>Choice 03 </p>
-       <p>Choice 04 </p>
-       <p>Choice 05 </p>
+     <!-- begin poll results -->
+     <div id="poll-results-container" class="col span_3_of_12  hidden">
+       <div id="rendered-poll-results">
+         <h4>Poll Results</h4>
+         <h5>[Poll Question here]</h5>
+         <p>Choice 01 </p>
+         <p>Choice 02 </p>
+         <p>Choice 03 </p>
+         <p>Choice 04 </p>
+         <p>Choice 05 </p>
 
+       </div>
+       <!-- <div id="survey-results-graph">
+         chart data of results breakdown could go here
+       </div> -->
      </div>
-     <!-- <div id="survey-results-graph">
-       chart data of results breakdown could go here
-     </div> -->
+     <!-- end poll results -->
    </div>
-   <!-- end poll results -->
+
   </div>
 
 <!-- begin scripts -->

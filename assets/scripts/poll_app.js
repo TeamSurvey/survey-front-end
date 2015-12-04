@@ -28,7 +28,7 @@ $(document).ready(function() {
   $('.user-messages').on('click', '.create-new', function() {
     console.log('clicked');
     $('#poll-creation-container').fadeIn().removeClass('hidden');
-    $('.user-messages').find('p').fadeOut();
+    $('.user-messages').fadeOut();
 
   });
 
@@ -107,7 +107,7 @@ $(document).ready(function() {
 
     poll_api.createPoll(data, createPollCb);
 
-    $(this).closest('#poll-creation-container').fadeOut();
+    // $(this).closest('#poll-creation-container').fadeOut();
     // On submit, msg fades out, create form fades out, message with URL (let's vote on it) fades in, GET request created poll data, Li with a-tag of poll w data-poll-id fades in poll list ul, poll container fades up, dates populated in (for each)? Buttons populate on.
 
   });
@@ -124,7 +124,7 @@ $(document).ready(function() {
 
     // On submit click, title patch request and populate title in the p tag.
 
-    $(this).closest('#poll-edit-container').fadeOut();
+    // $(this).closest('#poll-edit-container').fadeOut();
 
   });
 
