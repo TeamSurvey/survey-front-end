@@ -28,9 +28,10 @@
 
 
   <div class="wrapper">
-    <section class="span_6_of_12 hero animated zoomIn">
+
+    <section class="">
       <!-- begin hero -->
-      <div class="duck-intro">
+      <div class="span_6_of_12 hero animated zoomIn duck-intro">
         <h2 >Ducks in a Row</h2>
         <h5>Create a poll, vote on a poll, better intro text here</h5>
         <p>To continue, <a href="#login" class="login-a">login</a>. If you need an account, <a href="#register" class="register-a">register</a>.</p>
@@ -79,19 +80,15 @@
    </div>
    <!-- end login -->
 
-    <div id="create-edit-del-button-dashboard" class="">
-     <button type="" class="create-new">Create New Poll</button>
+  <!-- start button dashboard -->
+  <div id="create-edit-del-button-dashboard" class="span_12_of_12">
+    <button type="" class="create-new">Create New Poll</button>
 
-     <!-- km begin add show button -->
-     <button type="" class="show-poll">Show a Poll</button>
-     <form id="show-poll">
-       <input name="showPoll" type="text" placeholder="poll ID">
-     </form>
-     <!-- km end add show button -->
+    <button type="" id="edit">Edit this Poll</button>
+    <button type="" id="delete">Delete this Poll</button>
+  </div>
+  <!-- end button dashboard -->
 
-      <button type="" id="edit">Edit this Poll</button>
-      <button type="" id="delete">Delete this Poll</button>
-    </div>
 
 
   <div class="span_12_of_12">
@@ -120,14 +117,14 @@
 
     <div class="col span_3_of_12">
     <!-- begin user polls list -->
-      <div id="user-polls" class="col">
+      <div id="user-polls">
         <h5>Most Recent Poll</h5>
         <ul id="poll-list"></ul>
       </div>
       <!-- end user polls list -->
 
       <!-- begin poll edit container -->
-      <div id="poll-edit-container" class="col">
+      <div id="poll-edit-container">
 
        <h4>Edit this poll</h4>
 
@@ -165,7 +162,7 @@
 
 
    <!-- begin poll results -->
-   <div id="poll-results-container" class="span_3_of_12  ">
+   <div id="poll-results-container" class="col span_3_of_12  ">
      <div id="rendered-poll-results">
        <h4>Poll Results</h4>
        <h5>[Poll Question here]</h5>

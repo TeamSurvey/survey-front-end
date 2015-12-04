@@ -146,14 +146,15 @@ button:active, input[type="submit"]:active {
 
 .hero {
 /*  width: 60%;*/
-  height: 250px;
-  margin: 10px auto;
+  margin: 100px auto 30px;
   color: white;
+  overflow: auto;
 }
 
 .duck-intro {
   /*width: 60%;*/
   padding: 20px;
+  height: 200px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
 /*  float: left;*/
@@ -161,7 +162,7 @@ button:active, input[type="submit"]:active {
 
 
 .duck-intro h2 {
-/*  margin-top: 25px;*/
+border-bottom: 2px solid white;
 }
 
 .duck-intro h5 {
@@ -169,13 +170,10 @@ button:active, input[type="submit"]:active {
 }
 
 .user-messages {
-  overflow: auto;
-  /*width: 30%;*/
   height: 100px;
-  margin-left: .9%;
+  margin-top: 20px;
   padding: 10px;
   background-color: rgba(0,0,0,0.5);
-/*  float: left;*/
 }
 
 /* button dashboard 01 */
@@ -191,46 +189,46 @@ button:active, input[type="submit"]:active {
 .API-register {
   width: 20%;
   position: fixed;
-  top: 195px;
+  top: 160px;
   right: 0px;
-  background-color: #eee;
+  background-color: rgba(0,0,0,0.5);
 }
 
 .API-login {
   width: 20%;
   position: fixed;
-  top: 195px;
+  top: 160px;
   right: 0px;
-  background-color: #ddd;
+  background-color: rgba(0,0,0,0.5);
 }
 
 .register-login {
-  padding: 30px 10%;
+  padding: 20px 10%;
 }
 
 
 
 /* Create poll container */
 
-.messages-container {
+/*.messages-container {
   margin-top: 10px;
   padding: 10px;
   overflow: auto;
-}
+}*/
 
 #poll-creation-container{
-  margin: 0 10px;
+  /*margin: 0 10px;*/
   /*padding: 30px 3%;*/
-  display: block;
+  /*display: block;*/
   background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
 
 #poll-edit-container{
   width: 100%;
-  margin: 0 10px;
+  /*margin: 0 10px;*/
   /*padding: 30px 3%;*/
-  display: block;
+  /*display: block;*/
   background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
@@ -242,14 +240,14 @@ button:active, input[type="submit"]:active {
   width: 100%;
   /*margin-top: 64px;
   margin-left: 10px;*/
-  display: block;
-  padding: 10px 0;
+  /*display: block;*/
+  /*padding: 10px 0;*/
   background-color: rgba(0,0,0,0.5);
 }
 
 #user-polls li {
-    display: block;
-    padding: 5px;
+  display: block;
+  padding: 5px;
 }
 
 #user-polls button {
@@ -258,10 +256,10 @@ button:active, input[type="submit"]:active {
   padding: 5px;
 }
 
-#user-polls:after {
+/*#user-polls:after {
   content: " ";
   clear: both;
-}
+}*/
 
 
 
@@ -274,24 +272,16 @@ button:active, input[type="submit"]:active {
 }
 
 #rendered-poll {
-  /*width: 90%;*/
-  /*margin: 0;*/
-  /*padding: 30px 0 30px 10px;*/
   background-color: rgba(0,0,0,0.5);
-  /*float: left;*/
 }
 
 /* button dashboard 02 */
 
 #vote-results-button-dashboard {
-  /*width: 10%;*/
-  color: white;
-  /*float: left;*/
   margin-top: 0;
 }
 
 #vote-results-button-dashboard button{
-  /*width: 65%;*/
   margin-right: 5px;
   padding-left: 5px;
   display: block;
@@ -301,17 +291,12 @@ button:active, input[type="submit"]:active {
 /* Poll results */
 
 #poll-results-container {
-  /*width: 50%;*/
-  margin: 0 auto;
-  /*padding: 30px 3%;*/
   background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
 
 #rendered-poll-results {
-  /*width: 90%;*/
-  padding: 30px 3%;
-  float: left;
+
 }
 
 #rendered-poll-results p{
@@ -320,20 +305,12 @@ button:active, input[type="submit"]:active {
   background-color: rgba(0,0,0,0.5);
 }
 
-/*#poll-results-graph {
-  width: 150px;
-  height: 150px;
-  margin-top: 84px;
-  margin-left: 10px;
-  padding: 10px;
-  float: left;
-  background-color: #ddd;
-}*/
 
-#poll-results-graph:after {
+
+/*#poll-results-graph:after {
   content: " ";
   clear: both;
-}
+}*/
 
 /* animations and jQuery*/
 
