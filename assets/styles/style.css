@@ -78,6 +78,7 @@ header{
   overflow: auto;
   background-color: #fff;
   border-bottom: 1px solid #777;
+  z-index: 100;
 }
 
 nav {
@@ -145,17 +146,17 @@ button:active, input[type="submit"]:active {
 /* Hero */
 
 .hero {
-/*  width: 60%;*/
-  margin: 100px auto 30px;
+  margin: 90px auto 0;
   color: white;
   overflow: auto;
+  text-align: center;
 }
 
 .duck-intro {
   /*width: 60%;*/
   padding: 20px;
-  height: 200px;
-  text-align: center;
+  height: 150px;
+
   background-color: rgba(0, 0, 0, 0.5);
 /*  float: left;*/
 }
@@ -171,7 +172,7 @@ border-bottom: 2px solid white;
 
 .user-messages {
   height: 100px;
-  margin-top: 20px;
+  margin: 15px auto 30px;
   padding: 10px;
   background-color: rgba(0,0,0,0.5);
 }
@@ -189,7 +190,7 @@ border-bottom: 2px solid white;
 .API-register {
   width: 20%;
   position: fixed;
-  top: 160px;
+  top: 155px;
   right: 0px;
   background-color: rgba(0,0,0,0.5);
 }
@@ -197,7 +198,7 @@ border-bottom: 2px solid white;
 .API-login {
   width: 20%;
   position: fixed;
-  top: 160px;
+  top: 155px;
   right: 0px;
   background-color: rgba(0,0,0,0.5);
 }
@@ -210,25 +211,15 @@ border-bottom: 2px solid white;
 
 /* Create poll container */
 
-/*.messages-container {
-  margin-top: 10px;
-  padding: 10px;
-  overflow: auto;
-}*/
+
 
 #poll-creation-container{
-  /*margin: 0 10px;*/
-  /*padding: 30px 3%;*/
-  /*display: block;*/
   background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
 
 #poll-edit-container{
   width: 100%;
-  /*margin: 0 10px;*/
-  /*padding: 30px 3%;*/
-  /*display: block;*/
   background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
@@ -238,10 +229,6 @@ border-bottom: 2px solid white;
 
 #user-polls {
   width: 100%;
-  /*margin-top: 64px;
-  margin-left: 10px;*/
-  /*display: block;*/
-  /*padding: 10px 0;*/
   background-color: rgba(0,0,0,0.5);
 }
 
@@ -256,24 +243,19 @@ border-bottom: 2px solid white;
   padding: 5px;
 }
 
-/*#user-polls:after {
-  content: " ";
-  clear: both;
-}*/
-
 
 
 /* Poll container */
 
 .vote-poll-container {
-  /*width: 50%;*/
-  /*margin: 0 auto;*/
   overflow: auto;
 }
 
 #rendered-poll {
   background-color: rgba(0,0,0,0.5);
 }
+
+
 
 /* button dashboard 02 */
 
@@ -307,10 +289,6 @@ border-bottom: 2px solid white;
 
 
 
-/*#poll-results-graph:after {
-  content: " ";
-  clear: both;
-}*/
 
 /* animations and jQuery*/
 
