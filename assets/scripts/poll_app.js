@@ -125,10 +125,10 @@ $(document).ready(function() {
     console.log('the form will send ' + JSON.stringify(data, null, 4));
     console.log("data is: " + data.title);
     var newTitle = data.title;
-    $('#pollTitle').html(newTitle);
-    // var newTitle = $('#pollTitle').val();
+    var getpollID = $('#poll-creation-container').attr('data-pollid');
+
     console.log("new title is: " + newTitle);
-    poll_api.editPoll(newTitle.title, editPollCb);
+    poll_api.editPoll(getpollID, newTitle, data, editPollCb);
 
     // On submit click, title patch request and populate title in the p tag.
 

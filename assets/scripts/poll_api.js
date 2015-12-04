@@ -88,7 +88,7 @@ var poll_api = {
   },
 
 
-  editPoll: function (id, data, callback) {
+  editPoll: function (id, title, data, callback) {
     this.ajax({
       method: 'PATCH',
       url: this.url + '/polls/' + id,

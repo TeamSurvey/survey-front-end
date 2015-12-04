@@ -177,17 +177,17 @@ var editPollCb = function (error, data) {
     $(".user-messages").html("<strong>Error! Poll edit fail!</strong>");
     return;
   }
-  // console.log test
+
   console.log('new poll data is ' + data);
 
   var pollTitle = data.title;
-
   console.log('new poll title is ' + pollTitle);
+  $('#pollTitle').html(pollTitle);
 
   $(".user-messages").html("<strong>Poll updated!</strong>");
 
 };
-// end of updateFavBike submit handler
+// end of updatePollTitle submit handler
 
 
 
