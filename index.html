@@ -15,13 +15,6 @@
  <!-- begin header -->
    <header>
      <h1>Duck Poll</h1>
-     <!-- nav buttons for login/register -->
-     <!-- <nav>
-       <ul>
-           <li><a href="#">Login</a></li>
-           <li><a href="#">Register</a></li>
-       </ul>
-     </nav> -->
    </header>
    <!-- end header -->
 
@@ -31,12 +24,12 @@
   <div class="wrapper">
 
 
-    <section class="span_12_of_12">
+    <section class="span_4_of_12 pad-lft">
     <!-- begin hero -->
-    <div class="span_5_of_12 hero animated zoomIn duck-intro">
+    <div class="hero animated zoomIn duck-intro">
       <h2>Duck Poll</h2>
       <h5>All it's quacked up to be.</h5>
-      <p>Ready to poll? <a href="#login" class="login-a">Waddle in</a>. First time here? <a href="#register" class="register-a">Join the flock</a>.</p>
+      <p>Ready to poll? <a href="#login" class="login-a">Waddle in</a>.</p><p>First time here? <a href="#register" class="register-a">Join the flock</a>.</p>
 
     </div>
      <!-- end hero -->
@@ -119,7 +112,7 @@
 
   <div class="col span_3_of_12">
     <!-- begin user polls list -->
-      <div id="user-polls">
+      <div id="user-polls" class="hidden">
         <h4>Most Recent Poll</h4>
         <ul id="poll-list"></ul>
       </div>
@@ -143,7 +136,7 @@
 
 
   <!-- begin rendered poll -->
-  <div class="col span_3_of_12 vote-poll-container">
+  <div class="col span_3_of_12 vote-poll-container hidden">
     <div id="rendered-poll" data-currentPollId="">
       <h4 class="render-poll-title">[Poll Question here]</h4>
       <!-- swapped checkboxes for radio button and made all  -->
@@ -171,15 +164,15 @@
 
 
    <!-- begin poll results -->
-   <div id="poll-results-container" class="col span_3_of_12  ">
+   <div id="poll-results-container" class="col span_3_of_12  hidden">
      <div id="rendered-poll-results">
        <h4>Poll Results</h4>
        <h5>[Poll Question here]</h5>
-       <p>Choice 01 <small>(choice01 votes/total votes) * 100</small></p>
-       <p>Choice 02 <small>(choice02 votes/total votes) * 100</small></p>
-       <p>Choice 03 <small>(choice03 votes/total votes) * 100</small></p>
-       <p>Choice 04 <small>(choice04 votes/total votes) * 100</small></p>
-       <p>Choice 05 <small>(choice05 votes/total votes) * 100</small></p>
+       <p>Choice 01 </p>
+       <p>Choice 02 </p>
+       <p>Choice 03 </p>
+       <p>Choice 04 </p>
+       <p>Choice 05 </p>
 
      </div>
      <!-- <div id="survey-results-graph">

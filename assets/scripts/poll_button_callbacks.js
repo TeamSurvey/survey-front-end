@@ -103,6 +103,8 @@ var createPollCb = function (error, data) {
   poll.options = data.options;
   poll.owner_id = data.owner_id;
 
+ // km add jQuery animation
+ $('.vote-poll-container').fadeIn().removeClass('hidden');
  $('.render-poll-title').html(poll.title);
 
 // km changing class references to id refs
@@ -121,6 +123,9 @@ var createPollCb = function (error, data) {
   console.log('poll_url is ' + poll_url);
 
   var newPollLink = $('<li><a href="' + poll_url + '" data-poll-id="' + data["_id"] + '" class="load-poll">' + data.title + '</a></li>');
+
+  // km add jQuery animation
+  $('#user-polls').fadeIn().removeClass('hidden')
 
   $('#poll-list').append(newPollLink);
 

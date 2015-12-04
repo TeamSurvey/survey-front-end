@@ -65,6 +65,10 @@ small {
   font-size: .8em;
 }
 
+p {
+  font-size: 1.1em;
+  line-height: 1.2em;
+}
 
 
 /* Header */
@@ -79,6 +83,10 @@ header{
   background-color: #fff;
   border-bottom: 1px solid #777;
   z-index: 100;
+}
+
+section {
+  margin-left: 130%;
 }
 
 nav {
@@ -117,7 +125,8 @@ button, input[type="submit"] {
   border: 0;
   padding: 10px;
   margin: 5px 0;
-  background-color: #ccc;
+  background-color: rgba(0,122,65,.7);
+  color: #fff;
 }
 
 button:hover, input[type="submit"]:hover {
@@ -146,7 +155,8 @@ button:active, input[type="submit"]:active {
 /* Hero */
 
 .hero {
-  margin: 90px auto 0;
+  margin: 60px auto 0;
+  padding: 5px 5px 10px;
   color: white;
   overflow: auto;
   text-align: center;
@@ -163,11 +173,14 @@ button:active, input[type="submit"]:active {
 
 
 .duck-intro h2 {
-border-bottom: 2px solid white;
+/*border-bottom: 2px solid white;*/
 }
 
 .duck-intro h5 {
-  margin: 10px;
+  width: 60%;
+  margin: 0 auto 12px;
+  padding-top: 10px;
+  border-top: 2px solid teal;
 }
 
 .user-messages {
@@ -177,10 +190,15 @@ border-bottom: 2px solid white;
   background-color: rgba(0,0,0,0.5);
 }
 
+.user-messages:after {
+  content:'';
+  clear: both;
+}
+
 /* button dashboard 01 */
 #create-edit-del-button-dashboard {
   width: 8%;
-  background-color: rgba(0,0,0,0.5);
+/*  background-color: rgba(0,0,0,0.5);*/
   color: white;
 }
 
@@ -213,13 +231,13 @@ border-bottom: 2px solid white;
 
 
 
-#poll-creation-container, #poll-edit-container, #user-polls, #vote-poll-container, #poll-results-container {
+#poll-creation-container, #poll-edit-container, #user-polls, .vote-poll-container, #poll-results-container {
   padding: 10px 10px 0;
   background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
 
-#poll-creation-container form, #poll-edit-container form, #vote-poll-container ul{
+#poll-creation-container form, #poll-edit-container form, .vote-poll-container ul{
   position: relative;
   width: 90%;
   padding: 10px 5px;
@@ -265,9 +283,9 @@ border-bottom: 2px solid white;
   overflow: auto;
 }
 
-#rendered-poll {
+/*#rendered-poll {
   background-color: rgba(0,0,0,0.5);
-}
+}*/
 
 
 
@@ -304,6 +322,8 @@ border-bottom: 2px solid white;
 
 
 
+
+
 /* misc, animations, and jQuery*/
 
 .hidden {
@@ -312,4 +332,8 @@ border-bottom: 2px solid white;
 
 .center-content {
   margin: 0 auto;
+}
+
+.pad-lft {
+  margin-left: 10%;
 }

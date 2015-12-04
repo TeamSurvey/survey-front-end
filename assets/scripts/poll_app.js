@@ -28,17 +28,8 @@ $(document).ready(function() {
   $('.user-messages').on('click', '.create-new', function() {
     console.log('clicked');
     $('#poll-creation-container').fadeIn().removeClass('hidden');
-
-        // fade up user-messages and create-poll button
-            // fade up user-messages and create-poll button
     $('.user-messages').find('p').fadeOut();
-    $('.user-messages').html('<p>WelcomeCreate a poll!</p>').fadeIn();
 
-    // replace or hide user messages text
-
-    // Create form fades in input fields fade in (for each)? Message instruct enter poll question and options.
-
-    // On create poll click, if viewing a rendered poll, poll container fades out and poll creation container fades up
   });
 
   // or
@@ -55,7 +46,6 @@ $(document).ready(function() {
     console.log('clicked');
     $('#poll-edit-container').fadeIn().removeClass('hidden');
   });
-
 
 
 
@@ -84,12 +74,13 @@ $(document).ready(function() {
     $('.API-login').slideUp();
 
     // fade up user-messages and create-poll button
-    $('.user-messages').fadeIn().removeClass('hidden');
+    $('.user-messages').fadeIn();
     $('.user-messages').html('<p>Welcome, ' + credentials.username + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
 
     // add user feedback
     $('.messages-container h4').html('Welcome, ' + credentials.username);
-  });
+    $('.wrapper').css("background-image", "url(assets/images/duck01_loRes_sketch.jpg");
+  }).fadeIn('fast');
 
 
 
@@ -165,18 +156,29 @@ $(document).ready(function() {
 
 
   // vote button click handler (put with AJAX request section)
-  $('#vote-results-button-dashboard').on('click', '.vote', function() {
+  $('#vote-results-button-dashboard').on('click', '#vote', function() {
     console.log('clicked');
 
     var data = form2object(this);
      console.log('the form will send ' + JSON.stringify(data, null, 4));
 
     poll_api.votePoll(data, votePollCb);
-    $('.user-messages').html('<p>Successful poll deletion</p>');
+    $('.user-messages').html('<p>Successful poll vote</p>');
   });
 
   // see results button click handler (put with AJAX request)
-  // On See Results button click, pollAnswers GET req, rendered poll fades out, poll results container fades in. Poll data from rendered poll populates here and count data fades in.
+  $('#vote-results-button-dashboard').on('click', '#results', function() {
+    // console.log('clicked');
+
+    // var data = form2object(this);
+    //  console.log('the form will send ' + JSON.stringify(data, null, 4));
+
+    // poll_api.votePoll(data, votePollCb);
+    // $('.user-messages').html('<p>Successful poll vote</p>');
+
+  // km add jQuery animation
+  $('#poll-results-container').fadeIn().removeClass('hidden');
+  });
 
 
   // delete poll event handler
