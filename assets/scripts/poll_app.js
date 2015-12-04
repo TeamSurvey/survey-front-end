@@ -128,7 +128,7 @@ $(document).ready(function() {
     var getpollID = $('#poll-creation-container').attr('data-pollid');
 
     console.log("new title is: " + newTitle);
-    poll_api.editPoll(getpollID, newTitle, data, editPollCb);
+    poll_api.editPoll(getpollID, data, editPollCb);
 
     // On submit click, title patch request and populate title in the p tag.
 
