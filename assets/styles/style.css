@@ -10,7 +10,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 1em;
-  color: #333;
+  color: #fff;
 /*  -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    box-sizing: border-box;*/
@@ -145,18 +145,18 @@ button:active, input[type="submit"]:active {
 /* Hero */
 
 .hero {
-  width: 60%;
+/*  width: 60%;*/
   height: 250px;
   margin: 10px auto;
   color: white;
 }
 
 .duck-intro {
-  width: 60%;
+  /*width: 60%;*/
   padding: 20px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
-  float: left;
+/*  float: left;*/
 }
 
 
@@ -170,12 +170,12 @@ button:active, input[type="submit"]:active {
 
 .user-messages {
   overflow: auto;
-  width: 30%;
+  /*width: 30%;*/
   height: 100px;
   margin-left: .9%;
   padding: 10px;
   background-color: rgba(0,0,0,0.5);
-  float: left;
+/*  float: left;*/
 }
 
 /* button dashboard 01 */
@@ -218,11 +218,20 @@ button:active, input[type="submit"]:active {
   overflow: auto;
 }
 
-#poll-creation-container, #poll-edit-container{
-  width: 50%;
-  margin: 0 auto;
-  padding: 30px 3%;
-  background-color: #eee;
+#poll-creation-container{
+  margin: 0 10px;
+  /*padding: 30px 3%;*/
+  display: block;
+  background-color: rgba(0,0,0,0.5);
+  overflow: auto;
+}
+
+#poll-edit-container{
+  width: 100%;
+  margin: 0 10px;
+  /*padding: 30px 3%;*/
+  display: block;
+  background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
 
@@ -230,11 +239,12 @@ button:active, input[type="submit"]:active {
 /* Your polls */
 
 #user-polls {
-  width: 20%;
-  margin-top: 64px;
-  margin-left: 10px;
-  padding: 10px 5px 10px 10px;
-  background-color: #eee;
+  width: 100%;
+  /*margin-top: 64px;
+  margin-left: 10px;*/
+  display: block;
+  padding: 10px 0;
+  background-color: rgba(0,0,0,0.5);
 }
 
 #user-polls li {
@@ -258,30 +268,30 @@ button:active, input[type="submit"]:active {
 /* Poll container */
 
 .vote-poll-container {
-  width: 50%;
-  margin: 0 auto;
+  /*width: 50%;*/
+  /*margin: 0 auto;*/
   overflow: auto;
 }
 
 #rendered-poll {
-  width: 90%;
-  margin: 0;
-  padding: 30px 0 30px 10px;
-  background-color: #ddd;
-  float: left;
+  /*width: 90%;*/
+  /*margin: 0;*/
+  /*padding: 30px 0 30px 10px;*/
+  background-color: rgba(0,0,0,0.5);
+  /*float: left;*/
 }
 
 /* button dashboard 02 */
 
 #vote-results-button-dashboard {
-  width: 10%;
+  /*width: 10%;*/
   color: white;
-  float: left;
+  /*float: left;*/
   margin-top: 0;
 }
 
 #vote-results-button-dashboard button{
-  width: 65%;
+  /*width: 65%;*/
   margin-right: 5px;
   padding-left: 5px;
   display: block;
@@ -291,17 +301,15 @@ button:active, input[type="submit"]:active {
 /* Poll results */
 
 #poll-results-container {
-  width: 50%;
+  /*width: 50%;*/
   margin: 0 auto;
-  padding: 30px 3%;
-  background-color: #ddd;
-  overflow: auto;
-  background-color: #eee;
+  /*padding: 30px 3%;*/
+  background-color: rgba(0,0,0,0.5);
   overflow: auto;
 }
 
 #rendered-poll-results {
-  width: 90%;
+  /*width: 90%;*/
   padding: 30px 3%;
   float: left;
 }
@@ -309,10 +317,10 @@ button:active, input[type="submit"]:active {
 #rendered-poll-results p{
   margin: 10px 0;
   padding: 5px;
-  background-color: #ddd;
+  background-color: rgba(0,0,0,0.5);
 }
 
-#poll-results-graph {
+/*#poll-results-graph {
   width: 150px;
   height: 150px;
   margin-top: 84px;
@@ -320,7 +328,7 @@ button:active, input[type="submit"]:active {
   padding: 10px;
   float: left;
   background-color: #ddd;
-}
+}*/
 
 #poll-results-graph:after {
   content: " ";

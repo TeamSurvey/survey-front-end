@@ -3,9 +3,10 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Duck Poll</title>
-  <link rel="stylesheet" type="text/css" href="assets/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/html5reset.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
 
 </head>
 
@@ -27,7 +28,7 @@
 
 
   <div class="wrapper">
-    <div class="hero animated zoomIn">
+    <section class="span_6_of_12 hero animated zoomIn">
       <!-- begin hero -->
       <div class="duck-intro">
         <h2 >Ducks in a Row</h2>
@@ -36,10 +37,11 @@
       </div>
        <!-- end hero -->
        <!-- begin user messages box -->
-        <div class="user-messages hidden">
-        </div>
-        <!-- end user messages box -->
-    </div>
+      <div class="user-messages hidden">
+      </div>
+      <!-- end user messages box -->
+
+    </section>
 
 
 
@@ -87,30 +89,14 @@
      </form>
      <!-- km end add show button -->
 
-
       <button type="" id="edit">Edit this Poll</button>
       <button type="" id="delete">Delete this Poll</button>
     </div>
 
 
-    <!-- begin user polls list -->
-    <div id="user-polls">
-      <h5>Your Polls</h5>
-      <ul id="poll-list">
-        <li><a href="#" data-poll-id="poll01" class="load-poll">Poll Title 01</a></li>
-        <li><a href="#" data-poll-id="poll02" class="load-poll">Poll Title 02</a></li>
-        <li><a href="#" data-poll-id="poll03" class="load-poll"> Poll Title 03</a></li>
-        <li><a href="#" data-poll-id="poll04" class="load-poll">Poll Title 04</a></li>
-        <li><a href="#" data-poll-id="poll05" class="load-poll">Poll Title 05</a></li>
-      </ul>
-    </div>
-    <!-- end user polls list -->
-
-
-
-
-   <!-- begin poll creation container -->
-   <div id="poll-creation-container" class="hidden">
+  <div class="span_12_of_12">
+  <!-- begin poll creation container -->
+   <div id="poll-creation-container" class="col span_3_of_12">
      <h4>Create a poll</h4>
      <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
        <label for="title">Poll Question</label>
@@ -132,31 +118,35 @@
 
 
 
-   <!-- begin poll edit container -->
-   <div id="poll-edit-container hidden">
-     <!-- user messages -->
-     <div>
+    <div class="col span_3_of_12">
+    <!-- begin user polls list -->
+      <div id="user-polls" class="col">
+        <h5>Most Recent Poll</h5>
+        <ul id="poll-list"></ul>
+      </div>
+      <!-- end user polls list -->
+
+      <!-- begin poll edit container -->
+      <div id="poll-edit-container" class="col">
+
        <h4>Edit this poll</h4>
-     </div>
-     <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
-       <label for="title">Poll Title</label>
-       <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
 
-<!--  km: removed option01 and option02 inputs, we are not using them for this prototype -->
+       <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
+         <label for="title">Poll Title</label>
+         <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
+         <input name="save" type="submit" value="Save!">
+       </form>
 
-       <input name="save" type="submit" value="Save!">
-     </form>
-   </div>
-   <!-- end poll edit container -->
+      </div>
+      <!-- end poll edit container -->
+    </div>
 
 
 
   <!-- begin rendered poll -->
-  <div class="vote-poll-container">
+  <div class="col span_3_of_12 vote-poll-container">
     <div id="rendered-poll" data-currentPollId="">
       <h4 class="render-poll-title">[Poll Question here]</h4>
-      <!-- swapped checkboxes for radio button and made all  -->
-      <!-- name attributes the same to force one choice per vote. -->
 
       <div class="option-one" data-option="01"><input type="radio" name="option" value="option01">Option 01</div>
       <div class="option-two" data-option="02"><input type="radio" name="option" value="option02">Option 02</div>
@@ -175,7 +165,7 @@
 
 
    <!-- begin poll results -->
-   <div id="poll-results-container">
+   <div id="poll-results-container" class="span_3_of_12  ">
      <div id="rendered-poll-results">
        <h4>Poll Results</h4>
        <h5>[Poll Question here]</h5>
@@ -186,11 +176,11 @@
        <p>Choice 05 <small>(choice05 votes/total votes) * 100</small></p>
 
      </div>
-     <div id="survey-results-graph">
+     <!-- <div id="survey-results-graph">
        chart data of results breakdown could go here
-     </div>
+     </div> -->
    </div>
-   <!-- end poll results -->
+   <!-- end poll results --></div>
   </div>
 
 <!-- begin scripts -->
