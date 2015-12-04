@@ -3,9 +3,10 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Duck Poll</title>
-  <link rel="stylesheet" type="text/css" href="assets/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/html5reset.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
 
 </head>
 
@@ -27,19 +28,22 @@
 
 
   <div class="wrapper">
-    <div class="hero animated zoomIn">
-      <!-- begin hero -->
-      <div class="duck-intro">
-        <h2 >Ducks in a Row</h2>
-        <h5>Create a poll, vote on a poll, better intro text here</h5>
-        <p>To continue, <a href="#login" class="login-a">login</a>. If you need an account, <a href="#register" class="register-a">register</a>.</p>
-      </div>
-       <!-- end hero -->
-       <!-- begin user messages box -->
-        <div class="user-messages hidden">
-        </div>
-        <!-- end user messages box -->
+
+
+    <section class="">
+    <!-- begin hero -->
+    <div class="span_6_of_12 hero animated zoomIn duck-intro">
+      <h2 >Ducks in a Row</h2>
+      <h5>Create a poll, vote on a poll, better intro text here</h5>
+      <p>To continue, <a href="#login" class="login-a">login</a>. If you need an account, <a href="#register" class="register-a">register</a>.</p>
     </div>
+     <!-- end hero -->
+     <!-- begin user messages box -->
+    <div class="user-messages hidden">
+    </div>
+    <!-- end user messages box -->
+
+    </section>
 
 
 
@@ -77,40 +81,20 @@
    </div>
    <!-- end login -->
 
-    <div id="create-edit-del-button-dashboard" class="">
-     <button type="" class="create-new">Create New Poll</button>
+  <!-- start button dashboard -->
+  <div id="create-edit-del-button-dashboard" class="span_12_of_12">
+    <button type="" class="create-new">Create New Poll</button>
 
-     <!-- km begin add show button -->
-     <button type="" class="show-poll">Show a Poll</button>
-     <form id="show-poll">
-       <input name="showPoll" type="text" placeholder="poll ID">
-     </form>
-     <!-- km end add show button -->
-
-
-      <button type="" id="edit">Edit this Poll</button>
-      <button type="" id="delete">Delete this Poll</button>
-    </div>
-
-
-    <!-- begin user polls list -->
-    <div id="user-polls">
-      <h5>Your Polls</h5>
-      <ul id="poll-list">
-        <li><a href="#" data-poll-id="poll01" class="load-poll">Poll Title 01</a></li>
-        <li><a href="#" data-poll-id="poll02" class="load-poll">Poll Title 02</a></li>
-        <li><a href="#" data-poll-id="poll03" class="load-poll"> Poll Title 03</a></li>
-        <li><a href="#" data-poll-id="poll04" class="load-poll">Poll Title 04</a></li>
-        <li><a href="#" data-poll-id="poll05" class="load-poll">Poll Title 05</a></li>
-      </ul>
-    </div>
-    <!-- end user polls list -->
+    <button type="" id="edit">Edit this Poll</button>
+    <button type="" id="delete">Delete this Poll</button>
+  </div>
+  <!-- end button dashboard -->
 
 
 
-
+  <div class="span_12_of_12">
    <!-- begin poll creation container -->
-   <div id="poll-creation-container" class="hidden" data-pollid="">
+   <div id="poll-creation-container" class="span_3_of_12" data-pollid="">
      <h4>Create a poll</h4>
      <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
        <label for="title">Poll Question</label>
@@ -129,40 +113,49 @@
      </form>
    </div>
    <!-- end poll creation container -->
-
-
-
-   <!-- begin poll edit container -->
-   <div id="poll-edit-container hidden">
-     <!-- user messages -->
-     <div>
-       <h4>Edit this poll</h4>
-     </div>
-     <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
-       <label for="title">Poll Title</label>
-       <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
-
-<!--  km: removed option01 and option02 inputs, we are not using them for this prototype -->
-
-       <input name="save" type="submit" value="Save!">
-     </form>
    </div>
-   <!-- end poll edit container -->
+
+
+
+  <div class="col span_3_of_12">
+    <!-- begin user polls list -->
+      <div id="user-polls">
+        <h5>Most Recent Poll</h5>
+        <ul id="poll-list"></ul>
+      </div>
+      <!-- end user polls list -->
+
+      <!-- begin poll edit container -->
+      <div id="poll-edit-container">
+
+       <h4>Edit this poll</h4>
+
+       <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
+         <label for="title">Poll Title</label>
+         <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
+         <input name="save" type="submit" value="Save!">
+       </form>
+
+      </div>
+      <!-- end poll edit container -->
+    </div>
 
 
 
   <!-- begin rendered poll -->
-  <div class="vote-poll-container">
+  <div class="col span_3_of_12 vote-poll-container">
     <div id="rendered-poll" data-currentPollId="">
       <h4 class="render-poll-title">[Poll Question here]</h4>
       <!-- swapped checkboxes for radio button and made all  -->
       <!-- name attributes the same to force one choice per vote. -->
 
-      <div class="option-one" data-option="01"><input type="radio" name="option" value="option01">Option 01</div>
-      <div class="option-two" data-option="02"><input type="radio" name="option" value="option02">Option 02</div>
-      <div class="option-three" data-option="03"><input type="radio" name="option" value="option03">Option 03</div>
-      <div class="option-four" data-option="04"><input type="radio" name="option" value="option04">Option 04</div>
-      <div class="option-five" data-option="05"><input type="radio" name="option" value="option05">Option 05</div>
+      <!-- LCN added id fields to each below -->
+     <div class="option-one" id="option-one" data-option="01"><input type="radio" name="option" value="option01">Option 01</div>
+     <div class="option-two" id="option-two" data-option="02"><input type="radio" name="option" value="option02">Option 02</div>
+     <div class="option-three" id="option-three" data-option="03"><input type="radio" name="option" value="option03">Option 03</div>
+     <div class="option-four" id="option-four" data-option="04"><input type="radio" name="option" value="option04">Option 04</div>
+     <div class="option-five" id="option-five" data-option="05"><input type="radio" name="option" value="option05">Option 05</div>
+     <!-- End LCN edits -->
 
     </div>
     <div id="vote-results-button-dashboard">
@@ -174,8 +167,10 @@
 
 
 
+
+
    <!-- begin poll results -->
-   <div id="poll-results-container">
+   <div id="poll-results-container" class="col span_3_of_12  ">
      <div id="rendered-poll-results">
        <h4>Poll Results</h4>
        <h5>[Poll Question here]</h5>
