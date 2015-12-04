@@ -28,7 +28,7 @@ $(document).ready(function() {
   $('.user-messages').on('click', '.create-new', function() {
     console.log('clicked');
     $('#poll-creation-container').fadeIn().removeClass('hidden');
-    $('.user-messages').fadeOut();
+    // $('.user-messages').fadeOut();
 
   });
 
