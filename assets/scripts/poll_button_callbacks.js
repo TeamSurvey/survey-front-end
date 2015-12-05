@@ -184,10 +184,10 @@ var editPollCb = function (error, data) {
   }
   // console.log test
   console.log('new poll data is ' + data);
-
+  var id = $('#poll-creation-container').attr('data-pollid');
   var pollTitle = data.title;
 
-  console.log('new poll title is ' + pollTitle);
+  console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
 
   $(".user-messages").html("<strong>Poll updated!</strong>");
 

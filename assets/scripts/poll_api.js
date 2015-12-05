@@ -83,7 +83,7 @@ var poll_api = {
   listPolls: function (callback) {
     this.ajax({
       method: 'GET',
-      url: this.url + '/polls',
+      url: this.url + '/polls/' + id,
       }, callback);
   },
 
