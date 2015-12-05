@@ -104,13 +104,6 @@ var poll_api = {
       url: this.url + '/polls/' + id,
       contentType: 'application/json'
     }, callback);
-  },
-
-// watchPoll function is a stretch goal
-  watchPoll: function (id) {
-    var url = this.url + '/polls/' + id + '/watch';
-    this.pollWatcher = resourceWatcher(url, auth); //jshint ignore: line
-    return this.pollWatcher;
   }
 
 };

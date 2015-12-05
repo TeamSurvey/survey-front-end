@@ -147,6 +147,8 @@ var showPollCb = function (error, data) {
   poll.id = data[0]["_id"];
    // prod_id = data[0]["_id"]; //Global variable
   console.log('poll id is ' + poll.id);
+  console.log("data[1]: " + data[1]);
+  console.log("data.title: " + data.title);
   poll.title = data.title;
   console.log(poll.title);
   poll.options = data.options;
@@ -184,17 +186,15 @@ var editPollCb = function (error, data) {
   }
   // console.log test
   console.log('new poll data is ' + data);
-
+  var id = $('#poll-creation-container').attr('data-pollid');
   var pollTitle = data.title;
 
-  console.log('new poll title is ' + pollTitle);
+  console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
 
   $(".user-messages").html("<strong>Poll updated!</strong>");
 
 };
-// end of updateFavBike submit handler
-
-
+// end of editPollCb submit handler
 
 // deletePoll callback
 var deletePollCb = function (error, data) {

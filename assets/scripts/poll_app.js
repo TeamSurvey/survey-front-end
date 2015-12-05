@@ -117,12 +117,16 @@ $(document).ready(function() {
   $('#edit-poll').on('submit', function(e) {
     e.preventDefault();
 
-    var data = form2object(this);
-     console.log('the form will send ' + JSON.stringify(data, null, 4));
+    var id = $('#poll-creation-container').attr('data-pollid');
+    var data = {
+      _id: id,
+      title: $('#updatePollTitle').val()
 
-    poll_api.editPoll(data, editPollCb);
+    };
 
-    // On submit click, title patch request and populate title in the p tag.
+    console.log('the form will send ' + JSON.stringify(data, null, 4));
+
+    poll_api.editPoll(id, data, editPollCb);
 
     // $(this).closest('#poll-edit-container').fadeOut();
 
@@ -140,7 +144,7 @@ $(document).ready(function() {
 
     console.log('poll id is ' + JSON.stringify(poll.id, null, 4));
 
-    poll_api.editPoll(poll.id, showPollCb);
+    poll_api.showPoll(id, showPollCb);
 
     // On submit click, title patch request and populate title in the p tag.
 
