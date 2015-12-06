@@ -1,7 +1,8 @@
 'use strict';
 
 // lcn adds
-var url = 'http://localhost:3000/'; //CHANGE TO GH PAGES URL
+// var url = 'http://localhost:3000/'; //CHANGE TO GH PAGES URL
+var url = 'http://localhost:5000/'; //CHANGE TO GH PAGES URL
 var poll_url = "";
 
 var createdPoll = $('#rendered-poll');
@@ -118,7 +119,9 @@ var createPollCb = function (error, data) {
   //ben edits end
 
   // lcn unique URL add
-  poll_url = (url + "polls/" + data["_id"]);
+  // poll_url = (url + "polls/" + data["_id"]);
+  // change url to localhost:5000 for testing
+  poll_url = (url + "#" + data["_id"]);
 
   console.log('poll_url is ' + poll_url);
 
@@ -130,7 +133,7 @@ var createPollCb = function (error, data) {
   $('#poll-list').append(newPollLink);
 
 
-  $(".user-messages").html("Your survey can be found here " + poll_url);
+  $(".user-messages").html('<p>Your survey can be found here: <a href="' + poll_url + '">' + poll_url + '</a></p>');
 
 };
 
@@ -144,7 +147,8 @@ var showPollCb = function (error, data) {
   }
   // grab poll from backend
   console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
-  poll.id = data[0]["_id"];
+  // poll.id = data[0]["_id"];
+  poll.id = data["_id"];
    // prod_id = data[0]["_id"]; //Global variable
   console.log('poll id is ' + poll.id);
   console.log("data[1]: " + data[1]);
