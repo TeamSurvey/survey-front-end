@@ -104,16 +104,6 @@ var createPollCb = function (error, data) {
   poll.options = data.options;
   poll.owner_id = data.owner_id;
 
- // km add jQuery animation
- $('.vote-poll-container').fadeIn().removeClass('hidden');
- $('.render-poll-title').html(poll.title);
-
-// km changing class references to id refs
-  $('#option-one').text(poll.options[0]);
-  $('#option-two').html(poll.options[1]);
-  $('#option-three').html(poll.options[2]);
-  $('#option-four').html(poll.options[3]);
-  $('#option-five').html(poll.options[4]);
   $('#poll-creation-container').attr('data-pollid', poll.id);
 
   //ben edits end
@@ -132,7 +122,6 @@ var createPollCb = function (error, data) {
 
   $('#poll-list').append(newPollLink);
 
-
   $(".user-messages").html('<p>Your survey can be found here: <a href="' + poll_url + '">' + poll_url + '</a></p>');
 
 };
@@ -147,18 +136,31 @@ var showPollCb = function (error, data) {
   }
   // grab poll from backend
   console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
-  // poll.id = data[0]["_id"];
-  poll.id = data["_id"];
-   // prod_id = data[0]["_id"]; //Global variable
-  console.log('poll id is ' + poll.id);
-  console.log("data[1]: " + data[1]);
-  console.log("data.title: " + data.title);
-  poll.title = data.title;
-  console.log(poll.title);
-  poll.options = data.options;
-  console.log(poll.options);
-  poll.owner_id = data.owner_id;
-  console.log(poll.owner_id);
+   // used bracket notation to solve for special character in key value
+   // seems that the returned object is wrapped in an array, so all
+   // keys need to be include the data[0]
+  poll.id = data[0]["_id"];
+  poll.title = data[0].title;
+  poll.options[0] = data[0].options[0];
+  poll.owner_id = data[0].owner_id;
+  console.log("poll id is: " + poll.id)
+  console.log("data[0]: " + data[0]);
+  console.log("data.title: " + data[0].title);
+  console.log("data.owner_id: " + data[0].owner_id);
+  console.log("data.options[0]: " + data[0].options[0]);
+
+
+ // km add jQuery animation
+ $('.vote-poll-container').fadeIn().removeClass('hidden');
+ $('.render-poll-title').html(poll.title);
+
+// km changing class references to id refs
+  $('#option-one').text(poll.options[0]);
+  $('#option-two').html(poll.options[1]);
+  $('#option-three').html(poll.options[2]);
+  $('#option-four').html(poll.options[3]);
+  $('#option-five').html(poll.options[4]);
+  $('#rendered-poll').attr('data-pollid', poll.id);
 
 };
 
