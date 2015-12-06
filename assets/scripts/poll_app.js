@@ -164,20 +164,9 @@ $(document).ready(function() {
     var data = {
       pollID: pollID,
       answer: value
-    }
+    };
 
-    // var radioButton = $(this).closest('input').attr('checked');
-    // // $( "input[name=option]:radio" ).attr('checked').text();
-    // console.log("radioButton: " + radioButton);
-    // if(radioButton = true) {
-    //   var answer = $(this).closest('input').val();
-    //   console.log("answer is: " + answer);
-    // }else {
-
-    // }
-
-    // var data = form2object(this);
-     console.log('the form will send ' + JSON.stringify(data, null, 4));
+    console.log('the form will send ' + JSON.stringify(data, null, 4));
 
     poll_api.votePoll(data, votePollCb);
 
@@ -186,12 +175,11 @@ $(document).ready(function() {
 
   // see results button click handler (put with AJAX request)
   $('#vote-results-button-dashboard').on('click', '#results', function() {
-    // console.log('clicked');
+    console.log('clicked');
 
-    // var data = form2object(this);
     //  console.log('the form will send ' + JSON.stringify(data, null, 4));
 
-    poll_api.votePoll(data, votePollCb);
+    // poll_api.showPollResults(id, showPollResultsCb);
 
   // km add jQuery animation
   $('#poll-results-container').fadeIn().removeClass('hidden');

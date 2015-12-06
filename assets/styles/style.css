@@ -345,10 +345,11 @@ button:active, input[type="submit"]:active {
 
 }
 
-#rendered-poll-results p{
+#rendered-poll-results li{
   margin: 10px 0;
   padding: 5px;
   background-color: rgba(0,0,0,0.5);
+  /*display: inline-block;*/
 }
 
 
