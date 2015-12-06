@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   // create-new (poll) button click handler
   $('.user-messages').on('click', '.create-new', function() {
-    console.log('clicked');
+
     $('#poll-creation-container').fadeIn().removeClass('hidden');
     // $('.user-messages').fadeOut();
 
@@ -112,7 +112,6 @@ $(document).ready(function() {
 
   });
 
-
   // edit poll title handler
   $('#edit-poll').on('submit', function(e) {
     e.preventDefault();
@@ -138,11 +137,13 @@ $(document).ready(function() {
 
 
   // showPoll handler for user poll list (READ)
-    $('#show-poll').on('submit', function(e) {
+    // $('#show-poll').on('submit', function(e) {
+  $('#poll-list').on('click', '.load-poll', function(e) {
     e.preventDefault();
     console.log('clicked');
 
-    console.log('poll id is ' + JSON.stringify(poll.id, null, 4));
+    var id = $(this).closest('a').data('poll-id');
+    console.log('poll id is ' + id);
 
     poll_api.showPoll(id, showPollCb);
 
