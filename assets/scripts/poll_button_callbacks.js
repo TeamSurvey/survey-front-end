@@ -258,10 +258,10 @@ var resultsAggCb = function (error, data) {
  $('.render-poll-results').html(poll.title);
 
   $('.result01').html(data[0].count);
-  // $('.result02').html(data[0].count);
-  // $('.result03').html(data[0].count);
-  // $('.result04').html(data[0].count);
-  // $('.result05').html(data[0].count);
+  $('.result02').html(data[1].count);
+  $('.result03').html(data[2].count);
+  $('.result04').html(data[3].count);
+  $('.result05').html(data[4].count);
 
 
   $('#answer01').html(poll.options[0]);
@@ -269,22 +269,6 @@ var resultsAggCb = function (error, data) {
   $('#answer03').html(poll.options[2]);
   $('#answer04').html(poll.options[3]);
   $('#answer05').html(poll.options[4]);
-
- //  pollAnswer.pollID = data[0]["_id"];
- //  poll.answer = data[0].;
- //  poll.options[0] = data[0].options[0];
- //  poll.owner_id = data[0].owner_id;
- //  console.log("poll id is: " + poll.id)
- //  console.log("data[0]: " + data[0]);
- //  console.log("data.title: " + data[0].title);
- //  console.log("data.owner_id: " + data[0].owner_id);
- //  console.log("data.options[0]: " + data[0].options[0]);
-
-
- // $('.vote-poll-container').fadeIn().removeClass('hidden');
-
-
-
 
 };
 
