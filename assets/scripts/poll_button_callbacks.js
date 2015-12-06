@@ -209,6 +209,8 @@ var editPollCb = function (error, data) {
 
   console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
 
+  $('.load-poll').val(data.pollTitle);
+
   $(".user-messages").html("<strong>Poll updated!</strong>");
 
 };
