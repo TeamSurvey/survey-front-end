@@ -290,24 +290,36 @@ button:active, input[type="submit"]:active {
 
 
 
-/* Poll container */
+/* Rendered Poll container */
 
 .vote-poll-container {
   overflow: auto;
 }
 
-/*#rendered-poll ul{
-  background-color: rgba(0,255,0,0.5);
-}*/
+#rendered-poll ul{
+  padding: 5px 0;
+}
 
-#rendered-poll li{
+#rendered-poll ul:link{
+  background-color: rgba(0,255,255,0.5);
+}
+
+#rendered-poll ul:hover{
+  background-color: rgba(0,255,0,0.5);
+}
+
+#rendered-poll ul:active{
+  background-color: rgba(0255,255,0,0.5);
+}
+
+#rendered-poll li:nth-child(even){
   list-style: none;
-  display: inline-block;
   padding: 10px;
 }
 
-
-
+#rendered-poll li:nth-child(odd){
+  list-style: none;
+}
 
 /* button dashboard 02 */
 

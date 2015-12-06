@@ -154,13 +154,20 @@ var showPollCb = function (error, data) {
  $('.vote-poll-container').fadeIn().removeClass('hidden');
  $('.render-poll-title').html(poll.title);
 
+  $('.option-one').val(poll.options[0]);
+  $('.option-two').val(poll.options[1]);
+  $('.option-three').val(poll.options[2]);
+  $('.option-four').val(poll.options[3]);
+  $('.option-five').val(poll.options[4]);
+
+
 // km changing class references to id refs
-  $('#option-one').text(poll.options[0]);
+  $('#option-one').html(poll.options[0]);
   $('#option-two').html(poll.options[1]);
   $('#option-three').html(poll.options[2]);
   $('#option-four').html(poll.options[3]);
   $('#option-five').html(poll.options[4]);
-  $('#rendered-poll').attr('data-pollid', poll.id);
+  $('#rendered-poll').attr('data-currentpollid', poll.id);
 
 };
 

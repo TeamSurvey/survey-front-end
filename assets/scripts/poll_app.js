@@ -147,22 +147,27 @@ $(document).ready(function() {
 
     poll_api.showPoll(id, showPollCb);
 
-    // On submit click, title patch request and populate title in the p tag.
-
-    $(this).fadeOut();
   });
 
-  //   On click of URL, URL populates in address bar, and if poll container visible, poll container repopulates. If hidden, poll container shows and populates.
-
-  // Each option and li will have hover and active actions
-
 // km -- end showPoll handler
-
-
 
   // vote button click handler (put with AJAX request section)
   $('#vote-results-button-dashboard').on('click', '#vote', function() {
     console.log('clicked');
+
+    $('#rendered-poll input').on('change', function() {
+    alert($('input[name="option"]:checked', '#rendered-poll').val());
+    });
+
+    // var radioButton = $(this).closest('input').attr('checked');
+    // // $( "input[name=option]:radio" ).attr('checked').text();
+    // console.log("radioButton: " + radioButton);
+    // if(radioButton = true) {
+    //   var answer = $(this).closest('input').val();
+    //   console.log("answer is: " + answer);
+    // }else {
+
+    // }
 
     var data = form2object(this);
      console.log('the form will send ' + JSON.stringify(data, null, 4));
