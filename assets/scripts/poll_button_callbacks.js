@@ -234,7 +234,7 @@ var votePollCb = function (error, data) {
     $(".user-messages").html("<strong>Error! Poll create fail!</strong>");
     return;
   }
-  console.log('successful vote data is ' + JSON.stringify(data, null, 4));
+  console.log('successful returned vote data is ' + JSON.stringify(data, null, 4));
 
   pollAnswer.answer = data.answer;
 
@@ -243,6 +243,47 @@ var votePollCb = function (error, data) {
   // poll.options = data.options;
 
   $('.user-messages').html('<p>Successful Vote! Your vote was ' + pollAnswer.answer + '</p>');
+
+};
+
+var resultsAggCb = function (error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Poll listing fail!</strong>");
+    return;
+  }
+
+  console.log('the retrieved aggregation is ' + JSON.stringify(data, null, 4));
+
+
+ //  pollAnswer.pollID = data[0]["_id"];
+ //  poll.answer = data[0].;
+ //  poll.options[0] = data[0].options[0];
+ //  poll.owner_id = data[0].owner_id;
+ //  console.log("poll id is: " + poll.id)
+ //  console.log("data[0]: " + data[0]);
+ //  console.log("data.title: " + data[0].title);
+ //  console.log("data.owner_id: " + data[0].owner_id);
+ //  console.log("data.options[0]: " + data[0].options[0]);
+
+
+ // $('.vote-poll-container').fadeIn().removeClass('hidden');
+ // $('.render-poll-title').html(poll.title);
+
+ //  $('.option-one').val(poll.options[0]);
+ //  $('.option-two').val(poll.options[1]);
+ //  $('.option-three').val(poll.options[2]);
+ //  $('.option-four').val(poll.options[3]);
+ //  $('.option-five').val(poll.options[4]);
+
+
+
+ //  $('#option-one').html(poll.options[0]);
+ //  $('#option-two').html(poll.options[1]);
+ //  $('#option-three').html(poll.options[2]);
+ //  $('#option-four').html(poll.options[3]);
+ //  $('#option-five').html(poll.options[4]);
+ //  $('#rendered-poll').attr('data-currentpollid', poll.id);
 
 };
 

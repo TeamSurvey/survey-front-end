@@ -75,10 +75,10 @@ var poll_api = {
     }, callback);
   },
 
-  showPollResults: function(id, callback) {
+  resultsAgg: function(data, callback) {
     this.ajax({
       method: 'GET',
-      url: this.url + '/pollAnswers/' + id,
+      url: this.url + '/pollAnswers/' + data,
     }, callback);
   },
 

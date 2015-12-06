@@ -166,7 +166,7 @@ $(document).ready(function() {
       answer: value
     };
 
-    console.log('the form will send ' + JSON.stringify(data, null, 4));
+    console.log('the form will send this vote ' + JSON.stringify(data, null, 4));
 
     poll_api.votePoll(data, votePollCb);
 
@@ -178,13 +178,14 @@ $(document).ready(function() {
     console.log('clicked');
 
     //  console.log('the form will send ' + JSON.stringify(data, null, 4));
+    var pollID = $('#rendered-poll').attr('data-currentpollid');
+    console.log("poll id is: " + pollID);
 
-    // poll_api.showPollResults(id, showPollResultsCb);
+    poll_api.resultsAgg(pollID, resultsAggCb);
 
   // km add jQuery animation
   $('#poll-results-container').fadeIn().removeClass('hidden');
   });
-
 
   // delete poll event handler
   $('#delete').on('click', function(e) {
