@@ -255,6 +255,20 @@ var resultsAggCb = function (error, data) {
 
   console.log('the retrieved aggregation is ' + JSON.stringify(data, null, 4));
 
+ $('.render-poll-results').html(poll.title);
+
+  $('.result01').html(data[0].count);
+  // $('.result02').html(data[0].count);
+  // $('.result03').html(data[0].count);
+  // $('.result04').html(data[0].count);
+  // $('.result05').html(data[0].count);
+
+
+  $('#answer01').html(poll.options[0]);
+  $('#answer02').html(poll.options[1]);
+  $('#answer03').html(poll.options[2]);
+  $('#answer04').html(poll.options[3]);
+  $('#answer05').html(poll.options[4]);
 
  //  pollAnswer.pollID = data[0]["_id"];
  //  poll.answer = data[0].;
@@ -268,22 +282,9 @@ var resultsAggCb = function (error, data) {
 
 
  // $('.vote-poll-container').fadeIn().removeClass('hidden');
- // $('.render-poll-title').html(poll.title);
-
- //  $('.option-one').val(poll.options[0]);
- //  $('.option-two').val(poll.options[1]);
- //  $('.option-three').val(poll.options[2]);
- //  $('.option-four').val(poll.options[3]);
- //  $('.option-five').val(poll.options[4]);
 
 
 
- //  $('#option-one').html(poll.options[0]);
- //  $('#option-two').html(poll.options[1]);
- //  $('#option-three').html(poll.options[2]);
- //  $('#option-four').html(poll.options[3]);
- //  $('#option-five').html(poll.options[4]);
- //  $('#rendered-poll').attr('data-currentpollid', poll.id);
 
 };
 
