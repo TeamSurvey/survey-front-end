@@ -179,7 +179,8 @@ $(document).ready(function() {
     // var data = form2object(this);
      console.log('the form will send ' + JSON.stringify(data, null, 4));
 
-    // poll_api.votePoll(data, votePollCb);
+    poll_api.votePoll(data, votePollCb);
+
     $('.user-messages').html('<p>Successful poll vote</p>');
   });
 

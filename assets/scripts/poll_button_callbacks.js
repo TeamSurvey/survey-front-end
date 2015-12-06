@@ -236,32 +236,13 @@ var votePollCb = function (error, data) {
   }
   console.log('successful vote data is ' + JSON.stringify(data, null, 4));
 
-  // pollAnswer.pollID = data["_id"];
+  pollAnswer.answer = data.answer;
 
   // console.log("poll id is: " + poll.id)
   // pollAnswer.id = data.title;
   // poll.options = data.options;
 
-
-  // $('#poll-creation-container').attr('data-pollid', poll.id);
-
-  //ben edits end
-
-  // lcn unique URL add
-  // poll_url = (url + "polls/" + data["_id"]);
-  // change url to localhost:5000 for testing
-  // poll_url = (url + "#" + data["_id"]);
-
-  // console.log('poll_url is ' + poll_url);
-
-  // var newPollLink = $('<li><a href="' + poll_url + '" data-poll-id="' + data["_id"] + '" class="load-poll">' + data.title + '</a></li>');
-
-  // // km add jQuery animation
-  // $('#user-polls').fadeIn().removeClass('hidden')
-
-  // $('#poll-list').append(newPollLink);
-
-  $('.user-messages').html('<p>Successful Vote!</p>');
+  $('.user-messages').html('<p>Successful Vote! Your vote was ' + pollAnswer.answer + '</p>');
 
 };
 
