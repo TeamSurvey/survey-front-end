@@ -17,6 +17,11 @@ var poll = {
 };
 //ben changes end
 
+var pollAnswer = {
+  pollID: null,
+  answer: null
+};
+
 // for poplulating the poll content into the div
 var createdPollsHTML = function(poll) {
   createdPollsList.append('<div id=' + poll.id + ' class="poll-posts usr-posts"><h3>' + poll.title + '</h3><p>' + poll.description +'</p><p> poll id: '+ poll.id +'</p><p> user id: '+ poll.user_id +'</p><button class="delete-poll">Delete this listing</button></div>');
@@ -220,8 +225,43 @@ var deletePollCb = function (error, data) {
   // find li by data attribute, delete that li in the 'your polls list and hide the rendered survey container? If so, do in click handler js section'
 
   $(".user-messages").html("<strong>Poll deletion success!</strong>");
+};
+
+// createPoll callback
+var votePollCb = function (error, data) {
+  if (error) {
+    console.error(error);
+    $(".user-messages").html("<strong>Error! Poll create fail!</strong>");
+    return;
+  }
+  console.log('successful vote data is ' + JSON.stringify(data, null, 4));
+
+  // pollAnswer.pollID = data["_id"];
+
+  // console.log("poll id is: " + poll.id)
+  // pollAnswer.id = data.title;
+  // poll.options = data.options;
 
 
+  // $('#poll-creation-container').attr('data-pollid', poll.id);
+
+  //ben edits end
+
+  // lcn unique URL add
+  // poll_url = (url + "polls/" + data["_id"]);
+  // change url to localhost:5000 for testing
+  // poll_url = (url + "#" + data["_id"]);
+
+  // console.log('poll_url is ' + poll_url);
+
+  // var newPollLink = $('<li><a href="' + poll_url + '" data-poll-id="' + data["_id"] + '" class="load-poll">' + data.title + '</a></li>');
+
+  // // km add jQuery animation
+  // $('#user-polls').fadeIn().removeClass('hidden')
+
+  // $('#poll-list').append(newPollLink);
+
+  $('.user-messages').html('<p>Successful Vote!</p>');
 
 };
 

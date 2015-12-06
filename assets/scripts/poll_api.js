@@ -66,10 +66,12 @@ var poll_api = {
     }, callback);
   },
 
-  votePoll: function(id, callback) {
+  votePoll: function(data, callback) {
     this.ajax({
       method: 'POST',
-      url: this.url + '/pollAnswers/' + id,
+      url: this.url + '/pollAnswers',
+      contentType: 'application/json; charset=utf-8',
+      data: JSON.stringify(data),
     }, callback);
   },
 
