@@ -4,7 +4,7 @@
 
 var poll_api = {
   pollWatcher: null,
-  url: 'http://localhost:3000',
+  url: 'https://hidden-springs-2370.herokuapp.com',
 
   ajax: function(config, cb) {
     $.ajaxSetup({
