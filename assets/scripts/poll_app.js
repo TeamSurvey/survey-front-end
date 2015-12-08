@@ -10,25 +10,27 @@ $(document).ready(function() {
   // check for url with hash that is a number
   var browserHash = location.hash;
 
-  // exclude a hash containing #login and #register,
-  // split the hash at the '#' into an array, and
-  // use the string at the 1st index as the pollID to load
-  if (browserHash !== '#login' && browserHash !== '#register') {
-      console.log('the hash part is: '+ browserHash);
-      var splitHash = browserHash.split('#');
-      var pollID_to_load = splitHash[1];
+  if (browserHash) {
+    // exclude a hash containing #login and #register,
+    // split the hash at the '#' into an array, and
+    // use the string at the 1st index as the pollID to load
+    if (browserHash !== '#login' && browserHash !== '#register') {
+        console.log('the hash part is: '+ browserHash);
+        var splitHash = browserHash.split('#');
+        var pollID_to_load = splitHash[1];
 
-      console.log(splitHash);
-      console.log(pollID_to_load);
+        console.log(splitHash);
+        console.log(pollID_to_load);
 
-      // do a showPoll GET request
-      // load the data in a rendered poll
-      poll_api.showPoll(pollID_to_load, showPollCb);
+        // do a showPoll GET request
+        // load the data in a rendered poll
+        poll_api.showPoll(pollID_to_load, showPollCb);
+    }
+
   }
 
 
 
-  // if browser hash === numbers, slice off has and put number into var and send as a get request
 
   // animate on register/login containers
   $('.register-a').on('click', function() {
@@ -54,7 +56,6 @@ $(document).ready(function() {
   $('.user-messages').on('click', '.create-new', function() {
 
     $('#poll-creation-container').fadeIn().removeClass('hidden');
-    // $('.user-messages').fadeOut();
 
   });
 
@@ -120,10 +121,6 @@ $(document).ready(function() {
 
 
 
-  // handlers requiring authentication
-
-
-
   // create new poll handler
   $('#create-poll').on('submit', function(e) {
     e.preventDefault();
@@ -137,6 +134,8 @@ $(document).ready(function() {
     // On submit, msg fades out, create form fades out, message with URL (let's vote on it) fades in, GET request created poll data, Li with a-tag of poll w data-poll-id fades in poll list ul, poll container fades up, dates populated in (for each)? Buttons populate on.
 
   });
+
+
 
   // edit poll title handler
   $('#edit-poll').on('submit', function(e) {
