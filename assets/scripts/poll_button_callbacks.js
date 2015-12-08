@@ -4,7 +4,7 @@
 // var url = 'http://localhost:3000/'; //CHANGE TO GH PAGES URL
 
 // km tweaks
-var url = 'http://teamsurvey.github.io/'; //CHANGE TO GH PAGES URL
+var url = 'http://teamsurvey.github.io'; //CHANGE TO GH PAGES URL
 var poll_url = "";
 
 var createdPoll = $('#rendered-poll');
@@ -120,7 +120,7 @@ var createPollCb = function (error, data) {
 
 
   // km change url to localhost:5000 for testing and added hash
-  poll_url = (url + "#" + data["_id"]);
+  poll_url = (url + "/#" + data["_id"]);
 
   console.log('poll_url is ' + poll_url);
 
