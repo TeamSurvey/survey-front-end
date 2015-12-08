@@ -2,6 +2,8 @@
 
 // lcn adds
 // var url = 'http://localhost:3000/'; //CHANGE TO GH PAGES URL
+
+// km tweaks
 var url = 'http://localhost:5000/'; //CHANGE TO GH PAGES URL
 var poll_url = "";
 
@@ -115,7 +117,9 @@ var createPollCb = function (error, data) {
 
   // lcn unique URL add
   // poll_url = (url + "polls/" + data["_id"]);
-  // change url to localhost:5000 for testing
+
+
+  // km change url to localhost:5000 for testing and added hash
   poll_url = (url + "#" + data["_id"]);
 
   console.log('poll_url is ' + poll_url);
@@ -128,6 +132,8 @@ var createPollCb = function (error, data) {
   $('#poll-list').append(newPollLink);
 
   $(".user-messages").html('<p>Your survey can be found here: <a href="' + poll_url + '">' + poll_url + '</a></p>');
+
+    $('#create-edit-del-button-dashboard').fadeIn().removeClass('hidden')
 
 };
 
@@ -145,52 +151,26 @@ var showPollCb = function (error, data) {
    // seems that the returned object is wrapped in an array, so all
    // keys need to be include the data[0]
   poll.id = data[0]["_id"];
-  poll.title = data[0].title;
-  poll.options[0] = data[0].options[0];
-  poll.owner_id = data[0].owner_id;
-  console.log("poll id is: " + poll.id)
-  console.log("data[0]: " + data[0]);
-  console.log("data.title: " + data[0].title);
-  console.log("data.owner_id: " + data[0].owner_id);
-  console.log("data.options[0]: " + data[0].options[0]);
 
 
- // km add jQuery animation
- $('.vote-poll-container').fadeIn().removeClass('hidden');
- $('.render-poll-title').html(poll.title);
+// km add jQuery
+  $('.vote-poll-container').fadeIn().removeClass('hidden');
+  $('.render-poll-title').html(data[0].title);
 
-  $('.option-one').val(poll.options[0]);
-  $('.option-two').val(poll.options[1]);
-  $('.option-three').val(poll.options[2]);
-  $('.option-four').val(poll.options[3]);
-  $('.option-five').val(poll.options[4]);
+  $('.option-one').val(data[0].options[0]);
+  $('.option-two').val(data[0].options[1]);
+  $('.option-three').val(data[0].options[2]);
+  $('.option-four').val(data[0].options[3]);
+  $('.option-five').val(data[0].options[4]);
 
 
 // km changing class references to id refs
-  $('#option-one').html(poll.options[0]);
-  $('#option-two').html(poll.options[1]);
-  $('#option-three').html(poll.options[2]);
-  $('#option-four').html(poll.options[3]);
-  $('#option-five').html(poll.options[4]);
+  $('#option-one').html(data[0].options[0]);
+  $('#option-two').html(data[0].options[1]);
+  $('#option-three').html(data[0].options[2]);
+  $('#option-four').html(data[0].options[3]);
+  $('#option-five').html(data[0].options[4]);
   $('#rendered-poll').attr('data-currentpollid', poll.id);
-
-};
-
-
-
-// listAllPolls callback
-var listAllPollsCb = function (error, data) {
-  if (error) {
-    console.error(error);
-    $(".user-messages").html("<strong>Error! Poll listing fail!</strong>");
-    return;
-  }
-  // grab polls from backend
-  var polls = data.polls;
-
-  // polls.forEach(function(poll){
-  //   listPollHTML(poll);
-  // });
 
 };
 
@@ -209,7 +189,7 @@ var editPollCb = function (error, data) {
 
   console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
 
-  $('.load-poll').val(data.pollTitle);
+  $('.load-poll').val(pollTitle);
 
   $(".user-messages").html("<strong>Poll updated!</strong>");
 
@@ -240,10 +220,6 @@ var votePollCb = function (error, data) {
 
   pollAnswer.answer = data.answer;
 
-  // console.log("poll id is: " + poll.id)
-  // pollAnswer.id = data.title;
-  // poll.options = data.options;
-
   $('.user-messages').html('<p>Successful Vote! Your vote was ' + pollAnswer.answer + '</p>');
 
 };
@@ -257,7 +233,12 @@ var resultsAggCb = function (error, data) {
 
   console.log('the retrieved aggregation is ' + JSON.stringify(data, null, 4));
 
- $('.render-poll-results').html(poll.title);
+  $('#answer01').html(data[0]["_id"]);
+  $('#answer02').html(data[1]["_id"]);
+  $('#answer03').html(data[2]["_id"]);
+  $('#answer04').html(data[3]["_id"]);
+  $('#answer05').html(data[4]["_id"]);
+
 
   $('.result01').html(data[0].count);
   $('.result02').html(data[1].count);
@@ -266,11 +247,7 @@ var resultsAggCb = function (error, data) {
   $('.result05').html(data[4].count);
 
 
-  $('#answer01').html(poll.options[0]);
-  $('#answer02').html(poll.options[1]);
-  $('#answer03').html(poll.options[2]);
-  $('#answer04').html(poll.options[3]);
-  $('#answer05').html(poll.options[4]);
+
 
 };
 

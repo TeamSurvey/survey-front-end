@@ -1,8 +1,34 @@
 'use strict';
 
 
-
 $(document).ready(function() {
+
+  // km uniqueURL parse feature
+
+  // grab pollID from uniqueURL
+
+  // check for url with hash that is a number
+  var browserHash = location.hash;
+
+  // exclude a hash containing #login and #register,
+  // split the hash at the '#' into an array, and
+  // use the string at the 1st index as the pollID to load
+  if (browserHash !== '#login' && browserHash !== '#register') {
+      console.log('the hash part is: '+ browserHash);
+      var splitHash = browserHash.split('#');
+      var pollID_to_load = splitHash[1];
+
+      console.log(splitHash);
+      console.log(pollID_to_load);
+
+      // do a showPoll GET request
+      // load the data in a rendered poll
+      poll_api.showPoll(pollID_to_load, showPollCb);
+  }
+
+
+
+  // if browser hash === numbers, slice off has and put number into var and send as a get request
 
   // animate on register/login containers
   $('.register-a').on('click', function() {
@@ -127,7 +153,7 @@ $(document).ready(function() {
 
     poll_api.editPoll(id, data, editPollCb);
 
-    // $(this).closest('#poll-edit-container').fadeOut();
+    $(this).closest('#poll-edit-container').fadeOut();
 
   });
 
@@ -135,9 +161,7 @@ $(document).ready(function() {
 
 // km -- begin showPoll handler
 
-
   // showPoll handler for user poll list (READ)
-    // $('#show-poll').on('submit', function(e) {
   $('#poll-list').on('click', '.load-poll', function(e) {
     e.preventDefault();
     console.log('clicked');
@@ -177,7 +201,6 @@ $(document).ready(function() {
   $('#vote-results-button-dashboard').on('click', '#results', function() {
     console.log('clicked');
 
-    //  console.log('the form will send ' + JSON.stringify(data, null, 4));
     var pollID = $('#rendered-poll').attr('data-currentpollid');
     console.log("poll id is: " + pollID);
 
