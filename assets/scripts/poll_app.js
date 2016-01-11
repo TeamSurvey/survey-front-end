@@ -1,5 +1,6 @@
 'use strict';
 
+var currUser;
 
 $(document).ready(function() {
 
@@ -95,6 +96,9 @@ $(document).ready(function() {
     e.preventDefault();
     var credentials = form2object(this);
     console.log(credentials);
+
+    currUser = $('#login').find('input[name="username"]').val();
+
     poll_api.login(credentials, loginCb);
 
     // hide login container
@@ -102,10 +106,11 @@ $(document).ready(function() {
 
     // fade up user-messages and create-poll button
     $('.user-messages').fadeIn();
-    $('.user-messages').html('<p>Welcome, ' + credentials.username + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
+    $('.user-messages').text('Logging in. Please wait.');
+    // $('.user-messages').html('<p>Welcome, ' + credentials.username + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
 
-    // add user feedback
-    $('.messages-container h4').html('Welcome, ' + credentials.username);
+    // // add user feedback
+    // $('.messages-container h4').html('Welcome, ' + credentials.username);
     $('.wrapper').css("background-image", "url(assets/images/duck01_loRes_sketch.jpg");
   }).fadeIn('fast');
 

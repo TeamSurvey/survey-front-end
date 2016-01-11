@@ -4,8 +4,8 @@
 // var url = 'http://localhost:3000'; //CHANGE TO GH PAGES URL
 
 // km tweaks
-var url = 'http://teamsurvey.github.io/survey-front-end'; //CHANGE TO GH PAGES URL
-// var url = 'http://localhost:5000'; //CHANGE TO GH PAGES URL
+// var url = 'http://teamsurvey.github.io/survey-front-end'; //CHANGE TO GH PAGES URL
+var url = 'http://localhost:5000'; //CHANGE TO GH PAGES URL
 var poll_url = "";
 
 var createdPoll = $('#rendered-poll');
@@ -75,6 +75,7 @@ var loginCb = function (error, data) {
     return;
   } else {
     console.log(JSON.stringify(data, null, 4));
+    $('.user-messages').html('<p>Welcome, ' + currUser + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
   }
 
 }; // end of login callback;
