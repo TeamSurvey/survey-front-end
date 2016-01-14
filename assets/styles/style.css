@@ -55,7 +55,8 @@ h1 {
     padding: 5px 10px;
     position: relative;
     float: left;
-    width: 130px;
+    display: none;
+    /*width: 130px;*/
 
 }
 
@@ -151,10 +152,6 @@ button:hover, input[type="submit"]:hover {
 button:active, input[type="submit"]:active {
   background-color: orange;
   color: #fff;
-}
-
-button.create-new {
-  width: 90%;
 }
 
 label: {
@@ -277,7 +274,7 @@ label: {
 /* button dashboard 01 */
 #create-edit-del-button-dashboard {
   position: absolute;
-  width: 333px;
+  /*width: 333px;*/
   top: 16px;
   right: 2%;
   font-size: .8em;
@@ -508,9 +505,9 @@ label: {
 
 
 @media only screen and (min-width: 481px) and (max-width: 690px) {
-/*  h1 {
-    margin-left: 1%;
-  }*/
+  h1 {
+    display: none;
+  }
 
   #create-edit-del-button-dashboard {
     margin: 0 2%;
@@ -566,43 +563,9 @@ label: {
     height: 120px;
   }
 
+
   h1 {
-    /*position: absolute;*/
-    /*float:left;*/
-    width: 130px;
-    margin: 5px 1%;
-    padding-bottom: 20px;
-  }
-
-/*  #poll-creation-container, #poll-edit-container, #user-polls, .vote-poll-container, #poll-results-container {
-    top: 10px;
-    padding: 10px 10px 0;
-    background-color: rgba(0,0,0,0.7);
-    overflow: auto;
-  }
-
-  #poll-creation-container form, #poll-edit-container form, .vote-poll-container ul{
-    position: relative;
-    width: 85%;
-    padding: 10px 5px;
-  }*/
-
-
-  #create-edit-del-button-dashboard {
-    position: absolute;
-    top: 46px;
-    left: 0;
-    right: 0%;
-    margin: 0 1%;
-    width: 312px;
-  }
-
-  #create-edit-del-button-dashboard li  {
-    /*float: none;*/
-    display: inline-block;
-    padding: 5px;
-    border: 1px solid #fff;
-    background-color: rgba(0,0,0,0.5);
+    display: block;
   }
 
 
@@ -619,12 +582,7 @@ label: {
   }
 
   .hero {
-    position: fixed;
-    z-index: 10;
-    bottom: 50px;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
+    display: none;
   }
 
   .duck-intro {

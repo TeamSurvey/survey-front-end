@@ -76,8 +76,8 @@ var loginCb = function (error, data) {
   } else {
     console.log(JSON.stringify(data, null, 4));
     $('.user-messages').html('<p>Welcome, ' + currUser + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
-    $('.hero').fadeOut(300);
-    $('h1').fadeIn(300).removeClass('hidden');
+    $('.hero > p').fadeOut(300);
+    // $('h1').fadeIn(300).removeClass('hidden');
   }
 
 }; // end of login callback;
