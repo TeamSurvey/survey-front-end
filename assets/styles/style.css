@@ -154,6 +154,10 @@ button:active, input[type="submit"]:active {
   color: #fff;
 }
 
+button.create-new {
+  width: 90%;
+}
+
 label: {
   margin-top: 5px;
 }
