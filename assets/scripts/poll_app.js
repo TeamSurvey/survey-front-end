@@ -226,11 +226,12 @@ $(document).ready(function() {
     e.preventDefault();
     console.log('clicked');
 
-    var getpollID= $(this).closest('.load-poll').data('poll-id');
+    var getpollID = $(e.target).data('poll-id');
 
     console.log("poll id is: " + getpollID);
 
-    $(this).closest('.load-poll').remove();
+    // $(this).closest('.load-poll').remove();
+    $(e.target).remove();
 
     poll_api.deletePoll(getpollID, deletePollCb);
 
