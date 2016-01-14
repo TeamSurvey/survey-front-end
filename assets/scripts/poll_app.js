@@ -222,11 +222,11 @@ $(document).ready(function() {
 
 
   // delete poll event handler
-  $('#user-polls').on('click', '.delete-poll', function(e) {
+  $('#user-polls').on('click', '.fa-trash', function(e) {
     e.preventDefault();
     console.log('clicked');
 
-    var getpollID= $(this).closest('.load-poll').attr('data-pollid');
+    var getpollID= $(this).closest('.load-poll').data('poll-id');
 
     console.log("poll id is: " + getpollID);
 
