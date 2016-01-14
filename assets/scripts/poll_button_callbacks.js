@@ -127,7 +127,7 @@ var createPollCb = function (error, data) {
 
   $('#poll-list').append(newPollLink);
 
-  $(".user-messages").html('<p>Your survey can be found here: <button><a href="' + poll_url + '"> View Your Survey </a></button></p>');
+  $(".user-messages").html('<p>Your survey can be found here: <button><a href="' + poll_url + '" target="_blank"> View Your Survey </a></button></p>');
 
   $('#create-edit-del-button-dashboard').fadeIn(300).removeClass('hidden');
 
@@ -187,7 +187,7 @@ var editPollCb = function (error, data) {
 
   console.log('the retrieved poll is ' + JSON.stringify(data, null, 4));
 
-  $('.load-poll').val(pollTitle);
+  $('.load-poll').text(pollTitle);
 
   $(".user-messages").html("<strong>Poll updated!</strong>");
 
