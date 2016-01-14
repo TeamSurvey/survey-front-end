@@ -21,13 +21,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13262b', end
 
 }
 
-a.login-a, a.register-a, a.login-a2, a.register-a2 {
+a {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #fff;
+}
+
+a.user-polls, a.login-a, a.register-a, a.login-a2, a.register-a2 {
     text-decoration: none;
     color: rgba(0,255,0,0.8);
 }
 
-a.login-a:hover, a.register-a:hover, a.login-a2:hover, a.register-a2:hover {
-    text-decoration: none;
+a.user-polls:hover, a.login-a:hover, a.register-a:hover, a.login-a2:hover, a.register-a2:hover {
     color: orange;
 }
 
@@ -120,6 +131,9 @@ input {
 }
 
 button, input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
   width: 100%;
   border: 0;
   border-radius: 5px;
@@ -169,6 +183,7 @@ label: {
 .hero {
   position: relative;
   z-index: 10;
+  left: 5%;
   margin: 0px auto;
   padding: 5px 5px 0px;
   color: white;
@@ -322,10 +337,10 @@ label: {
 
 .vote-poll-n-reslt-holder {
   position: absolute;
-  left: 0;
-  top: 180px;
+  left: 1.2%;
+  top: 210px;
   /*right: 0;*/
-  margin-right: 2%;
+  margin: 0 2%;
   z-index: 1600;
 
 }
@@ -333,7 +348,7 @@ label: {
 
 .vote-poll-container, #poll-results-container {
   position: relative;
-  margin: 0 auto 20px;
+  margin: 0 1%;
   float: left;
   top: 0px;
   padding: 10px 10px 0;

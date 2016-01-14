@@ -158,18 +158,20 @@ $(document).ready(function() {
   });
 
 
+  // disabling this functionality to allow the anchor tags to perform the READ function with a unique URL
 
-  // showPoll handler for user poll list (READ)
-  $('#poll-list').on('click', '.load-poll', function(e) {
-    e.preventDefault();
-    console.log('clicked');
+  // // showPoll handler for user poll list (READ)
+  // $('#poll-list').on('click', '.load-poll', function(e) {
 
-    var id = $(this).closest('a').data('poll-id');
-    console.log('poll id is ' + id);
+  //   // e.preventDefault();
+  //   // console.log('clicked');
 
-    poll_api.showPoll(id, showPollCb);
+  //   // var id = $(this).closest('a').data('poll-id');
+  //   // console.log('poll id is ' + id);
 
-  });
+  //   // poll_api.showPoll(id, showPollCb);
+
+  // });
 
 
   // vote button click handler (put with AJAX request section)
