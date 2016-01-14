@@ -127,7 +127,7 @@ var createPollCb = function (error, data) {
 
   $('#poll-list').append(newPollLink);
 
-  $(".user-messages").html('<p>Your survey can be found here: <button><a href="' + poll_url + '" target="_blank"> View Your Survey </a></button></p>');
+  $(".user-messages").html('<p>Success! Survey created. Click on the link below to load your survey.</p>');
 
   $('#create-edit-del-button-dashboard').fadeIn(300).removeClass('hidden');
 
