@@ -226,6 +226,13 @@ label: {
 
 
 
+.poll-list li {
+  display: block;
+  margin: 5px 0;
+}
+
+
+
 
 .crt-poll-n-msg-holder {
   position: fixed;
@@ -313,11 +320,13 @@ label: {
 }
 
 .vote-poll-n-reslt-holder {
-  position: relative;
-  /*float: right;*/
+  position: absolute;
+  left: 0;
   top: 60px;
   /*right: 0;*/
   margin-right: 2%;
+  z-index: 1600;
+
 }
 
 
