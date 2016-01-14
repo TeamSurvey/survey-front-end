@@ -4,8 +4,8 @@
 // var url = 'http://localhost:3000'; //CHANGE TO GH PAGES URL
 
 // km tweaks
-// var url = 'http://teamsurvey.github.io/survey-front-end'; //CHANGE TO GH PAGES URL
-var url = 'http://localhost:5000'; //CHANGE TO GH PAGES URL
+var url = 'http://teamsurvey.github.io/survey-front-end';
+// var url = 'http://localhost:5000'; //CHANGE TO GH PAGES URL
 var poll_url = "";
 
 var createdPoll = $('#rendered-poll');
