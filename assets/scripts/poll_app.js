@@ -231,7 +231,7 @@ $(document).ready(function() {
     console.log("poll id is: " + getpollID);
 
     // $(this).closest('.load-poll').remove();
-    $(e.target).remove();
+    $(this).closest('.load-poll').remove();
 
     poll_api.deletePoll(getpollID, deletePollCb);
 
