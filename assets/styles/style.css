@@ -226,11 +226,11 @@ label: {
 
 
 
-.poll-list li {
+/*ul.poll-list li {
   display: block;
   margin: 5px 0;
 }
-
+*/
 
 
 
@@ -378,7 +378,7 @@ label: {
 }
 
 #user-polls li {
-  display: inline-block;
+  display: block;
   padding: 5px;
 }
 
