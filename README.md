@@ -65,13 +65,6 @@ Git is a free and open source distributed version control system designed to han
 - [Initial ERM Diagram](http://imgur.com/iZBmK9U)
 - [Final ERM Diagram](http://i.imgur.com/6Kgo7Fj.jpg)
 
-
-##Unsolved Issues
-
-- Can successfully log-in, however cannot successfully submit a poll when using the app via mobile Safari on an iPad using iOS8.
-- The mobile phone UX is incomplete... CSS media queries are still in progress.
-
-
 ##Major Hurdles
 
 - We kept vacillating between different data models, which yielded not only a bit of stress, but also significant learning. Our initial data model utilized one model which included both answers and votes. We eventually decided to create two data models that stored polls and poll answers (which would then be aggregated by the answer chosen in the poll model), respectively. This second option was chosen as it was our intent to write this app to leverage the strengths of Mongo, one of which is the ability to create many documents very quickly. We also recognized that this gave us the ability to extend functionality to creat surveys instead of single question polls, which we had identified as a stretch goal.
@@ -85,7 +78,16 @@ Git is a free and open source distributed version control system designed to han
 - Group communication
 - Javascript familiarity - especially with respect to binding data to dynamically-generated elements and traversing the DOM!
 
+##Unsolved Issues
+
+- Logging in to the server as a user results in a 5-second delay. Is this a Passport issue?
+- If one of the poll options receives no votes, that option's text is displayed as the poll answer's placeholder text. Need to ensure data is passed to all answer field categories regardless of a zero vote count.
+- Can successfully log-in, however cannot successfully submit a poll when using the app via mobile Safari on an iPad using iOS8.
+- The mobile phone UX is incomplete... CSS media query are still in progress.
+
+
 ##Future Additions
 
+- HTML file needs second pass to double-check web accessibility best practices have been met
 - RWD layout for mobile
 - Real-time poll results
