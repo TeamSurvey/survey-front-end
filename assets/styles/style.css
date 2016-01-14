@@ -21,12 +21,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13262b', end
 
 }
 
-a {
+a.login-a, a.register-a, a.login-a2, a.register-a2 {
     text-decoration: none;
     color: rgba(0,255,0,0.8);
 }
 
-a:hover {
+a.login-a:hover, a.register-a:hover, a.login-a2:hover, a.register-a2:hover {
     text-decoration: none;
     color: orange;
 }
@@ -169,11 +169,12 @@ label: {
 .hero {
   position: relative;
   z-index: 10;
-  margin: 10% auto;
+  margin: 0px auto;
   padding: 5px 5px 0px;
   color: white;
   overflow: auto;
   text-align: center;
+  /*border: 1px solid white*/;
 }
 
 .duck-intro {
@@ -253,7 +254,7 @@ label: {
   height: 60px;
   margin: 0px auto 20px;
   padding: 10px;
-  background-color: rgba(49,169,200,0.3);
+  background-color: rgba(49,169,200,0.6);
 }
 
 
@@ -303,7 +304,7 @@ label: {
   position: relative;
   margin: 0 auto;
   float: right;
-  top: 0px;
+  top: 30px;
   padding: 10px 10px 0;
   background-color: rgba(0,0,0,0.7);
   overflow: auto;
@@ -322,7 +323,7 @@ label: {
 .vote-poll-n-reslt-holder {
   position: absolute;
   left: 0;
-  top: 60px;
+  top: 180px;
   /*right: 0;*/
   margin-right: 2%;
   z-index: 1600;
@@ -334,7 +335,7 @@ label: {
   position: relative;
   margin: 0 auto 20px;
   float: left;
-  top: 100px;
+  top: 0px;
   padding: 10px 10px 0;
   background-color: rgba(0,0,0,0.7);
   overflow: auto;

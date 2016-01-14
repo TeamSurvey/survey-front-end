@@ -14,8 +14,8 @@ $(document).ready(function() {
     // split the hash at the '#' into an array, and
     // use the string at the 1st index as the pollID to load
     if (browserHash !== '#login' && browserHash !== '#register') {
-        $('.hero').fadeOut(300);
-        $('h1').fadeIn(300).removeClass('hidden');
+        $('.hero > p').fadeOut(300);
+        // $('h1').fadeIn(300).removeClass('hidden');
         console.log('the hash part is: '+ browserHash);
         var splitHash = browserHash.split('#');
         var pollID_to_load = splitHash[1];
