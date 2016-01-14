@@ -2,9 +2,9 @@
 
 This project was created by [Kathleen McMahon](https://github.com/resource11), [Ben Spencer](https://github.com/baz1389), and [Laurisa Neuwirth](https://github.com/LaurisaNeuwirth).
 
-**NOTE: This is still a *work in progress* and is not a finished product**
+**NOTE: This is still a *work in progress* **
 
-Deployed fron-end URL: http://teamsurvey.github.io/survey-front-end
+Deployed front-end URL: http://teamsurvey.github.io/survey-front-end
 
 To see the **back-end** repository, click [here](https://github.com/TeamSurvey/survey-back-end).
 
@@ -17,7 +17,7 @@ This single-page application (SPA) can be used to create custom polls.
 
 ###Node.js
 
-Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
 ###Express:
 
@@ -59,18 +59,18 @@ Git is a free and open source distributed version control system designed to han
 
 ##Approach
 
-
 - [Wireframes](http://i.imgur.com/bHvabIp.jpg)
 - [User Journey](http://imgur.com/iGlESh4)
 - [User Stories and Work Process](https://trello.com/b/V36WDCbW/survey-says)
 - [Initial ERM Diagram](http://imgur.com/iZBmK9U)
 - [Final ERM Diagram](http://i.imgur.com/6Kgo7Fj.jpg)
 
-##Unsolved Problems
 
-- Cannot update a poll on the front-end
-- We can display a unique poll URL but cannot currently get the URL to show anything other than JSON.
-- Cannot display poll results on the front-end (but the aggregation of votes works on the back end).
+##Unsolved Issues
+
+- Can successfully log-in, however cannot successfully submit a poll when using the app via mobile Safari on an iPad using iOS8.
+- The mobile phone UX is incomplete... CSS media queries are still in progress.
+
 
 ##Major Hurdles
 
@@ -79,13 +79,13 @@ Git is a free and open source distributed version control system designed to han
   - Due to time restraints we had to hard code various aspects just to get more features working.
 - When splitting up work as the deadline came closer, we ran into some difficult merge conflicts.
 
-##Areas of Growth
+##Growth Milestones - Improvements Achieved with:
 
 - Git control
 - Group communication
-- Javascript familiarity
+- Javascript familiarity - especially with respect to binding data to dynamically-generated elements and traversing the DOM!
 
 ##Future Additions
 
-- jQuery animations and general UX
-- Real time results
+- RWD layout for mobile
+- Real-time poll results
