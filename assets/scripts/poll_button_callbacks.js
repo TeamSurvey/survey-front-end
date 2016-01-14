@@ -78,7 +78,8 @@ var loginCb = function (error, data) {
     // $('.user-messages').html('<p>Welcome, ' + currUser + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
     $('.user-messages').html('<p>Welcome, ' + currUser + '. Create a poll!</p>');
     $('.hero > p').fadeOut(300);
-    $('.create-new').fadeIn(300).removeClass('hidden');
+    // $('.create-new').fadeIn(300).removeClass('hidden');
+    $('#create-edit-del-button-dashboard').fadeIn(300).removeClass('hidden');
   }
 
 }; // end of login callback;
@@ -130,7 +131,7 @@ var createPollCb = function (error, data) {
 
   $(".user-messages").html('<p>Success! Survey created. Click on the link below to load your survey.</p>');
 
-  $('#create-edit-del-button-dashboard').fadeIn(300).removeClass('hidden');
+  // $('#create-edit-del-button-dashboard').fadeIn(300).removeClass('hidden');
 
 
 };

@@ -98,6 +98,7 @@ p {
 header{
   position: fixed;
   top: 0;
+  min-height: 60px;
   left: 0;
   width: 100%;
   overflow: auto;
