@@ -226,7 +226,7 @@ $(document).ready(function() {
     e.preventDefault();
     console.log('clicked');
 
-    var getpollID = $(e.target).data('poll-id');
+    var getpollID = $(e.target).data('trash-id');
 
     console.log("poll id is: " + getpollID);
 
