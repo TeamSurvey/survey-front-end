@@ -4,8 +4,6 @@ var currUser;
 
 $(document).ready(function() {
 
-  // km uniqueURL parse feature
-
   // grab pollID from uniqueURL
 
   // check for url with hash that is a number
@@ -16,6 +14,8 @@ $(document).ready(function() {
     // split the hash at the '#' into an array, and
     // use the string at the 1st index as the pollID to load
     if (browserHash !== '#login' && browserHash !== '#register') {
+        $('.hero').fadeOut(300);
+        $('h1').fadeIn(300).removeClass('hidden');
         console.log('the hash part is: '+ browserHash);
         var splitHash = browserHash.split('#');
         var pollID_to_load = splitHash[1];
@@ -64,13 +64,19 @@ $(document).ready(function() {
 
  $('#create-edit-del-button-dashboard').on('click', '.create-new', function() {
     console.log('clicked');
+    $('#pollTitle').val(" ");
+    $('#pollOption01').val(" ");
+    $('#pollOption02').val(" ");
+    $('#pollOption03').val(" ");
+    $('#pollOption04').val(" ");
+    $('#pollOption05').val(" ");
     $('#poll-creation-container').fadeIn();
   });
 
 
 
   // edit poll button click handler
-  $('#create-edit-del-button-dashboard').on('click', '#edit', function() {
+  $('#create-edit-del-button-dashboard').on('click', '.edit', function() {
     console.log('clicked');
     $('#poll-edit-container').fadeIn().removeClass('hidden');
   });
@@ -101,16 +107,9 @@ $(document).ready(function() {
 
     poll_api.login(credentials, loginCb);
 
-    // hide login container
     $('.API-login').slideUp();
-
-    // fade up user-messages and create-poll button
     $('.user-messages').fadeIn();
     $('.user-messages').text('Logging in. Please wait.');
-    // $('.user-messages').html('<p>Welcome, ' + credentials.username + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
-
-    // // add user feedback
-    // $('.messages-container h4').html('Welcome, ' + credentials.username);
     $('.wrapper').css("background-image", "url(assets/images/duck01_loRes_sketch.jpg");
   }).fadeIn('fast');
 
@@ -131,12 +130,9 @@ $(document).ready(function() {
     e.preventDefault();
 
     var data = form2object(this);
-     console.log('the form will send ' + JSON.stringify(data, null, 4));
+    console.log('the form will send ' + JSON.stringify(data, null, 4));
 
     poll_api.createPoll(data, createPollCb);
-
-    // $(this).closest('#poll-creation-container').fadeOut();
-    // On submit, msg fades out, create form fades out, message with URL (let's vote on it) fades in, GET request created poll data, Li with a-tag of poll w data-poll-id fades in poll list ul, poll container fades up, dates populated in (for each)? Buttons populate on.
 
   });
 
@@ -163,8 +159,6 @@ $(document).ready(function() {
 
 
 
-// km -- begin showPoll handler
-
   // showPoll handler for user poll list (READ)
   $('#poll-list').on('click', '.load-poll', function(e) {
     e.preventDefault();
@@ -177,7 +171,6 @@ $(document).ready(function() {
 
   });
 
-// km -- end showPoll handler
 
   // vote button click handler (put with AJAX request section)
   $('#vote-results-button-dashboard').on('click', '#vote', function() {
@@ -210,12 +203,12 @@ $(document).ready(function() {
 
     poll_api.resultsAgg(pollID, resultsAggCb);
 
-  // km add jQuery animation
+  // add jQuery animation
   $('#poll-results-container').fadeIn().removeClass('hidden');
   });
 
   // delete poll event handler
-  $('#delete').on('click', function(e) {
+  $('.delete-poll').on('click', function(e) {
     e.preventDefault();
     console.log('clicked');
 

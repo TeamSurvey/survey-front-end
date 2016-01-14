@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="assets/styles/html5reset.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
 
 
@@ -13,8 +14,18 @@
 
 <body>
  <!-- begin header -->
-   <header>
-     <h1>Duck Poll</h1>
+   <header class="">
+     <h1 class="brand flexbox-align-center hidden">Duck Poll</h1>
+         <!-- start button dashboard -->
+    <nav id="create-edit-del-button-dashboard" class="flexbox-align-center hidden">
+      <ul class="top-nav">
+        <li type="" class="delete-poll">Delete this Poll</li>
+        <li type="" class="create-new">Create New Poll</li>
+        <li type="" class="edit">Edit Poll Title</li>
+
+      </ul>
+    </nav>
+    <!-- end button dashboard -->
    </header>
    <!-- end header -->
 
@@ -24,192 +35,196 @@
   <div class="wrapper">
 
 
-    <section class="span_4_of_12 pad-lft">
-    <!-- begin hero -->
-    <div class="hero animated zoomIn duck-intro">
-      <h2>Duck Poll</h2>
-      <h5>All it's quacked up to be.</h5>
-      <p>Ready to poll? <a href="#login" class="login-a">Waddle in</a>.</p><p>First time here? <a href="#register" class="register-a">Join the flock</a>.</p>
+    <container class="span_4_of_12 crt-poll-n-msg-holder"><!-- begin user messages box -->
+      <div class="span_12_of_12 user-messages hidden"></div>
+      <!-- end user messages box -->
+
+      <!-- begin poll creation container -->
+      <div id="poll-creation-container" class="col span_12_of_12 hidden" data-pollid="">
+        <h4>Create a poll</h4>
+        <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
+          <label for="title">Poll Question</label>
+          <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
+          <label for="option01">Option 01</label>
+          <input name="option01" type="text" placeholder="Poll response option01" id="pollOption01">
+          <label for="option02">Option 02</label>
+          <input name="option02" type="text" placeholder="Poll response option02" id="pollOption02">
+           <label for="option03">Option 03</label>
+          <input name="option03" type="text" placeholder="Poll response option03" id="pollOption03">
+          <label for="option04">Option 04</label>
+          <input name="option04" type="text" placeholder="Poll response option04" id="pollOption04">
+          <label for="option05">Option 05</label>
+          <input name="option05" type="text" placeholder="Poll response option05" id="pollOption05">
+          <input name="create" type="submit" value="Create!">
+        </form>
+      </div>
+      <!-- end poll creation container -->
+
+
+      <!-- begin user polls list -->
+      <div id="user-polls" class="col span_12_of_12 hidden">
+        <h4>Most Recent Poll</h4>
+        <ul id="poll-list"></ul>
+      </div>
+      <!-- end user polls list -->
+
+      <!-- begin poll edit container -->
+      <div id="poll-edit-container" class="col span_12_of_12 hidden">
+
+       <h4>Edit this poll</h4>
+
+       <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
+         <label for="title">Poll Title</label>
+         <input name="title" type="text" placeholder="Poll Question" id="updatePollTitle">
+         <input name="save" type="submit" value="Save!">
+       </form>
+      </div>
+      <!-- end poll edit container -->
+
+
+    </container>
+
+
+
+
+  <!-- begin hero -->
+    <section class="col span_4_of_12">
+
+      <div class="hero animated zoomIn duck-intro">
+        <h2>Duck Poll</h2>
+        <h5>All it's quacked up to be.</h5>
+        <p>Ready to poll? <a href="#login" class="login-a">Waddle in</a>.</p><p>First time here? <a href="#register" class="register-a">Join the flock</a>.</p>
+      </div>
+
+    </section>
+   <!-- end hero -->
+
+
+
+
+
+    <!-- begin register -->
+    <div class="API-register span_3_of_12 hidden">
+
+      <div class="register-login">
+        <h4>Join the Flock</h4>
+        <form id="register" enctype="multipart/form-data" charset="utf-8">
+          <label for="username">Username</label>
+          <input type="text" name="username" placeholder="username">
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="password">
+          <input type="submit" name="register" value="Join the Flock">
+        </form>
+         <p>Ready to poll? <a href="#" class="login-a2"> Waddle in.</a></p>
+      </div>
 
     </div>
-     <!-- end hero -->
-    </section>
-    <!-- begin user messages box -->
-      <div class=" span_4_of_12 right-fix user-messages hidden"></div>
-    <!-- end user messages box -->
+    <!-- end register -->
 
+    <!-- begin login -->
+    <div class="API-login span_3_of_12 hidden">
 
-
-   <!-- begin register -->
-   <div class="API-register hidden">
-     <div class="register-login">
-       <h4>Join the Flock</h4>
-       <form id="register" enctype="multipart/form-data" charset="utf-8">
-         <label for="username">Username</label>
-         <input type="text" name="username" placeholder="username">
-         <label for="password">Password</label>
-         <input type="password" name="password" placeholder="password">
-         <input type="submit" name="register" value="Join the Flock">
-       </form>
-         <p>Ready to poll? <a href="#" class="login-a2"> Waddle in.</a></p>
-     </div>
-   </div>
-   <!-- end register -->
-
-   <!-- begin login -->
-   <div class="API-login hidden">
-     <div class="register-login">
-       <h4>Waddle In</h4>
-       <form id="login" enctype="multipart/form-data" charset="utf-8">
-         <label for="username">Username</label>
-         <input name="username" type="text" placeholder="username">
-         <label for="password">Password</label>
-         <input name="password" type="password" placeholder="password">
-         <input name="login" type="submit" value="Waddle In">
-       </form>
-       <p>First time here? <a href="#" class="register-a2"> Join the flock.</a></p>
-     </div>
-   </div>
-   <!-- end login -->
-
-  <!-- start button dashboard -->
-  <div id="create-edit-del-button-dashboard" class="span_12_of_12 hidden">
-    <button type="" class="create-new">Create New Poll</button>
-
-    <button type="" id="edit">Edit Poll Title</button>
-    <button type="" id="delete">Delete this Poll</button>
-  </div>
-  <!-- end button dashboard -->
-
-
-
-
-  <div class="span_12_of_12 bottom-fix">
-     <!-- begin poll creation container -->
-     <div id="poll-creation-container" class="col span_3_of_12 hidden" data-pollid="">
-       <h4>Create a poll</h4>
-       <form id="create-poll" enctype="multipart/form-data" charset="utf-8">
-         <label for="title">Poll Question</label>
-         <input name="title" type="text" placeholder="Poll Question" id="pollTitle">
-         <label for="option01">Option 01</label>
-         <input name="option01" type="text" placeholder="Poll response option01" id="pollOption01">
-         <label for="option02">Option 02</label>
-         <input name="option02" type="text" placeholder="Poll response option02" id="pollOption02">
-          <label for="option03">Option 03</label>
-         <input name="option03" type="text" placeholder="Poll response option03" id="pollOption03">
-         <label for="option04">Option 04</label>
-         <input name="option04" type="text" placeholder="Poll response option04" id="pollOption04">
-         <label for="option05">Option 05</label>
-         <input name="option05" type="text" placeholder="Poll response option05" id="pollOption05">
-         <input name="create" type="submit" value="Create!">
-       </form>
-     </div>
-     <!-- end poll creation container -->
-
-
-
-    <div class="col span_2_of_12">
-      <!-- begin user polls list -->
-        <div id="user-polls" class="hidden">
-          <h4>Most Recent Poll</h4>
-          <ul id="poll-list"></ul>
-        </div>
-        <!-- end user polls list -->
-
-        <!-- begin poll edit container -->
-        <div id="poll-edit-container" class="hidden">
-
-         <h4>Edit this poll</h4>
-
-         <form id="edit-poll" enctype="multipart/form-data" charset="utf-8">
-           <label for="title">Poll Title</label>
-           <input name="title" type="text" placeholder="Poll Question" id="updatePollTitle">
-           <input name="save" type="submit" value="Save!">
-         </form>
-        </div>
-        <!-- end poll edit container -->
+      <div class="register-login">
+        <h4>Waddle In</h4>
+        <form id="login" enctype="multipart/form-data" charset="utf-8">
+           <label for="username">Username</label>
+           <input name="username" type="text" placeholder="username">
+           <label for="password">Password</label>
+           <input name="password" type="password" placeholder="password">
+           <input name="login" type="submit" value="Waddle In">
+        </form>
+        <p>First time here? <a href="#" class="register-a2"> Join the flock.</a></p>
       </div>
+    </div>
+   <!-- end login -->
 
 
 
     <!-- begin rendered poll -->
-    <div class="col span_3_of_12 vote-poll-container hidden">
-      <div id="rendered-poll" data-currentPollId="">
-        <h4 class="render-poll-title">[Poll Question here]</h4>
-        <!-- swapped checkboxes for radio button and made all  -->
-        <!-- name attributes the same to force one choice per vote. -->
+    <container class="span_12_of_12 vote-poll-n-reslt-holder hidden">
+      <div class="col span_2_of_12"> </div>
+      <div class="col span_5_of_12 vote-poll-container hidden">
+        <div id="rendered-poll" data-currentPollId="" class="">
+          <h4 class="render-poll-title">[Poll Question here]</h4>
+          <!-- swapped checkboxes for radio button and made all  -->
+          <!-- name attributes the same to force one choice per vote. -->
 
-        <!-- km mods to rendered poll options -->
-       <ul>
-         <li><input class="option-one" type="radio" name="option" value="option01"></li>
-         <li id="option-one" data-option="01">Option 01</li>
-       </ul>
-       <ul>
-         <li><input class="option-two" type="radio" name="option" value="option02"></li>
-         <li id="option-two" data-option="02">Option 02</li>
-       </ul>
-       <ul>
-         <li><input class="option-three" type="radio" name="option" value="option03"></li>
-         <li id="option-three" data-option="03">Option 03</li>
-       </ul>
-       <ul>
-         <li><input class="option-four" type="radio" name="option" value="option04"></li>
-         <li id="option-four" data-option="04">Option 04</li>
-       </ul>
-       <ul>
-         <li><input class="option-five" type="radio" name="option" value="option05"></li>
-         <li id="option-five" data-option="05">Option 05</li>
-       </ul>
-       <!-- End km mods -->
+
+         <ul>
+           <li><input class="option-one" type="radio" name="option" value="option01"></li>
+           <li id="option-one" data-option="01">Option 01</li>
+         </ul>
+         <ul>
+           <li><input class="option-two" type="radio" name="option" value="option02"></li>
+           <li id="option-two" data-option="02">Option 02</li>
+         </ul>
+         <ul>
+           <li><input class="option-three" type="radio" name="option" value="option03"></li>
+           <li id="option-three" data-option="03">Option 03</li>
+         </ul>
+         <ul>
+           <li><input class="option-four" type="radio" name="option" value="option04"></li>
+           <li id="option-four" data-option="04">Option 04</li>
+         </ul>
+         <ul>
+           <li><input class="option-five" type="radio" name="option" value="option05"></li>
+           <li id="option-five" data-option="05">Option 05</li>
+         </ul>
+
+        </div>
+        <div id="vote-results-button-dashboard">
+          <button type="" id="vote">Submit Vote</button>
+          <button type="" id="results">See Results</button>
+        </div>
+
+
 
 
       </div>
-      <div id="vote-results-button-dashboard">
-        <button type="" id="vote">Submit Vote</button>
-        <button type="" id="results">See Results</button>
-      </div>
-    </div>
-    <!-- end rendered polls -->
+                   <!-- begin poll results -->
+       <div id="poll-results-container" class="col span_3_of_12 hidden">
+         <div id="rendered-poll-results">
+           <h4>Poll Results</h4>
+           <!-- <h5>[Poll Question here]</h5> -->
+           <ul>
+             <li id="answer01">Answer 01</li>
+             <li class="result01">Count 01</li>
+           </ul>
+           <ul>
+             <li id="answer02">Answer 02</li>
+             <li class="result02">Count 02</li>
+           </ul>
+           <ul>
+             <li id="answer03">Answer 03</li>
+             <li class="result03">Count 03</li>
+           </ul>
+           <ul>
+             <li id="answer04">Answer 04</li>
+             <li class="result04">Count 04</li>
+           </ul>
+           <ul>
+             <li id="answer05">Answer 05</li>
+             <li class="result05">Count 05</li>
+           </ul>
 
-
-
-
-
-     <!-- begin poll results -->
-     <div id="poll-results-container" class="col span_2_of_12  hidden">
-       <div id="rendered-poll-results">
-         <h4>Poll Results</h4>
-         <!-- <h5>[Poll Question here]</h5> -->
-         <ul>
-           <li id="answer01">Answer 01</li>
-           <li class="result01">Count 01</li>
-         </ul>
-         <ul>
-           <li id="answer02">Answer 02</li>
-           <li class="result02">Count 02</li>
-         </ul>
-         <ul>
-           <li id="answer03">Answer 03</li>
-           <li class="result03">Count 03</li>
-         </ul>
-         <ul>
-           <li id="answer04">Answer 04</li>
-           <li class="result04">Count 04</li>
-         </ul>
-         <ul>
-           <li id="answer05">Answer 05</li>
-           <li class="result05">Count 05</li>
-         </ul>
-
+         </div>
+         <!-- <div id="survey-results-graph">
+           chart data of results breakdown could go here
+         </div> -->
        </div>
-       <!-- <div id="survey-results-graph">
-         chart data of results breakdown could go here
-       </div> -->
-     </div>
-     <!-- end poll results -->
-   </div>
+       <!-- end poll results -->
+       <div class="col span_2_of_12"> </div>
+      <!-- end rendered polls -->
+    </container>
+
+
+
+
+
+
 
   </div>
+  <!-- end wrapper -->
 
 <!-- begin scripts -->
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>

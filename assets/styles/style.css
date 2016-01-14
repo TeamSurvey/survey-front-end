@@ -37,14 +37,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.5vw;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.75em;
+    margin-top: 10px;
+    margin-left: 2%;
     padding: 5px 10px;
+    position: relative;
     float: left;
+    width: 130px;
+
 }
 
 h2 {
   font-family: 'Varela Round', sans-serif;
-  font-size: 4.5vw;
+  font-size: 3em;
 }
 
 h3 {
@@ -82,32 +88,20 @@ header{
   top: 0;
   left: 0;
   width: 100%;
-  height: 0px;
   overflow: auto;
-  /*background-color: #fff;*/
-  border-bottom: 1px solid #777;
   z-index: 100;
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
 }
 
 section {
   margin-left: 130%;
 }
 
-nav {
-    float: right;
-    padding-right: 20px;
-}
-nav li {
-    display: inline;
-}
-nav li a {
-    padding: 26px 10px;
-    display: inline-block;
-}
-nav li a:hover {
-    background: teal;
-    color: #fff;
-}
+
+
 
 
 
@@ -116,19 +110,21 @@ nav li a:hover {
 input {
   width: 100%;
   border:0;
-  padding:7px 0;
-  margin: 5px 0;
+  padding: 7px 0;
+  margin: 5px 0 10px;
   font-size:.8em;
   display: block;
   color: #444;
   text-indent: 10px;
+  border-radius: 5px;
 }
 
 button, input[type="submit"] {
   width: 100%;
   border: 0;
+  border-radius: 5px;
   padding: 10px;
-  margin: 5px 0;
+  margin: 10px 0;
   background-color: rgba(0,122,65,.7);
   color: #fff;
 }
@@ -143,11 +139,23 @@ button:active, input[type="submit"]:active {
   color: #fff;
 }
 
+button.create-new {
+  width: 90%;
+}
+
+label: {
+  margin-top: 5px;
+}
+
+
+
 /* wrapper */
 .wrapper {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height:auto;
-  padding: 30px 0 250px;
+  padding: 30px 0 450px;
   background: url(../images/duck01_crop.jpg) no-repeat center center;
   -webkit-background-size:cover;
   -moz-background-size:cover;
@@ -159,7 +167,9 @@ button:active, input[type="submit"]:active {
 /* Hero */
 
 .hero {
-  margin: 0px auto 0;
+  position: relative;
+  z-index: 10;
+  margin: 10% auto;
   padding: 5px 5px 0px;
   color: white;
   overflow: auto;
@@ -167,66 +177,38 @@ button:active, input[type="submit"]:active {
 }
 
 .duck-intro {
-  /*width: 60%;*/
   padding: 20px;
-  height: 150px;
-
-  background-color: rgba(0, 0, 0, 0.5);
-/*  float: left;*/
+  /*height: 150px;*/
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
 }
 
 
 .duck-intro h2 {
   margin-bottom: 5px;
-/*border-bottom: 2px solid white;*/
 }
 
 .duck-intro h5 {
-  width: 60%;
+  width: 80%;
   margin: 0 auto 12px;
   padding-top: 7px;
   border-top: 3px solid teal;
-}
-
-.user-messages {
-  height: 60px;
-  margin: 0px auto 30px;
-  padding: 10px;
-  background-color: rgba(49,169,200,0.3);
-}
-
-.user-messages:after {
-  content:'';
-  clear: both;
-}
-
-/* button dashboard 01 */
-#create-edit-del-button-dashboard {
-  position: absolute;
-  right: 0;
-  top: 480px;
-  width: 8%;
-/*  background-color: rgba(0,0,0,0.5);*/
-  color: white;
-  z-index: 20;
 }
 
 
 
 /* Register and Login */
 .API-register {
-  width: 20%;
   position: fixed;
-  top: 155px;
-  right: 0px;
+  top:60px;
+  right: 2%;
   background-color: rgba(0,0,0,0.5);
 }
 
 .API-login {
-  width: 20%;
   position: fixed;
-  top: 155px;
-  right: 0px;
+  top: 60px;
+  right: 2%;
   background-color: rgba(0,0,0,0.5);
 }
 
@@ -234,16 +216,128 @@ button:active, input[type="submit"]:active {
   padding: 20px 10%;
 }
 
+.register-login h4 {
+  margin-bottom: 10px;
+}
 
+.register-login p {
+  font-size: .9em;
+}
+
+
+
+
+.crt-poll-n-msg-holder {
+  position: fixed;
+  float: right;
+  top: 60px;
+  right: 0;
+  margin-left: 2%;
+}
+
+
+
+
+.user-messages {
+  position: relative;
+  top: 0px;
+  float: right;
+  /*right: 2%;*/
+  height: 60px;
+  margin: 0px auto 20px;
+  padding: 10px;
+  background-color: rgba(49,169,200,0.3);
+}
+
+
+/* button dashboard 01 */
+#create-edit-del-button-dashboard {
+  position: absolute;
+  width: 333px;
+  top: 16px;
+  right: 2%;
+  font-size: .8em;
+  color: white;
+}
+
+#create-edit-del-button-dashboard li  {
+  display: inline-block;
+  float: right;
+  margin: 0 5px;
+  padding: 5px 8px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  background-color: rgba(0,0,0,0.5);
+  /*border-radius: 15px;*/
+}
+
+#create-edit-del-button-dashboard li:hover{
+  background-color: rgba(0,255,0,0.5);
+}
+
+#create-edit-del-button-dashboard li:active{
+  background-color: rgba(232,177,0,0.5);
+}
+
+
+.user-messages:after, #create-edit-del-button-dashboard:after {
+  content: '';
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
 
 /* Create poll container */
 
 
 
-#poll-creation-container, #poll-edit-container, #user-polls, .vote-poll-container, #poll-results-container {
+#poll-creation-container {
+  position: relative;
+  margin: 0 auto;
+  float: right;
+  top: 0px;
   padding: 10px 10px 0;
   background-color: rgba(0,0,0,0.7);
   overflow: auto;
+}
+
+#poll-edit-container, #user-polls {
+  position: relative;
+  margin: 0 auto;
+  float: right;
+  top: 0px;
+  padding: 10px 10px 0;
+  background-color: rgba(0,0,0,0.7);
+  overflow: auto;
+}
+
+.vote-poll-n-reslt-holder {
+  position: relative;
+  /*float: right;*/
+  top: 60px;
+  /*right: 0;*/
+  margin-right: 2%;
+}
+
+
+.vote-poll-container, #poll-results-container {
+  position: relative;
+  margin: 0 auto 20px;
+  float: left;
+  top: 100px;
+  padding: 10px 10px 0;
+  background-color: rgba(0,0,0,0.7);
+  overflow: auto;
+}
+
+/*#poll-results-container {
+  margin-left: 20px;
+}*/
+
+
+#rendered-poll h4 {
+  margin: 10px 0;
 }
 
 #poll-creation-container form, #poll-edit-container form, .vote-poll-container ul{
@@ -271,6 +365,7 @@ button:active, input[type="submit"]:active {
 
 #user-polls {
   height: 100px;
+  margin-top: 20px;
 }
 
 #user-polls li {
@@ -309,7 +404,7 @@ button:active, input[type="submit"]:active {
 }
 
 #rendered-poll ul:active{
-  background-color: rgba(0255,255,0,0.5);
+  background-color: rgba(232,177,0,0.5);
 }
 
 #rendered-poll li:nth-child(even){
@@ -367,9 +462,9 @@ button:active, input[type="submit"]:active {
   margin: 0 auto;
 }
 
-.pad-lft {
+/*.pad-lft {
   margin-left: 10%;
-}
+}*/
 
 .bottom-fix {
   position: fixed;
@@ -383,3 +478,215 @@ button:active, input[type="submit"]:active {
   top: 60px;
   padding: 15px 40px 15px 15px;
 }
+
+
+
+@media only screen and (min-width: 481px) and (max-width: 690px) {
+/*  h1 {
+    margin-left: 1%;
+  }*/
+
+  #create-edit-del-button-dashboard {
+    margin: 0 2%;
+    /*width: 80%;*/
+  }
+
+  #create-edit-del-button-dashboard li  {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(0,0,0,0.5);
+    /*border-radius: 15px;*/
+  }
+
+
+  .API-register {
+    position: fixed;
+    top:260px;
+    /*right: 0px;*/
+    margin: 0 1%;
+  }
+
+  .API-login {
+    position: fixed;
+    top: 260px;
+    right: 0px;
+  }
+
+  .hero {
+    position: fixed;
+    z-index: 10;
+    top: 60px;
+    right: 0;
+    left: 0;
+    margin: 1% auto;
+  }
+
+  .user-messages {
+    position: relative;
+    top: 220px;
+    right: 0;
+    height: 60px;
+    margin: 0;
+    padding: 10px 20px;
+  }
+
+}
+
+
+@media only screen and (max-width: 480px) {
+
+  header{
+    height: 120px;
+  }
+
+  h1 {
+    /*position: absolute;*/
+    /*float:left;*/
+    width: 130px;
+    margin: 5px 1%;
+    padding-bottom: 20px;
+  }
+
+/*  #poll-creation-container, #poll-edit-container, #user-polls, .vote-poll-container, #poll-results-container {
+    top: 10px;
+    padding: 10px 10px 0;
+    background-color: rgba(0,0,0,0.7);
+    overflow: auto;
+  }
+
+  #poll-creation-container form, #poll-edit-container form, .vote-poll-container ul{
+    position: relative;
+    width: 85%;
+    padding: 10px 5px;
+  }*/
+
+
+  #create-edit-del-button-dashboard {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    right: 0%;
+    margin: 0 1%;
+    width: 312px;
+  }
+
+  #create-edit-del-button-dashboard li  {
+    /*float: none;*/
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+
+  .API-register {
+    position: fixed;
+    top:25px;
+    margin: 1% 0;
+  }
+
+  .API-login {
+    position: fixed;
+    top: 25px;
+    right: 0px;
+  }
+
+  .hero {
+    position: fixed;
+    z-index: 10;
+    bottom: 50px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .duck-intro {
+    padding: 20px;
+    background-color: rgba(0,0,0, .8);
+
+  }
+
+
+  .duck-intro h2 {
+    margin-bottom: 5px;
+    font-size: 2.25em;
+  }
+
+  .duck-intro h5 {
+    width: 70%;
+    margin: 0 auto 12px;
+    padding-top: 7px;
+    border-top: 3px solid teal;
+    font-size: 1em;
+  }
+
+  .duck-intro p {
+    font-size: .9em;
+  }
+
+/*  .user-messages {
+    position: relative;
+    right: 0;
+    top: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 10px 20px;
+  }*/
+
+  .crt-poll-n-msg-holder {
+    width: 94%;
+    position: absolute;
+    float: none;
+    top: 60px;
+    /*right: 0;*/
+    margin-right: 0%;
+  }
+
+
+  .vote-poll-n-reslt-holder {
+    width: 94%;
+    position: absolute;
+    float: none;
+    top: 60px;
+    /*right: 0;*/
+    margin-right: 0%;
+  }
+
+
+  #poll-creation-container, #poll-edit-container, #user-polls {
+    top: 0px;
+  }
+
+    #poll-creation-container, #poll-edit-container, #user-polls, .vote-poll-container, #poll-results-container {
+    top: 0px;
+    padding: 10px 10px 0;
+    background-color: rgba(0,0,0,0.7);
+    overflow: auto;
+  }
+
+  .vote-poll-container, #poll-results-container {
+    top: 0px;
+    width: 100%;
+    padding: 10px 10px 0;
+    background-color: rgba(0,0,0,0.7);
+    overflow: auto;
+  }
+
+  .poll-results-container {
+    margin: 20px 0;
+    margin-left: 0;
+    float: left;
+  }
+
+  #poll-creation-container form, #poll-edit-container form, .vote-poll-container ul{
+    position: relative;
+    width: 85%;
+    padding: 10px 5px;
+  }
+
+
+
+}
+
+

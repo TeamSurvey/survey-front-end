@@ -76,6 +76,8 @@ var loginCb = function (error, data) {
   } else {
     console.log(JSON.stringify(data, null, 4));
     $('.user-messages').html('<p>Welcome, ' + currUser + '. Create a poll!</p><button class="create-new">Create New Poll</button>');
+    $('.hero').fadeOut(300);
+    $('h1').fadeIn(300).removeClass('hidden');
   }
 
 }; // end of login callback;
@@ -103,7 +105,6 @@ var createPollCb = function (error, data) {
   }
   console.log('successful create, data is ' + JSON.stringify(data, null, 4));
 
-  //ben edits start
 
   // used bracket notation to solve for special character in key value
   poll.id = data["_id"];
@@ -115,27 +116,21 @@ var createPollCb = function (error, data) {
 
   $('#poll-creation-container').attr('data-pollid', poll.id);
 
-  //ben edits end
-
-  // lcn unique URL add
-  // poll_url = (url + "polls/" + data["_id"]);
-
-
-  // km change url to localhost:5000 for testing and added hash
   poll_url = (url + "/#" + data["_id"]);
 
   console.log('poll_url is ' + poll_url);
 
   var newPollLink = $('<li><a href="' + poll_url + '" data-poll-id="' + data["_id"] + '" class="load-poll">' + data.title + '</a></li>');
 
-  // km add jQuery animation
-  $('#user-polls').fadeIn().removeClass('hidden')
+  $('#user-polls').fadeIn(300).removeClass('hidden');
+  $('#poll-creation-container').fadeOut(300).addClass('hidden');
 
   $('#poll-list').append(newPollLink);
 
-  $(".user-messages").html('<p>Your survey can be found here: <a href="' + poll_url + '">' + poll_url + '</a></p>');
+  $(".user-messages").html('<p>Your survey can be found here: <button><a href="' + poll_url + '"> View Your Survey </a></button></p>');
 
-    $('#create-edit-del-button-dashboard').fadeIn().removeClass('hidden')
+  $('#create-edit-del-button-dashboard').fadeIn(300).removeClass('hidden');
+
 
 };
 
@@ -155,7 +150,7 @@ var showPollCb = function (error, data) {
   poll.id = data[0]["_id"];
 
 
-// km add jQuery
+// add jQuery
   $('.vote-poll-container').fadeIn().removeClass('hidden');
   $('.render-poll-title').html(data[0].title);
 
@@ -166,7 +161,7 @@ var showPollCb = function (error, data) {
   $('.option-five').val(data[0].options[4]);
 
 
-// km changing class references to id refs
+// changing class references to id refs
   $('#option-one').html(data[0].options[0]);
   $('#option-two').html(data[0].options[1]);
   $('#option-three').html(data[0].options[2]);
