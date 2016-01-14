@@ -209,13 +209,29 @@ $(document).ready(function() {
   $('#poll-results-container').fadeIn().removeClass('hidden');
   });
 
-  // delete poll event handler
+  // delete poll button event handler
   $('.delete-poll').on('click', function(e) {
     e.preventDefault();
     console.log('clicked');
 
     var getpollID = $('#poll-creation-container').attr('data-pollid');
     console.log("poll id is: " + getpollID);
+    poll_api.deletePoll(getpollID, deletePollCb);
+
+  });
+
+
+  // delete poll event handler
+  $('#user-polls').on('click', '.delete-poll' function(e) {
+    e.preventDefault();
+    console.log('clicked');
+
+    var getpollID= $(this).closest('.load-poll').attr('data-pollid');
+
+    console.log("poll id is: " + getpollID);
+
+    $(this).closest('.load-poll').remove();
+
     poll_api.deletePoll(getpollID, deletePollCb);
 
   });
