@@ -151,6 +151,7 @@ var showPollCb = function (error, data) {
 
 
 // add jQuery
+$('.vote-poll-n-reslt-holder').fadeIn().removeClass('hidden');
   $('.vote-poll-container').fadeIn().removeClass('hidden');
   $('.render-poll-title').html(data[0].title);
 
