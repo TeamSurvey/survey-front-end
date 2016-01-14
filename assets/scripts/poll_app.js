@@ -1,6 +1,6 @@
 'use strict';
 
-var currUser;
+var currUser, getpollID;
 
 $(document).ready(function() {
 
@@ -138,11 +138,27 @@ $(document).ready(function() {
 
 
 
+  // individual edit poll event handler
+  $('#user-polls').on('click', '.fa-pencil', function(e) {
+    e.preventDefault();
+    console.log('clicked');
+
+    getpollID = $(e.target).data('edit-id');
+
+
+    console.log("poll id is: " + getpollID);
+
+    $('#poll-edit-container').fadeIn().removeClass('hidden');
+
+  });
+
+
   // edit poll title handler
   $('#edit-poll').on('submit', function(e) {
     e.preventDefault();
 
-    var id = $('#poll-creation-container').attr('data-pollid');
+    // var id = $('#poll-creation-container').attr('data-pollid');
+    var id = getpollID;
     var data = {
       _id: id,
       title: $('#updatePollTitle').val()
@@ -156,6 +172,10 @@ $(document).ready(function() {
     $(this).closest('#poll-edit-container').fadeOut();
 
   });
+
+
+
+
 
 
   // disabling this functionality to allow the anchor tags to perform the READ function with a unique URL
@@ -210,18 +230,18 @@ $(document).ready(function() {
   });
 
   // delete poll button event handler
-  $('.delete-poll').on('click', function(e) {
-    e.preventDefault();
-    console.log('clicked');
+  // $('.delete-poll').on('click', function(e) {
+  //   e.preventDefault();
+  //   console.log('clicked');
 
-    var getpollID = $('#poll-creation-container').attr('data-pollid');
-    console.log("poll id is: " + getpollID);
-    poll_api.deletePoll(getpollID, deletePollCb);
+  //   var getpollID = $('#poll-creation-container').attr('data-pollid');
+  //   console.log("poll id is: " + getpollID);
+  //   poll_api.deletePoll(getpollID, deletePollCb);
 
-  });
+  // });
 
 
-  // delete poll event handler
+  // individual delete poll event handler
   $('#user-polls').on('click', '.fa-trash', function(e) {
     e.preventDefault();
     console.log('clicked');
@@ -231,7 +251,7 @@ $(document).ready(function() {
     console.log("poll id is: " + getpollID);
 
     // $(this).closest('.load-poll').remove();
-    $(this).closest('.load-poll').remove();
+    $(this).closest('.single-poll').remove();
 
     poll_api.deletePoll(getpollID, deletePollCb);
 
