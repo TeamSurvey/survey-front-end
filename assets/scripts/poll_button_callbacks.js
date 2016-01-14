@@ -120,7 +120,7 @@ var createPollCb = function (error, data) {
 
   console.log('poll_url is ' + poll_url);
 
-  var newPollLink = $('<li><a href="' + poll_url + '" data-poll-id="' + data["_id"] + '" class="load-poll" target="_blank">' + data.title + '</a>&nbsp;&nbsp;<i class="fa fa-trash"></i></li>');
+  var newPollLink = $('<li data-poll-id=" ' + data["_id"] + '"><a href="' + poll_url + ' class="load-poll" target="_blank">' + data.title + '</a>&nbsp;&nbsp;<i class="fa fa-trash"></i></li>');
 
   $('#user-polls').fadeIn(300).removeClass('hidden');
   $('#poll-creation-container').fadeOut(300).addClass('hidden');
