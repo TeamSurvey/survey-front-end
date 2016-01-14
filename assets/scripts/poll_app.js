@@ -222,7 +222,7 @@ $(document).ready(function() {
 
 
   // delete poll event handler
-  $('#user-polls').on('click', '.delete-poll' function(e) {
+  $('#user-polls').on('click', '.delete-poll', function(e) {
     e.preventDefault();
     console.log('clicked');
 
